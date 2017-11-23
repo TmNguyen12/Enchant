@@ -17,8 +17,8 @@
     "webpack": "^3.8.1"
   },
   "engines": {
-    "node": "4.1.1",
-    "npm": "2.1.x"
+    "node": "8.9.0",
+    "npm": "5.5.1"
   },
   "scripts": {
     "postinsall": "webpack",
