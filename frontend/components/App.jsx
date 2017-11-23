@@ -16,10 +16,12 @@ import {
 
 const App = () => (
   <div>
-
+    <nav className="nav-main">
+      <Link to="/" className="logo">Enchant</Link>
+      <NavContainer />
+    </nav>
     <header>
       <h1> ENCHAAAAAAAAAAANNTT</h1>
-      <NavContainer />
     </header>
 
     <div>

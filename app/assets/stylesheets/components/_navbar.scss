@@ -1,0 +1,38 @@
+.nav-main{
+  position: fixed;
+  top: 0;
+  width: 100%; 
+  background: $black; 
+  float: left; 
+  height: 60px; 
+
+  .logo{
+    color: $white; 
+    text-decoration: none; 
+    height:60px; 
+    position: absolute;
+    left: 20px;
+    top: 0; 
+    display: flex; 
+    justify-content: space-between;
+    width: 9%;
+    align-items: center; 
+    
+  }
+
+  .login-signup{
+    height:60px; 
+    position: absolute;
+    right: 25px;
+    top: 0; 
+    display: flex; 
+    justify-content: space-between;
+    width: 9%;
+    align-items: center; 
+    
+    a {
+      text-decoration: none; 
+      color: $light-gray;
+    }
+  }
+}

@@ -23,9 +23,9 @@ class Splash extends React.Component {
     return (
       <div className="splash-image">
         <h1 className="splash-image-title">
-          "Showcase & Discover"
+          Showcase & Discover
           <br/>
-          "Creative Work"
+          Creative Work
         </h1>
         <button className="demo-button" onClick={this.demoLogin}>Demo Login</button>
       </div>
@@ -37,24 +37,12 @@ class Splash extends React.Component {
       <div className="hide"></div>
     );
   }
-
-  // whichOne({ currentUser }) {
-  //   let splashExec; 
-  //   if (currentUser) {
-  //     splashExec = () => loggedIn(); 
-  //   } else {
-  //     splashExec = () => notLoggedIn(); 
-  //   } 
-  // }
-
+  
   render() {
     return (
       this.props.currentUser ? this.loggedIn() : this.notLoggedIn() 
     ); 
     
-    // return (
-    //   splashExec()
-    // ); 
   }
 }
 export default Splash; 
