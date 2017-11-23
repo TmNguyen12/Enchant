@@ -18,6 +18,18 @@ class SessionForm extends React.Component {
     });
   }
 
+  renderErrors() {
+    return (
+      <ul>
+        {this.props.errors.map((error, idx) => (
+          <li key={`error${idx}`}>
+            { error }
+          </li>
+        ))}
+      </ul>
+    ); 
+  }
+
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
@@ -28,28 +40,30 @@ class SessionForm extends React.Component {
   render () {
     const { username, password } = this.state;
 
-
     return(
-      <div className="login-form">
+      <div className="login-form-container">
         <form onSubmit={this.handleSubmit} className="login-form-box">
           <div className="login-form">
-            <label>Username:
+            {this.renderErrors()}
               <input type="text"
                 value={ username }
                 onChange={this.update('username')}
                 className="login-input"
+                placeholder="User name"
               />
-            </label>
-            <br/>
-            <label>Password:
+                    
               <input type="password"
                 value={ password }
                 onChange={this.update('password')}
                 className="login-input"
+                placeholder="Password"
               />
-            </label>
-            <input type="submit" value="Login"/>
-            <Link to="signup"> Sign up here</Link> 
+              <input type="submit" value="Login" className="signin-button"/>
+
+            <Link to="/signup" > Sign up here</Link> 
+
+              <button type="submit" value="Demo Login"> Demo login </button>
+            
           </div>
         </form>
       </div>

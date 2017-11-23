@@ -13,15 +13,12 @@ const mapStateToProps = state => ({
 );
 
 const mapDispatchToProps = (dispatch, { location }) => {
-  // const formType = location.pathname.slice(1);        // 
-  // const splashForm= (formType === 'login') ? login : signup;
   return {
-    // splashForm: user => dispatch(splashForm(user)),
-    // formType
     logout: () => dispatch(logout()),
     login: user => dispatch(login(user))
   };
 };
+
 
 export default connect(
   mapStateToProps,
