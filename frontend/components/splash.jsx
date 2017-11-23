@@ -1,13 +1,14 @@
 import React from 'react'; 
-import { Link } from 'react-router-dom'; 
+// import { Link } from 'react-router-dom'; 
 
-class Splash extends React.component {
+class Splash extends React.Component {
   constructor(props) {
     super(props); 
     this.state ={
       username:"", 
       password: "", 
     }; 
+    this.demoLogin = this.demoLogin.bind(this); 
   }
   
   demoLogin(){
@@ -37,19 +38,23 @@ class Splash extends React.component {
     );
   }
 
-  whichOne({ currentUser }) {
-    let splashExec; 
-    if (currentUser) {
-      splashExec = () => loggedIn(); 
-    } else {
-      splashExec = () => notLoggedIn(); 
-    } 
-  }
+  // whichOne({ currentUser }) {
+  //   let splashExec; 
+  //   if (currentUser) {
+  //     splashExec = () => loggedIn(); 
+  //   } else {
+  //     splashExec = () => notLoggedIn(); 
+  //   } 
+  // }
 
   render() {
     return (
-      splashExec()
+      this.props.currentUser ? this.loggedIn() : this.notLoggedIn() 
     ); 
+    
+    // return (
+    //   splashExec()
+    // ); 
   }
 }
 export default Splash; 
