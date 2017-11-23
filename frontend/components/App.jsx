@@ -4,6 +4,7 @@ import SplashContainer from './splash_container';
 import SessionFormContainer from './session_form_container'; 
 import SignupContainer from './signup_form_container'; 
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
+import NavContainer from './navbar_container'; 
 
 import {
   Route,
@@ -18,10 +19,12 @@ const App = () => (
 
     <header>
       <h1> ENCHAAAAAAAAAAANNTT</h1>
-      {/* <SessionFormContainer /> */}
-      <Link to="/signup"> Signup </Link> 
-      <Link to="/login"> Login </Link> 
+      <NavContainer />
     </header>
+
+    <div>
+      <SplashContainer /> 
+    </div>
 
     <Switch>
       <AuthRoute exact path="/signup" component={SignupContainer} />

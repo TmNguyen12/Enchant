@@ -1,16 +1,17 @@
-import { connect } from 'react-redux'; 
-import { login } from '../actions/session_actions';
-import Splash from './splash'; 
+import { connect } from 'react-redux';
+
+import { logout } from '../actions/session_actions';
+import Navigation from './navbar';
 
 const mapStateToProps = ({ session }) => ({
   currentUser: session.currentUser
 });
 
 const mapDispatchToProps = dispatch => ({
-  login: user => dispatch(login(user))  
+  logout: () => dispatch(logout())
 });
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Splash); 
+)(Navigation);
