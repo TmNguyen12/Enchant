@@ -26,7 +26,6 @@
   }
 }
 
-
 input[type="submit"] {
   // padding: 100px;
   // font-size:50px;
@@ -43,4 +42,36 @@ input[type="submit"] {
 .login-input{
   width: 200px;
   padding: 10px;
+  background-color: $lighter-gray;
+  border-color: 1px solid transparent;
+  &:focus{
+    background-color: $white; 
+  }
 }
+
+.session-modal{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  marginRight: -50%; 
+  transform: translate(-50%, -50%); 
+  border: 1px solid #ccc;
+  background: #fff;
+  overflow:auto;
+  WebkitOverflowScrolling: touch;
+  borderRadius: 4px;
+  outline: none;
+  padding: 20px; 
+}
+
+.session-modal-overlay{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75); 
+}
+

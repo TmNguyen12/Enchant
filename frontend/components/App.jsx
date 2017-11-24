@@ -21,7 +21,6 @@ const App = () => (
       <NavContainer />
     </nav>
     <header>
-      <h1> ENCHAAAAAAAAAAANNTT</h1>
     </header>
 
     <div>
