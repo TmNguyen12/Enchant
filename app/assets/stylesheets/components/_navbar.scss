@@ -26,12 +26,18 @@
     top: 0; 
     display: flex; 
     justify-content: space-between;
-    width: 9%;
+    width: 12%;
+    // width: calc(100% - 500px);
     align-items: center; 
-    
     a {
       text-decoration: none; 
       color: $light-gray;
+    }
+    img{
+      object-fit: cover;
+      border-radius:50%;
+      width: 35px;
+      height: 35px; 
     }
   }
 }

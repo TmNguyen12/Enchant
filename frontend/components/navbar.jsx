@@ -8,12 +8,16 @@ const sessionLinks = () => (
   </nav>
 );
 
-const personalGreeting = (currentUser, logout) => (
+const personalGreeting = (currentUser, logout) => {
+ return (
   <nav className="login-signup">
-      <button className="header-button" onClick={logout}>Log Out</button>
-      <a className="header-name">{currentUser.username}!</a>
-  </nav>
-);
+        <button className="header-button" onClick={logout}>Log Out</button>
+        <a className="header-name">{currentUser.username}!</a>
+        <img src={currentUser.image_url}/>
+   </nav>
+
+ ); 
+};
 
 const Navigation = ({ currentUser, logout }) => (
   currentUser ? personalGreeting(currentUser, logout) : sessionLinks()

@@ -32,7 +32,9 @@
     "doc": "docs",
     "test": "test"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "redux-devtools-extension": "^2.13.2"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC"
