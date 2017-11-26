@@ -25,6 +25,10 @@ class User < ApplicationRecord
   has_attached_file :image
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
   
+  has_many :projects, 
+    foreign_key: :author_id, 
+    primary_key: :id, 
+    class_name: :Project 
 
   attr_reader :password
 
