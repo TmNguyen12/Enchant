@@ -10,10 +10,11 @@ User.destroy_all
 Project.destroy_all
 Item.destroy_all
 
-demo = User.create!(username:'demo', password:'password')
-
-
-demo.image = File.new('app/assets/images/gumbi.jpg')
+demo = User.create!(
+  username:'demo', 
+  password:'password',
+  image: File.new('app/assets/images/gumbi.jpg')
+  )
 
 project1 = Project.create!(
   title:'Winter', 

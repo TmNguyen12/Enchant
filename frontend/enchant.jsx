@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 import Root from './components/root'; 
 import configureStore from './store/store'; 
 import * as APIUtil from './util/session_api_util'; 
+import * as ProjAPIUtil from './util/project_api_util'; 
 
 document.addEventListener('DOMContentLoaded', () => {
   // let store;
@@ -18,7 +19,10 @@ document.addEventListener('DOMContentLoaded', () => {
   let store = configureStore(); 
   // window.store = store; 
   window.getState = store.getState; 
-  window.dispatch = store.dispatch; 
+  window.dispatch = store.dispatch;
+  window.fetchAllProjects = ProjAPIUtil.fetchAllProjects(); 
+  
+
 
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={ store }/>, root);
