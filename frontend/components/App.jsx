@@ -6,6 +6,7 @@ import SignupContainer from './signup_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import NavContainer from './navbar_container'; 
 import ProjectIndex from './project_index_container'; 
+import MainComponent from './main_container'; 
 
 import {
   Route,
@@ -23,7 +24,7 @@ const App = () => (
     </nav>
 
     <div className="main-content">
-      <ProjectIndex />
+      <MainComponent />
     </div>
     
     <Switch>

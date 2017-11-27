@@ -1,4 +1,4 @@
-.main-content{
+.project-index{
   background: $background; 
   justify-content:flex-end; 
   position:absolute;
@@ -11,6 +11,7 @@
   display: flex; 
   justify-content: center;
   flex-flow: row wrap; 
+  
 }
 
 .project-card{
