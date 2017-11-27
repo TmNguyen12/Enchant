@@ -5,6 +5,7 @@ import Root from './components/root';
 import configureStore from './store/store'; 
 import * as APIUtil from './util/session_api_util'; 
 import * as ProjAPIUtil from './util/project_api_util'; 
+import * as ItemAPIUtil from './util/item_api_util'; 
 import { selectProjects } from './reducers/selectors'; 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -22,6 +23,8 @@ document.addEventListener('DOMContentLoaded', () => {
   window.getState = store.getState; 
   window.dispatch = store.dispatch;
   window.fetchAllProjects = ProjAPIUtil.fetchAllProjects; 
+  window.fetchProject = ProjAPIUtil.fetchProject; 
+  window.fetchAllItems = ItemAPIUtil.fetchAllItems; 
   window.selectProjects = selectProjects; 
 
 

@@ -60,7 +60,18 @@ button {
   */
   -webkit-appearance: none;
   -moz-appearance: none;
-  appearance: none;
+	appearance: none;
+    background: $blue; 
+    border: 1px solid transparent; 
+    border-radius: 50px; 
+    display: block;
+    text-shadow:none;
+    transition-duration: 300ms;
+    transition-property: background, color, border; 
+    transition-timing-function: linear; 
+    vertical-align: top; 
+		user-select: none; 
+		color: $white; 
 }
 img {
   display: block;

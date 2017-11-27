@@ -1,6 +1,7 @@
 import React from 'react'; 
 import { selectProjects } from '../reducers/selectors'; 
 import ProjectIndexItem from './project_index_item'; 
+import ProjectShow from './project_show_container'; 
 
 class ProjectIndex extends React.Component {
   componentWillMount(){
@@ -30,7 +31,6 @@ class ProjectIndex extends React.Component {
   }
 }
 
-
 export default ProjectIndex; 
 
 
@@ -39,3 +39,4 @@ export default ProjectIndex;
       // console.log(projectsArr); 
 // {projectsArr.map( project => <ProjectIndexItem key={project.id} project={project}/>
 // )}
+

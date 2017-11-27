@@ -55,3 +55,49 @@
     height:40px; 
   }
 }
+
+
+// #modal-root {
+//   position: relative;
+//   z-index: 999;
+// }
+
+// .app {
+//   height: 10em;
+//   width: 10em;
+//   background: lightblue;
+//   overflow: hidden;
+// }
+
+// .modal {
+//   background-color: rgba(0,0,0,0.5);
+//   position: fixed;
+//   height: 100%;
+//   width: 100%;
+//   top: 0;
+//   left: 0;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+// }
+
+// .view-modal{
+//   position: aboslute; 
+//   width: 950px; 
+//   height: 750px; 
+//   top: 50%; 
+//   left: 50%;
+//   transform: translate(-50%, -50); 
+//   border-radius: 7px;
+//   padding: 10px;
+//   background: white; 
+// }
+
+// .view-modal-overlay{
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   right: 0;
+//   bottom: 0;
+//   background-color: rgba(0, 0, 0, 0.75); 
+// }
