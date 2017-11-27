@@ -5,6 +5,7 @@ import SessionFormContainer from './session_form_container';
 import SignupContainer from './signup_form_container'; 
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import NavContainer from './navbar_container'; 
+import ProjectIndex from './project_index_container'; 
 
 import {
   Route,
@@ -15,16 +16,14 @@ import {
 } from 'react-router-dom';
 
 const App = () => (
-  <div>
+  <div className="all-content">
     <nav className="nav-main">
       <Link to="/" className="logo">Enchant</Link>
       <NavContainer />
     </nav>
-    <header>
-    </header>
 
-    <div>
-      <SplashContainer /> 
+    <div className="main-content">
+      <ProjectIndex />
     </div>
     
     <Switch>
@@ -35,4 +34,8 @@ const App = () => (
   </div>
 );
 
-export default App; 
+export default App;
+
+  {/* <div>
+      <SplashContainer /> 
+    </div> */}

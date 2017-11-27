@@ -8,15 +8,17 @@ export const receiveAllProjects = projects => ({
   projects 
 });
 
-export const receiveProject = project => ({
+export const receiveProject = projects => ({
   type: RECEIVE_PROJECT, 
-  project 
+  projects 
 });
 
-export const fetchAllProjects = () => dispatch => (
-  ProjAPIUtil.fetchAllProjects()
-    .then(projects => dispatch(receiveAllProjects(projects)))
-); 
+export const fetchAllProjects = () => dispatch => {
+  return (
+    ProjAPIUtil.fetchAllProjects()
+      .then(projects => dispatch(receiveAllProjects(projects)))
+  ); 
+}; 
 
 export const fetchProject = id => dispatch => (
   ProjAPIUtil.fetchProject(id)

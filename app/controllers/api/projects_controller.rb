@@ -1,7 +1,10 @@
 class Api::ProjectsController < ApplicationController
 
+  # before_action :require_login 
+
   def create
     @project = Project.new(project_params)
+    @project.author_id = current_user.id 
     if @project.save
       # send to project update page 
     else 

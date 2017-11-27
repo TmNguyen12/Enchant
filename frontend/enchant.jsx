@@ -5,23 +5,24 @@ import Root from './components/root';
 import configureStore from './store/store'; 
 import * as APIUtil from './util/session_api_util'; 
 import * as ProjAPIUtil from './util/project_api_util'; 
+import { selectProjects } from './reducers/selectors'; 
 
 document.addEventListener('DOMContentLoaded', () => {
-  // let store;
-  // if (window.currentUser) {
-  //   const preloadedState = { session: { currentUser: window.currentUser } };
-  //   store = configureStore(preloadedState);
-  //   delete window.currentUser;
-  // } else {
-  //   store = configureStore();
-  // }
+  let store;
+  if (window.currentUser) {
+    const preloadedState = { session: { currentUser: window.currentUser } };
+    store = configureStore(preloadedState);
+    delete window.currentUser;
+  } else {
+    store = configureStore();
+  }
 
-  let store = configureStore(); 
+  // let store = configureStore(); 
   // window.store = store; 
   window.getState = store.getState; 
   window.dispatch = store.dispatch;
-  window.fetchAllProjects = ProjAPIUtil.fetchAllProjects(); 
-  
+  window.fetchAllProjects = ProjAPIUtil.fetchAllProjects; 
+  window.selectProjects = selectProjects; 
 
 
   const root = document.getElementById('root');

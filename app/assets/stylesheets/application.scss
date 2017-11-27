@@ -12,11 +12,13 @@
  *
  *= require_self
  */
+
+ // Core
+@import "base/colors.scss"; 
+
 // css reset 
 @import "base/reset.scss"; 
 
-// Core
-@import "base/colors.scss"; 
 
 //Componenets 
 @import "components/*"; 

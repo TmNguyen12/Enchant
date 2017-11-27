@@ -1,13 +1,16 @@
 import { connect } from 'react-redux'; 
 import ProjectIndex from './project_index'; 
-import { fetchIndex, fetchProject } from '../util/project_api_util'; 
+// import { fetchIndex, fetchProject } from '../util/project_api_util'; 
+import { fetchAllProjects } from '../actions/project_actions'; 
+import { selectProjects } from '../reducers/selectors'; 
 
-const mapStateToProps = ({ session }) => ({
-  currentUser: session.currentUser
+
+const mapStateToProps = ( state ) => ({
+  projects: selectProjects(state)
 });
 
 const mapDispatchToProps = dispatch => ({
-  login: user => dispatch(login(user))  
+  fetchProjects: () => dispatch(fetchAllProjects())
 });
 
 export default connect(
