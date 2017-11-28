@@ -47,10 +47,19 @@ class ProjectIndexItem extends React.Component {
 
         <Modal
           isOpen={this.state.modalIsOpen}
+          closeTimeoutMS={500}   // add after close, wait this long and then close 
           onAfterOpen={this.afterOpenModal}
           onRequestClose={this.closeModal}
-          className="view-modal"
-          overlayClassName="view-modal-overlay"
+          className={{
+            base: 'view-modal',
+            afterOpen:'view-modal-open', 
+            beforeClose: 'view-modal-close'
+          }}
+          overlayClassName={{
+            base: 'view-modal-overlay', 
+            afterOpen:'view-modal-overlay-open',
+            beforeCLose: 'view-modal-overlay-close'  
+          }}
          >
         <div className="modal">
             <ProjectShow project={project}/> 
