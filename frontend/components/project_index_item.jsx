@@ -32,7 +32,6 @@ class ProjectIndexItem extends React.Component {
 
   render () {
     const { project } = this.props;
-    console.log("project index", this.props)
     return (
       <div>
         <div className="project-card">

@@ -5,7 +5,6 @@ import ItemsIndexContainer from './items_index_container';
 class ProjectShow extends React.Component {
 
   // componentWillMount(){
-  //   debugger 
   //   this.props.fetchProject(this.props.project)
   // }
 

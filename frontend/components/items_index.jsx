@@ -11,8 +11,6 @@ class ItemsIndex extends React.Component {
 
   render () {
     const { items } = this.props; 
-    console.log(items);
-
 
     if (Object.keys(items).length < 1 ) {
       console.log("loading"); 

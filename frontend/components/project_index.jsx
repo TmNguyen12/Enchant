@@ -11,7 +11,6 @@ class ProjectIndex extends React.Component {
   
   render () {
     const { projects } = this.props; 
-    console.log(projects); 
 
     if (Object.keys(projects).length < 1) {
       console.log("loading"); 

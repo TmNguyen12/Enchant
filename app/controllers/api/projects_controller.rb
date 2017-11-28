@@ -6,7 +6,7 @@ class Api::ProjectsController < ApplicationController
     @project = Project.new(project_params)
     @project.author_id = current_user.id 
     if @project.save
-      # send to project update page 
+      render "api/projects/edit"
     else 
       render json: @project.errors.full_messages, status: 418 
     end 
@@ -35,6 +35,6 @@ class Api::ProjectsController < ApplicationController
 
   private
   def project_params
-    params.require(:project).permit(:title, :description, :category, :thumnail_url, :video)
+    params.require(:project).permit(:title, :description, :category, :thumnail_url, :video, :author_id)
   end 
 end

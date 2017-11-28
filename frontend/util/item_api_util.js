@@ -5,3 +5,15 @@ export const fetchAllItems = projectId => (
   })
 );
 
+export const createItem = (formData) => (
+  $.ajax({
+    method: 'POST', 
+    url: `api/projects/${formData.project_id}/items`,
+    dataType:"json", 
+    contentType: false, 
+    processData: false, 
+    data: formData
+  }) 
+); 
+
+

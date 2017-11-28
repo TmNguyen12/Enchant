@@ -19,10 +19,13 @@ export const editProject = id => (
   })
 );
 
-export const createProject = project => (
-  $.ajax({
-    method: 'POST', 
-    url:`api/projects`, 
-    data: { project } 
-  })
-);
+export const createProject = project => {
+  return (
+    $.ajax({
+      method: 'POST', 
+      url:`api/projects`, 
+      data: { project } 
+    })
+  ); 
+}; 
+

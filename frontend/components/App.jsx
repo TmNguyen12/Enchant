@@ -7,8 +7,9 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import NavContainer from './navbar_container'; 
 import ProjectIndexContainer from './project_index_container'; 
 import MainComponent from './main_container'; 
-import NavCenter from './nav_center_container'; 
+import NavCenterContainer from './nav_center_container'; 
 import ProjectCreateContainer from './project_create_container'; 
+import ProjectEditContainer from './project_edit_container'; 
 
 import {
   Route,
@@ -25,24 +26,21 @@ const App = () => (
         <Link to="/" className="logo">Enchant</Link>
       </div>
       <div>
-        <NavCenter /> 
+        <NavCenterContainer /> 
       </div>
       <div>
         <NavContainer />
       </div>
     </nav>
 
-    <AuthRoute exact path="/signup" component={SignupContainer} />
-    <AuthRoute exact path="/login" component={SessionFormContainer} />
-
+    <Route exact path="/signup" component={SignupContainer} />
+    <Route exact path="/login" component={SessionFormContainer} />
+    <Route exact path="/project/create" component={ProjectCreateContainer} />
 
     <div className="main-content">
-      <Switch>
-          <Route exact path="/" component={MainComponent} />
-          <ProtectedRoute exact path="/project/create" component={ProjectCreateContainer} />
-      </Switch>
-    </div>
-    
+      <Route exact path="/" component={MainComponent} />
+      <Route exact path="/project/edit/:projectId" component={ProjectEditContainer} />   
+    </div> 
   </div>
 );
 

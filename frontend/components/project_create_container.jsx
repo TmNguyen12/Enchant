@@ -9,15 +9,17 @@ import { makeProject } from '../actions/project_actions';
 //     author_id: ''
 // }; 
 
-const mapStateToProps = ( state ) => ({
+const mapStateToProps = ( {session} ) => ({
+  currentUser: session.currentUser
   // project: selectProjects(state)
 });
 
 const mapDispatchToProps = dispatch => ({
-  creatProject: project => dispatch(makeProject(project))
+  createProject: project => dispatch(makeProject(project))
 });
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(ProjectCreate); 
+
