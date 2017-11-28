@@ -3,10 +3,17 @@ import ItemsUploadContainer from './items_upload_container';
 import Modal from 'react-modal'; 
 
 class ProjectEdit extends React.Component {
-  constructor(){
-    super(); 
- 
+  constructor(props){
+    super(props); 
+    this.state = { 
+      project: {
+        id: this.props.match.params.projectId
+      }}; 
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  componentWillMount() {
+    this.props.receiveProject(this.state.project.id); 
   }
 
   update(field) {
