@@ -5,38 +5,46 @@ import SessionFormContainer from './session_form_container';
 import SignupContainer from './signup_form_container'; 
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import NavContainer from './navbar_container'; 
-import ProjectIndex from './project_index_container'; 
+import ProjectIndexContainer from './project_index_container'; 
 import MainComponent from './main_container'; 
+import NavCenter from './nav_center_container'; 
+import ProjectCreateContainer from './project_create_container'; 
 
 import {
   Route,
   Redirect,
   Switch,
-  Link,
+  Link, 
   HashRouter
 } from 'react-router-dom';
 
 const App = () => (
   <div className="all-content">
     <nav className="nav-main">
-      <Link to="/" className="logo">Enchant</Link>
-      <NavContainer />
+      <div>
+        <Link to="/" className="logo">Enchant</Link>
+      </div>
+      <div>
+        <NavCenter /> 
+      </div>
+      <div>
+        <NavContainer />
+      </div>
     </nav>
 
+    <AuthRoute exact path="/signup" component={SignupContainer} />
+    <AuthRoute exact path="/login" component={SessionFormContainer} />
+
+
     <div className="main-content">
-      <MainComponent />
+      <Switch>
+          <Route exact path="/" component={MainComponent} />
+          <ProtectedRoute exact path="/project/create" component={ProjectCreateContainer} />
+      </Switch>
     </div>
     
-    <Switch>
-      <AuthRoute exact path="/signup" component={SignupContainer} />
-      <AuthRoute exact path="/login" component={SessionFormContainer} />
-    </Switch>
-
   </div>
 );
 
 export default App;
 
-  {/* <div>
-      <SplashContainer /> 
-    </div> */}

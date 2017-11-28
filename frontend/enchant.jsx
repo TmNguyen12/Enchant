@@ -18,6 +18,13 @@ document.addEventListener('DOMContentLoaded', () => {
     store = configureStore();
   }
 
+  const project6 = {
+    title:'SuperDuper', 
+    description:' forever', 
+    category: 'Photography', 
+  }; 
+
+
   // let store = configureStore(); 
   // window.store = store; 
   window.getState = store.getState; 
@@ -26,6 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.fetchProject = ProjAPIUtil.fetchProject; 
   window.fetchAllItems = ItemAPIUtil.fetchAllItems; 
   window.selectProjects = selectProjects; 
+  window.createProject = ProjAPIUtil.createProject; 
 
 
   const root = document.getElementById('root');

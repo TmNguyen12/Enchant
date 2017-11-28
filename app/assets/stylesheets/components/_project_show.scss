@@ -1,18 +1,32 @@
 .project-show{
-  display:flex; 
-  flex-direction: row-reverse; 
-  height:1080px;
+  // display:flex; 
+  // flex-direction: row-reverse; 
+  // height:1080px;
+  position: relative; 
+  height:100vh; 
+  box-sizing: border-box; 
 }
 
 .items-index{
-  overflow: scroll;
-  // padding: 0 69px; 
+  // overflow: scroll;
+  // // height:100%;
+  // // padding: 0 69px; 
+
+  position: absolute; 
+  left: 0; 
+  width: 80%;
+  height: 100%; 
+  overflow: scroll; 
 }
 .sidebar{
-  display: flex;
-  flex-direction: column;
-  width: 1400px; 
-  box-sizing: border-box;
+  position: absolute; 
+  right: 0; 
+  width: 20%; 
+  // display: flex;
+  // flex-direction: column;
+  // width: 1400px; 
+  // box-sizing: border-box;
+  // // height:100vh; 
 }
 
 .sidebar-user-info{
@@ -90,14 +104,14 @@
   background: #fff;
   overflow:scroll; 
   WebkitOverflowScrolling: touch;
-  borderRadius: 4px;
+  // borderRadius: 4px;
   outline: none;
-  // padding: 20px; 
   height: 100%; 
   width:90%; 
   border-right:1px solid $gray-line; 
   opacity: 0 ; 
   transition: opacity 500ms ease-in-out; 
+  box-sizing: border-box;
 }
 
 .view-modal-open{
@@ -124,4 +138,30 @@
 
 .view-modal-overlay-close{
   opacity: 0; 
+}
+
+//modal animation from Jesse Couch on codepen
+
+@keyframes unfoldIn {
+  0% {
+    transform:scaleY(.005) scaleX(0);
+  }
+  50% {
+    transform:scaleY(.005) scaleX(1);
+  }
+  100% {
+    transform:scaleY(1) scaleX(1);
+  }
+}
+
+@keyframes unfoldOut {
+  0% {
+    transform:scaleY(1) scaleX(1);
+  }
+  50% {
+    transform:scaleY(.005) scaleX(1);
+  }
+  100% {
+    transform:scaleY(.005) scaleX(0);
+  }
 }

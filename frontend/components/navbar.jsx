@@ -15,7 +15,6 @@ const personalGreeting = (currentUser, logout) => {
         <a className="header-name">{currentUser.username}!</a>
         <img src={currentUser.image_url}/>
    </nav>
-
  ); 
 };
 

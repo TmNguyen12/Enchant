@@ -5,6 +5,8 @@
   background: $black; 
   float: left; 
   height: 60px; 
+  display:flex;
+  justify-content: space-between; 
 
   .logo{
     color: $white; 
@@ -17,6 +19,39 @@
     justify-content: space-between;
     width: 9%;
     align-items: center; 
+  }
+
+  div{
+    box-sizing:border-box;
+    width:calc(100% - 1040px); 
+    display:flex; 
+    justify-content:center;
+    .nav-center-links{
+      display: flex; 
+      justify-content:space-around;
+      align-items: center;
+      width:100%; 
+      li{
+        display:flex; 
+        justify-content: space-between;
+        
+        a{
+          color: $light-gray;
+          text-decoration: none; 
+          font-size: 15px; 
+          font-weight:bold;
+        }
+      }
+      button{
+        padding: 5px 10px;
+        a{
+          color:white; 
+          text-decoration:none;
+          font-size: 14px; 
+          font-weight:550; 
+        }
+      }
+    }
   }
 
   .login-signup{
@@ -40,5 +75,5 @@
       height: 35px; 
     }
   }
-
 }
+

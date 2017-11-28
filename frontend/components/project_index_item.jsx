@@ -58,7 +58,7 @@ class ProjectIndexItem extends React.Component {
           overlayClassName={{
             base: 'view-modal-overlay', 
             afterOpen:'view-modal-overlay-open',
-            beforeCLose: 'view-modal-overlay-close'  
+            beforeClose: 'view-modal-overlay-close'  
           }}
          >
         <div className="modal">

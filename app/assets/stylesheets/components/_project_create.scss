@@ -1,0 +1,19 @@
+.create-project-page{
+  height: 400px;
+  // color: #fff;
+  box-sizing: border-box;
+  display: flex;
+  // flex-direction: column; 
+  justify-content: left; 
+  padding: 0 20px; 
+  text-align: center; 
+  width: 100%;
+  position: fixed;
+  top: 60px; 
+  z-index:0; 
+  align-items: center;
+  .project-info-form{
+    display: flex;
+    flex-direction: column; 
+  }
+}
