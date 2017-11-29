@@ -15,6 +15,8 @@
 #  image_content_type :string
 #  image_file_size    :integer
 #  image_updated_at   :datetime
+#  fname              :string
+#  lname              :string
 #
 
 class User < ApplicationRecord
@@ -30,6 +32,8 @@ class User < ApplicationRecord
     primary_key: :id, 
     class_name: :Project 
 
+  has_many :likes
+  
   attr_reader :password
 
   after_initialize :ensure_session_token 

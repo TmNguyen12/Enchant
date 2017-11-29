@@ -27,4 +27,6 @@ class Project < ApplicationRecord
     primary_key: :id, 
     class_name: :Item 
   
+  has_many :likes 
+
 end

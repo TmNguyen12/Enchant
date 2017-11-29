@@ -4,7 +4,7 @@ class Api::ItemsController < ApplicationController
     # @item.author_id = current_user.id 
     @item.project_id = item_params[:project_id]
     if @item.save 
-
+      render json: {image_url: @item.image.url}
     else 
       render json: @item.errors.full_messages, status: 418 
     end 
