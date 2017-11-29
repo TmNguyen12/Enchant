@@ -26,7 +26,7 @@ class ProjectIndexItem extends React.Component {
   }
 
   closeModal() {
-    let oldLoc = this.props.history.goBack(); 
+    // let oldLoc = this.props.history.goBack(); 
     this.setState({modalIsOpen: false});
   }
 

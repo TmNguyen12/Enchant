@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'; 
 import ProjectEdit from './project_edit'; 
-import { editProject, receiveProject } from '../actions/project_actions'; 
+import { editProject, receiveProject, fetchProject } from '../actions/project_actions'; 
 import { withRouter } from 'react-router'; 
 
 // const defaultstate = {
@@ -18,7 +18,7 @@ const mapStateToProps = ( {session}, {project} ) => ({
 
 const mapDispatchToProps = dispatch => ({
   editProject: projectId => dispatch(editProject(projectId)), 
-  receiveProject: projectId => dispatch(receiveProject(projectId))
+  fetchProject: projectId => dispatch(fetchProject(projectId))
 });
 
 export default withRouter(connect(

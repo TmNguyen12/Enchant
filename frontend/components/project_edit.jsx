@@ -13,7 +13,9 @@ class ProjectEdit extends React.Component {
   }
 
   componentWillMount() {
-    this.props.receiveProject(this.state.project.id); 
+    debugger
+    this.props.fetchProject(parseInt(this.state.project.id)); 
+    debugger
   }
 
   update(field) {

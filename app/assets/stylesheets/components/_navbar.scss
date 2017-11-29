@@ -31,9 +31,14 @@
       justify-content:space-around;
       align-items: center;
       width:100%; 
+      color: $light-gray;
+      
       li{
         display:flex; 
         justify-content: space-between;
+        color: $light-gray;
+        font-size: 15px; 
+        font-weight:bold;
         
         a{
           color: $light-gray;

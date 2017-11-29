@@ -39,7 +39,7 @@ const App = () => (
 
     <div className="main-content">
       <Route exact path="/" component={MainComponent} />
-      <Route exact path="/project/edit/:projectId" component={ProjectEditContainer} />   
+      <ProtectedRoute exact path="/project/edit/:projectId" component={ProjectEditContainer} />   
     </div> 
   </div>
 );
