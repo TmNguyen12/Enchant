@@ -5,7 +5,9 @@ class ItemsUpload extends React.Component {
     super(props); 
     this.state = {
       text:"", 
-      image: ""
+      image: "",
+      project_id: this.props.project_id,
+    
     }; 
     this.handleSubmit = this.handleSubmit.bind(this); 
     this.updateFile = this.updateFile.bind(this); 
@@ -22,8 +24,8 @@ class ItemsUpload extends React.Component {
     const file = e.currentTarget.files[0];
     const fileReader = new FileReader();
     fileReader.onloadend = () => {
-      this.setState({ image: fileReader.result }, () => makeItem(this.state)) ;
-    };  
+      this.setState({ image: fileReader.result}); 
+      } ; 
 
     if (file) {
       fileReader.readAsDataURL(file);
@@ -32,10 +34,11 @@ class ItemsUpload extends React.Component {
 
   handleSubmit(e) {
     const formData = new FormData();
+    formData.append("item[project_id]", this.state.project_id); 
     formData.append("item[text]", this.state.text);
-    formData.append("item[image]", this.state.imageFile || this.state.image_url);
+    formData.append("item[image]", this.state.image || this.state.image_url);
 
-    if (this.state.imageFile) formData.append("item[image]", this.state.imageFile);
+    if (this.state.image) formData.append("item[image]", this.state.image);
     this.props.makeItem(formData);
   }
 
@@ -51,7 +54,7 @@ class ItemsUpload extends React.Component {
         <input type="text" onChange={this.updateText}/>
         <input type="file" onChange={this.updateFile}/>
         <button onClick={this.handleSubmit}>Upload file</button>
-        <img src={this.state.imageUrl}/>
+        <img src={this.state.image.url}/>
       </div>);
   }
 

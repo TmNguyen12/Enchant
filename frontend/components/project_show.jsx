@@ -11,7 +11,7 @@ class ProjectShow extends React.Component {
 
 
   render() {
-
+  
     const { project } = this.props; 
     console.log("project show", this.props)
     

@@ -5,12 +5,11 @@ import ItemIndexItem from './item_index_item';
 class ItemsIndex extends React.Component {
 
   componentWillMount(){
-    this.props.fetchAllItems(this.props.projectId);  
+    this.props.fetchAllItems(this.props.projectId); 
   }
 
-
   render () {
-    const { items } = this.props; 
+    const { items, itemIds } = this.props; 
 
     if (Object.keys(items).length < 1 ) {
       console.log("loading"); 
@@ -20,7 +19,7 @@ class ItemsIndex extends React.Component {
       return (
         <section className="item-index">
         <ul className="item-list">
-          {items.map( item => <ItemIndexItem key={item.id} item={item}/>)}
+          {itemIds.map( item => <ItemIndexItem key={items[item].id} item={items[item]}/>)}
         </ul>
       </section>
       ); 

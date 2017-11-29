@@ -6,7 +6,7 @@ import { fetchAllItems } from '../actions/item_actions';
 const mapStateToProps = ( state ) => { 
   return(
     {
-      items: selectItems(state),
+      items: state.entities.items.byId, 
       itemIds: state.entities.items.allIds
     }
   ); 
@@ -20,4 +20,3 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(ItemsIndex);
-

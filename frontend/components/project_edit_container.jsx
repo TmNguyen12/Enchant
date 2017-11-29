@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import ProjectEdit from './project_edit'; 
 import { editProject, receiveProject, fetchProject } from '../actions/project_actions'; 
 import { withRouter } from 'react-router'; 
+import { selectProjects } from '../reducers/selectors'; 
 
 // const defaultstate = {
 //     title:' ', 
@@ -10,10 +11,10 @@ import { withRouter } from 'react-router';
 //     author_id: ''
 // }; 
 
-const mapStateToProps = ( {session}, {project} ) => ({
-  currentUser: session.currentUser, 
-  project
-  // project: selectProjects(state)
+const mapStateToProps = ( state ) => ({
+  currentUser: state.session.currentUser, 
+  // project
+  project: selectProjects(state)
 });
 
 const mapDispatchToProps = dispatch => ({

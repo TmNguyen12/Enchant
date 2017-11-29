@@ -1,8 +1,8 @@
 class Api::ItemsController < ApplicationController
   def create
-    @item = Item.create!(params)
-    @item.author_id = current_user.id 
-    @item.project_id = params[:project_id]
+    @item = Item.create!(item_params)
+    # @item.author_id = current_user.id 
+    @item.project_id = item_params[:project_id]
     if @item.save 
 
     else 
@@ -18,4 +18,11 @@ class Api::ItemsController < ApplicationController
   def show 
     @item = Item.find_by(id: params[:id])
   end 
+
+  private
+  def item_params
+    params.require(:item).permit(:project_id, :id, :image, :text, :caption)
+  end 
+
 end 
+

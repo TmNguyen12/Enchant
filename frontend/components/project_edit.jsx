@@ -7,15 +7,17 @@ class ProjectEdit extends React.Component {
     super(props); 
     this.state = { 
       project: {
-        id: this.props.match.params.projectId
+        id: this.props.match.params.projectId, 
+        title: this.props.project.title, 
+        description: this.props.project.description, 
+        category: this.props.project.category, 
+        author_id: this.props.project.author_id, 
       }}; 
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentWillMount() {
-    debugger
     this.props.fetchProject(parseInt(this.state.project.id)); 
-    debugger
   }
 
   update(field) {
@@ -31,9 +33,14 @@ class ProjectEdit extends React.Component {
     this.props.editProject(project.id); 
   }
 
+
+
   render() {
-    debugger
-    const { project } = this.props; 
+    const { project } = this.state; 
+
+    if (!project) {
+      return null; 
+    } 
     return( 
         <div className="create-project-page">
           <form className="project-info-form">
@@ -59,6 +66,9 @@ class ProjectEdit extends React.Component {
                     />
             </label>
           </form>
+          <div className="item-upload">
+            <ItemsUploadContainer project_id={project.id}/>
+          </div>
           <button onClick={this.handleSubmit}>Update Project</button>
         </div>  
     ); 

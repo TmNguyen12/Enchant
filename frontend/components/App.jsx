@@ -35,7 +35,7 @@ const App = () => (
 
     <Route exact path="/signup" component={SignupContainer} />
     <Route exact path="/login" component={SessionFormContainer} />
-    <Route exact path="/project/create" component={ProjectCreateContainer} />
+    <ProtectedRoute exact path="/project/create" component={ProjectCreateContainer} />
 
     <div className="main-content">
       <Route exact path="/" component={MainComponent} />
