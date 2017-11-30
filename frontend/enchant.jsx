@@ -7,6 +7,7 @@ import * as APIUtil from './util/session_api_util';
 import * as ProjAPIUtil from './util/project_api_util'; 
 import * as ItemAPIUtil from './util/item_api_util'; 
 import { selectProjects } from './reducers/selectors'; 
+import { fetchLike, fetchUnLike } from './actions/like_actions'; 
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
@@ -34,7 +35,8 @@ document.addEventListener('DOMContentLoaded', () => {
   window.fetchAllItems = ItemAPIUtil.fetchAllItems; 
   window.selectProjects = selectProjects; 
   window.createProject = ProjAPIUtil.createProject; 
-
+  window.like = fetchLike; 
+  window.unlike = fetchUnLike; 
 
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={ store }/>, root);

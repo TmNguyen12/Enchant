@@ -1,5 +1,5 @@
 import React from 'react'; 
-import ProjectShow from './project_show_container'; 
+import ProjectShowContainer from './project_show_container'; 
 import Modal from 'react-modal'; 
 import { withRouter } from 'react-router-dom'; 
 
@@ -61,7 +61,7 @@ class ProjectIndexItem extends React.Component {
           }}
          >
         <div className="modal">
-            <ProjectShow project={project}/> 
+            <ProjectShowContainer project={project}/> 
         </div>
       </Modal>
     </div>

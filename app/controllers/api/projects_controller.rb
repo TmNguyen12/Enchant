@@ -14,10 +14,20 @@ class Api::ProjectsController < ApplicationController
 
   def index 
     @projects = Project.all 
+    @current_user = current_user
+    
   end 
 
   def show 
+    @current_user = current_user    
     @project = Project.find(params[:id])
+    # if current_user.likes
+    #   if current_user.likes.find_by(project_id: params[:project_id])
+    #     @project.liked_by_current_user = true 
+    #   else 
+    #     @project.liked_by_current_user = false 
+    #   end 
+    # end 
     render "api/projects/show"
   end 
 

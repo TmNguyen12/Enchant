@@ -1,9 +1,21 @@
-export const createLike = like => {
+export const createLike = project => {
+  debugger
   return (
     $.ajax({
       method: 'POST', 
-      url: `api/projects/${like.project_id}/likes`,
-      data: { like } 
+      url: `api/likes`,
+      data: { project }
+    })
+  ); 
+}; 
+
+export const unLike = project => {
+  debugger
+  return (
+    $.ajax({
+      method: 'DELETE', 
+      url: `api/likes`,
+      data: { project }
     })
   ); 
 }; 
