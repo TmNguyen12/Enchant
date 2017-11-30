@@ -13,7 +13,7 @@ class Comments extends React.Component {
   }
 
   render() {
-    const { comments,commentIds } = this.props; 
+    const { comments,commentIds, currentUser } = this.props; 
 
     if (!comments) {
       return null;
@@ -21,7 +21,7 @@ class Comments extends React.Component {
     return (
       <div className="comments-wrapper">
         <div className="comments-form">
-          <CommentsForm projectId={this.props.projectId} fetchMakeComment={this.props.fetchMakeComment}/>
+          <CommentsForm projectId={this.props.projectId} currentUser={currentUser} fetchMakeComment={this.props.fetchMakeComment}/>
         </div>
 
         <div className="comments-index-wrapper">
