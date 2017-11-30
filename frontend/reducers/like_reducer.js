@@ -9,7 +9,6 @@ const LikeReducer = (state = null, action) => {
 
   switch (action.type) {
     case LIKE_PROJECT:
-    debugger
       return merge ( {}, action.project); 
     case UNLIKE_PROJECT:
       return merge ( {}, action.project); 

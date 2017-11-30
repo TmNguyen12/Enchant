@@ -2,15 +2,16 @@
 #
 # Table name: projects
 #
-#  id            :integer          not null, primary key
-#  title         :string           not null
-#  description   :text
-#  category      :string
-#  thumbnail_url :string
-#  video         :string
-#  author_id     :integer          not null
-#  created_at    :datetime         not null
-#  updated_at    :datetime         not null
+#  id                    :integer          not null, primary key
+#  title                 :string           not null
+#  description           :text
+#  category              :string
+#  thumbnail_url         :string
+#  video                 :string
+#  author_id             :integer          not null
+#  created_at            :datetime         not null
+#  updated_at            :datetime         not null
+#  liked_by_current_user :boolean
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

@@ -33,6 +33,7 @@ class User < ApplicationRecord
     class_name: :Project 
 
   has_many :likes
+  has_many :comments 
   
   attr_reader :password
 

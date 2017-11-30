@@ -11,14 +11,15 @@ const projectReducer = (state = {}, action ) => {
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_ALL_PROJECTS:
-      return merge ( {}, action.projects); 
+      return merge ({}, action.projects); 
     case RECEIVE_PROJECT:
-      return merge ( {}, action.project); 
+      return merge({}, state, {[action.project.id]: action.project}); 
     case CREATE_PROJECT:
-      return merge ( {}, action.project);   
+      return merge({}, action.project);   
     default:
       return state; 
   }
 };
 
 export default projectReducer; 
+

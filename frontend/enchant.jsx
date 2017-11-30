@@ -8,6 +8,7 @@ import * as ProjAPIUtil from './util/project_api_util';
 import * as ItemAPIUtil from './util/item_api_util'; 
 import { selectProjects } from './reducers/selectors'; 
 import { fetchLike, fetchUnLike } from './actions/like_actions'; 
+import { fetchMakeComment, fetchComments } from './actions/comment_actions'; 
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
@@ -25,7 +26,8 @@ document.addEventListener('DOMContentLoaded', () => {
     category: 'Photography', 
   }; 
 
-
+  window.createComment = fetchMakeComment;
+  window.comments = fetchComments; 
   // let store = configureStore(); 
   // window.store = store; 
   window.getState = store.getState; 
@@ -37,6 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.createProject = ProjAPIUtil.createProject; 
   window.like = fetchLike; 
   window.unlike = fetchUnLike; 
+ 
 
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={ store }/>, root);

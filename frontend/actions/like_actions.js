@@ -19,7 +19,6 @@ export const makeLike = project => dispatch => {
   return (
     LikeAPIUtil.createLike(project).then(project1 => {
       console.log("hello")
-        debugger 
           dispatch(receiveProject(project1));
         }
       )

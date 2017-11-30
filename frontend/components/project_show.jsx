@@ -1,6 +1,7 @@
 import React from 'react'; 
 import Modal from 'react-modal'; 
 import ItemsIndexContainer from './items_index_container'; 
+import CommentsContainer from './comments_container'; 
 
 class ProjectShow extends React.Component {
   constructor(props){
@@ -11,16 +12,14 @@ class ProjectShow extends React.Component {
   }
 
   componentWillMount(){
-    this.props.fetchProject(this.props.project); 
+    this.props.fetchProject(this.props.project.id); 
   }
 
   handleLike(){
     const { liked_by_current_user } = this.props.project; 
     if (liked_by_current_user === true) {
-      debugger
       this.props.unLike(this.props.project); 
     } else {
-      debugger
       this.props.makeLike(this.props.project); 
     } 
   }
@@ -29,7 +28,7 @@ class ProjectShow extends React.Component {
     const { project } = this.props; 
     console.log("project show", this.props); 
 
-    const likeButton = this.props.project.liked_by_current_user ? `${this.props.project.liked_date}` : "Appreciate Project";  
+    const likeButton = this.props.project.liked_by_current_user ? "Thank you!" : "Appreciate Project";  
 
     if (!project) {
       return null;
@@ -59,6 +58,9 @@ class ProjectShow extends React.Component {
        
         <div className="items-index">
           <ItemsIndexContainer projectId={project.id}/> 
+          <div className="comments">
+            <CommentsContainer projectId={project.id}/>
+          </div>
         </div>
       </div>
 

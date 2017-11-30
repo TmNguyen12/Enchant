@@ -5,6 +5,7 @@
   position: relative; 
   height:100vh; 
   box-sizing: border-box; 
+  z-index: 999;
 }
 
 .items-index{
@@ -112,6 +113,7 @@
   opacity: 0 ; 
   transition: opacity 500ms ease-in-out; 
   box-sizing: border-box;
+  z-index: 6;
 }
 
 .view-modal-open{
@@ -131,6 +133,7 @@
   background-color: rgba(0, 0, 0, 0.75);
   opacity:0;
   transition: opacity 500ms ease-in-out;
+  z-index: 5;
 }
 .view-modal-overlay-open{
   opacity: 1; 
