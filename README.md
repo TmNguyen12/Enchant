@@ -52,8 +52,39 @@ return (
 
 ```
 
+### Dynamic Navigation Bar 
+The navigation bar changed to show relevant actions to the user depending on whether they were signed in. Session props were passed to the navigation bar component to check for a logged in user. A different component would display depending on this information. 
 
+```javascript
+  notLoggedIn(){
+    return (
+      <ul className="nav-center-links">
+        <li onClick={this.demoLogin}>Discover</li>
+        <li>LinkIn</li>
+        <li>GitHub</li>
+        <button> <Link to="/signup">Sign Up With Email</Link></button>
+      </ul>
+    ); 
+  }
+  
+  loggedIn(){
+    return (
+      <ul className="nav-center-links">
+        <li><Link to="/"> Activity </Link></li>
+        <li><Link to="/"> Discover </Link></li>
+        <li><Link to="/"> Live </Link></li>
+        <li><Link to="/"> Profile </Link></li>
+        <button> <Link to="/project/create">Create a Project</Link></button>
+      </ul>
+    );
+  }
 
+  render() {
+    return (
+      this.props.currentUser ? this.loggedIn() : this.notLoggedIn() 
+    ); 
+  }
+```
 
 ## Technologies 
 - Backend 
