@@ -13,7 +13,6 @@ Item.destroy_all
 demo = User.create!(
   username:'demo', 
   password:'password',
-  image: File.new('app/assets/images/gumbi.jpg')
   )
 
 Inara = User.create!(
