@@ -1,24 +1,35 @@
-# README
+# Enchānt
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[Enchant](https://enchants.herokuapp.com)
 
-Things you may want to cover:
+Enchant is a full-stack, single-page web application modeled after [Behance](https://www.behance.net/). It is built with a Ruby on Rails backend, a React.js/Redux frontend, and a PostgreSQL database. Media hosting is done through Amazon Web Services (S3) and application hosting is through Heroku.  
 
-* Ruby version
+## Features and Implementation 
+- View an index of project thumbnails 
+- View individual projects presented via a modal 
 
-* System dependencies
 
-* Configuration
 
-* Database creation
+## Technologies 
+- Backend 
+  - Ruby on Rails 
+  - jBuilder
+  - PostgreSQL
+  - Heroku 
+- Frontend
+  - Javascript
+  - React/Redux
+  - SCSS/CSS
+  - Webpack 
+- Storage 
+  - Amazon Web Services - S3 
 
-* Database initialization
+## Future Features 
+- User Profiles 
+  - Allow users to follow their favorite artists
+- Tagging 
+  - Allows for more dynamic/curated index pages 
+- More media types for project upload 
+  - Video, third party links, text 
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
