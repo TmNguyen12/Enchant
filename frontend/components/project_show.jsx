@@ -33,19 +33,15 @@ class ProjectShow extends React.Component {
   render() {
     const { project } = this.props; 
     const { author } = this.props.project; 
-    console.log("project show", this.props); 
-
     const likeButton = this.props.project.liked_by_current_user ? "Thank you!" : "Appreciate Project";  
     const fname = (author.fname) ? author.fname : author.username; 
     const lname = (author.lname) ? author.lname : ""; 
-
 
     if (!project) {
       return null;
     }
     return (
       <div className="project-show">
-       
           <div className="sidebar">
             <div className="sidebar-user-info">
               <div className="name-follow">
@@ -54,20 +50,16 @@ class ProjectShow extends React.Component {
               </div>
               <img id='comment-user-icon'src={author.image} />
             </div>
-            
             <div className="sidebar-project-info">
               <h2>{project.title}</h2>
               <h4>{project.category}</h4>
               <div className="stats"> Likes and comments</div>
               <div className="publish-date">Published: {project.created_at}</div> 
-
-              {/* <div className="publish-date">{date} </div>  */}
             </div>
             <div className="sidebar-misc-links">
               <button onClick={this.handleLike}>{likeButton}</button>
             </div>
           </div>
-       
         <div className="items-index">
           <ItemsIndexContainer projectId={project.id}/> 
           <div className="comments">
@@ -75,7 +67,6 @@ class ProjectShow extends React.Component {
           </div>
         </div>
       </div>
-
     ); 
   }
 }

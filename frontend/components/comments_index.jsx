@@ -14,7 +14,6 @@ class CommentsIndex extends React.Component {
     const { comments,commentIds } = this.props; 
 
     if (commentIds.length < 1) {
-      console.log("loading"); 
       return null; 
     } 
 

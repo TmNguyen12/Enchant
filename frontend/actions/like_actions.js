@@ -16,10 +16,8 @@ export const unlikeProject = project => ({
 });
 
 export const makeLike = project => dispatch => {
-  console.log("makelike")
   return (
     LikeAPIUtil.createLike(project).then(project1 => {
-      console.log("project1", project1)
           dispatch(receiveProject(project1));
         }
       )
