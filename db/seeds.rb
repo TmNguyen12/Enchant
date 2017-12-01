@@ -35,7 +35,7 @@ Kvothe = User.create!(
   username:'Kvothe', 
   password:'password',
   fname:'Kvothe', 
-  lname:'son of Arliden', 
+  lname:'Kingkiller', 
   image: URI.parse('https://s3-us-west-1.amazonaws.com/app-enchant-dev/dev/images/original/Kvothe.jpg')
   )
 
@@ -43,7 +43,7 @@ Felurian = User.create!(
   username:'Felurian', 
   password:'password',
   fname:'Felurian', 
-  lname:'', 
+  lname:'Fae', 
   image: URI.parse('https://s3-us-west-1.amazonaws.com/app-enchant-dev/dev/images/original/Felurian.jpg')
   )
 

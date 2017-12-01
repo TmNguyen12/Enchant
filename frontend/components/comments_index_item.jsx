@@ -13,10 +13,7 @@ class CommentsIndexItem extends React.Component {
     const lname = (comment.user.lname) ? comment.user.lname : ""; 
     return(
       <div className="comments-index-itemwrap">
-        <div className="user-icon"> 
-          <img src={comment.user.image.url} id="user-icon"/>
-        </div>
-
+        <img src={this.props.comment.user.image} id="comment-user-icon"/>
         <div className="comment-main-body">
           <div className="author-name">{fname} {lname} </div>
           <div className="comment-body">{comment.body} </div>

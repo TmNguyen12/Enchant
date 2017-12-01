@@ -9,7 +9,7 @@ class NavCenter extends React.Component {
 
   demoLogin(){
     const demo = {
-      username: "demo", 
+      username: "Felurian", 
       password: "password"
     }; 
     this.props.login(demo); 

@@ -12,6 +12,10 @@ class Comments extends React.Component {
     this.props.fetchComments(this.props.projectId);
   }
 
+  // componentWillReceiveProps(){
+  //   this.props.fetchComments(this.props.projectId);
+  // }
+
   render() {
     const { comments,commentIds, currentUser } = this.props; 
 

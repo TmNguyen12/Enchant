@@ -8,14 +8,13 @@ export const receiveAllComments = comments => ({
   comments 
 });
 
-export const makeComment = comment => ({
+export const makeComment = comments => ({
   type: CREATE_COMMENT, 
-  comment 
+  comments 
 });
 
 export const fetchMakeComment = (projectId, comment) => dispatch => {
   return (
-
     CommentAPIUtil.createComment(projectId, comment)
       .then( comment => dispatch(makeComment(comment)))
   ); 

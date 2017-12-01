@@ -37,7 +37,6 @@ class ItemsUpload extends React.Component {
     formData.append("item[project_id]", this.state.project_id); 
     formData.append("item[text]", this.state.text);
     formData.append("item[image]", this.state.image || this.state.image_url);
-
     if (this.state.image) formData.append("item[image]", this.state.image);
     this.props.makeItem(formData).then( ({item}) => {
       const uploadImages = this.state.uploadImages.slice(); 
@@ -68,8 +67,6 @@ class ItemsUpload extends React.Component {
         </ul>
       </div>);
   }
-
-
 
 }
 

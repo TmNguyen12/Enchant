@@ -31,10 +31,15 @@ class ProjectShow extends React.Component {
   }
 
   render() {
+    debugger 
     const { project } = this.props; 
+    const { author } = this.props.project; 
     console.log("project show", this.props); 
 
     const likeButton = this.props.project.liked_by_current_user ? "Thank you!" : "Appreciate Project";  
+    const fname = (author.fname) ? author.fname : author.username; 
+    const lname = (author.lname) ? author.lname : ""; 
+
 
     if (!project) {
       return null;
@@ -45,10 +50,10 @@ class ProjectShow extends React.Component {
           <div className="sidebar">
             <div className="sidebar-user-info">
               <div className="name-follow">
-                <h2>{project.author_id}</h2>
+                <h2>{fname} {lname}r</h2>
                 <button className="follow-button">Follow</button>
               </div>
-              <div className="author-icon"> Author Icon </div>
+              <img id='comment-user-icon'src={author.image} />
             </div>
             
             <div className="sidebar-project-info">

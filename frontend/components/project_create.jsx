@@ -48,10 +48,7 @@ class ProjectCreate extends React.Component {
     project.author_id = this.props.currentUser.id;  
     this.props.createProject(project).then( action => {      
       this.closeModal(); 
-      this.props.history.push({
-        pathname: `/project/edit/${Object.keys(action.project)[0]}`,
-        state: { project }
-      }); 
+      this.props.history.push(`/project/edit/${Object.keys(action.projects)[0]}`); 
     }); 
   }
 

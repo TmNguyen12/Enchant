@@ -11,7 +11,8 @@ class Api::CommentsController < ApplicationController
     @comment.project_id = @project.id 
     #may need to pass in user_id and project_id separately 
     if @comment.save 
-      render "api/comments/show"
+      @comments = Comment.select{ |c| c.project_id == @project.id}
+      render "api/comments/index"
     end 
   end
 
