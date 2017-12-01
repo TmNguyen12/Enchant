@@ -15,7 +15,8 @@
     "redux": "^3.7.2",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.2.0",
-    "webpack": "^3.8.1"
+    "webpack": "^3.8.1",
+    "redux-devtools-extension": "^2.13.2"
   },
   "engines": {
     "node": "8.9.0",
@@ -31,9 +32,6 @@
   "directories": {
     "doc": "docs",
     "test": "test"
-  },
-  "devDependencies": {
-    "redux-devtools-extension": "^2.13.2"
   },
   "keywords": [],
   "author": "",
