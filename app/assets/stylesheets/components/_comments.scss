@@ -7,10 +7,10 @@
   width: 100%;
   display: flex;
   justify-content: center; 
-  flex-direction:column;
-
-
+  flex-direction: column;
 }
 
-
-
+.comment-list{
+  display: flex; 
+  flex-direction: column-reverse; 
+}

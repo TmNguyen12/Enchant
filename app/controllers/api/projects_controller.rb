@@ -21,6 +21,7 @@ class Api::ProjectsController < ApplicationController
   def show 
     @current_user = current_user    
     @project = Project.find(params[:id])
+    @date = @project.created_at.strftime('%B %d %Y')
     # if current_user.likes
     #   if current_user.likes.find_by(project_id: params[:project_id])
     #     @project.liked_by_current_user = true 

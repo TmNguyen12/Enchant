@@ -12,7 +12,7 @@ const personalGreeting = (currentUser, logout) => {
  return (
   <nav className="login-signup">
         <button className="header-button" onClick={logout}>Log Out</button>
-        <a className="header-name">{currentUser.username}!</a>
+        <a className="header-name">{currentUser.username}</a>
         <img id="user-icon" src={currentUser.image_url}/>
    </nav>
  ); 

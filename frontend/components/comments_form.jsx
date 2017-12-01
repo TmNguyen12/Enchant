@@ -5,7 +5,9 @@ class CommentsForm extends React.Component {
   constructor(props) {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this); 
-    
+    this.state = {
+      body: ""
+    }; 
   }
 
   update(field) {
@@ -18,7 +20,10 @@ class CommentsForm extends React.Component {
     e.preventDefault();
     this.state.user_id = this.props.currentUser.id; 
     const comment = this.state; 
-    this.props.fetchMakeComment(this.props.projectId, comment); 
+    this.props.fetchMakeComment(this.props.projectId, comment)
+      .then ( () => this.setState({body: ""})); 
+    
+    // this.setState({body: ""});
   }
 
   render (){
@@ -37,7 +42,6 @@ class CommentsForm extends React.Component {
       </form>
     ); 
   }
-
 
 }
 export default CommentsForm; 

@@ -61,6 +61,7 @@ class SessionForm extends React.Component {
     const user = Object.assign({}, this.state);
     // this.props.splashForm(user);
     this.props.login(user); 
+    this.closeModal();
   }
 
   render () {
@@ -96,10 +97,6 @@ class SessionForm extends React.Component {
                 />
                 <input type="submit" value="Login" className="signin-button"/>
 
-              {/* <Link to="/signup" > Sign up here</Link>  */}
-
-                {/* <button type="submit" value="Demo Login"> Demo login </button> */}
-              
             </div>
           </form>
         </Modal>

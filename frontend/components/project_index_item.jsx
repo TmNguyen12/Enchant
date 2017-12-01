@@ -48,7 +48,7 @@ class ProjectIndexItem extends React.Component {
             </div>
             <div className="category">
               <p>{project.category}</p>
-              <i class="fa fa-bookmark" aria-hidden="true"></i>
+              <i className="fa fa-bookmark" aria-hidden="true"></i>
             </div>
             {/* <div className="stats"> Likes and comments</div> */}
           </div>

@@ -31,7 +31,6 @@ class ProjectShow extends React.Component {
   }
 
   render() {
-    debugger 
     const { project } = this.props; 
     const { author } = this.props.project; 
     console.log("project show", this.props); 
@@ -40,7 +39,6 @@ class ProjectShow extends React.Component {
     const fname = (author.fname) ? author.fname : author.username; 
     const lname = (author.lname) ? author.lname : ""; 
 
-    let date = new Date(project.created_at); 
 
     if (!project) {
       return null;
@@ -61,7 +59,7 @@ class ProjectShow extends React.Component {
               <h2>{project.title}</h2>
               <h4>{project.category}</h4>
               <div className="stats"> Likes and comments</div>
-              <div className="publish-date">{project.created_at.toString()} </div> 
+              <div className="publish-date">Published: {project.created_at}</div> 
 
               {/* <div className="publish-date">{date} </div>  */}
             </div>

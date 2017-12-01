@@ -64,6 +64,11 @@
     font-size:14px; 
     color: $black; 
   }
+  .publish-date{
+    font-size: 11px;
+    color: gray; 
+    padding-top: 10px; 
+  }
 }
 
 .name-follow{
@@ -275,7 +280,9 @@
   }
 }
 .comments-list{
-  border-radius: inherit;   
+  border-radius: inherit;  
+  display: flex; 
+  flex-direction: column-reverse;  
 }
 .comments-index{
   border-radius: inherit; 
@@ -286,6 +293,16 @@
   font-size: 16px; 
 }
 
+.top-part{
+  display: flex; 
+  align-items: center; 
+  p{
+    font-size: 10px; 
+    color: gray;
+    position: relative; 
+    left: 5px; 
+  }
+}
 .author-name{
   font-weight: bold; 
 }

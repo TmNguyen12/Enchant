@@ -28,11 +28,3 @@ class ProjectIndex extends React.Component {
 }
 
 export default ProjectIndex; 
-
-
-
-     // const projectsArr = selectProjects(this.props.state); 
-      // console.log(projectsArr); 
-// {projectsArr.map( project => <ProjectIndexItem key={project.id} project={project}/>
-// )}
-
