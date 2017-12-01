@@ -9,9 +9,9 @@ const LikeReducer = (state = null, action) => {
 
   switch (action.type) {
     case LIKE_PROJECT:
-      return merge ( {}, action.project); 
+      return merge ( {}, {[action.projects.id]: action.projects}); 
     case UNLIKE_PROJECT:
-      return merge ( {}, action.project); 
+      return merge ( {}, {[action.projects.id]: action.projects}); 
     default:
       return state;
   }

@@ -22,7 +22,6 @@ class CommentsForm extends React.Component {
   }
 
   render (){
-    debugger
     const { currentUser } = this.props;
     return(
       <form className="comments-form-form" onSubmit={this.handleSubmit}>

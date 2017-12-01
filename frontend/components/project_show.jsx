@@ -15,6 +15,12 @@ class ProjectShow extends React.Component {
     this.props.fetchProject(this.props.project.id); 
   }
 
+  componentWillReceiveProps(newProps){
+    this.setState({projects: newProps}); 
+  }
+
+  // component will umount and clear state 
+
   handleLike(){
     const { liked_by_current_user } = this.props.project; 
     if (liked_by_current_user === true) {

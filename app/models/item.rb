@@ -18,7 +18,7 @@
 class Item < ApplicationRecord
   validates :project_id, presence: true 
 
-  has_attached_file :image
+  has_attached_file :image, path:"dev/:attachment/:style/:filename"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
   belongs_to :project,

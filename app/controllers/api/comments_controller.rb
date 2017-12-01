@@ -5,7 +5,6 @@ class Api::CommentsController < ApplicationController
   end
 
   def create
-    debugger 
     @project = Project.find_by(id: params[:project_id])
     @comment = Comment.new(comment_params) 
     # @comment.user_id = current_user.id 
