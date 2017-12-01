@@ -5,8 +5,53 @@
 Enchant is a full-stack, single-page web application modeled after [Behance](https://www.behance.net/). It is built with a Ruby on Rails backend, a React.js/Redux frontend, and a PostgreSQL database. Media hosting is done through Amazon Web Services (S3) and application hosting is through Heroku.  
 
 ## Features and Implementation 
-- View an index of project thumbnails 
-- View individual projects presented via a modal 
+### Project Index and Detail Views 
+
+Users are able to view an index of project thumbnails which are individual react components. Upon clicking the thumbnail, a modal opens to show a scrolling view of high resolution images with a fixed sidebar displaying more details about the current project. Modal animations were created by overriding the default modal styling with css classes. 
+```javascript
+return (
+      <div>
+        <div className="project-card">
+          <img onClick={this.openModal} src={project.thumbnail_url} className="thumb pointer" />
+          <div className="details"> 
+            <div className="title">{project.title}</div>
+            <div className="owners">
+              <img id='card-user-icon'src={author.image} />
+              <p className="author-card">{fname} {lname}</p>
+            </div>
+            <div className="category">
+              <p>{project.category}</p>
+              <i className="fa fa-bookmark" aria-hidden="true"></i>
+            </div>
+          </div>
+        </div>
+        <Modal
+          isOpen={this.state.modalIsOpen}
+          closeTimeoutMS={500}   
+          onAfterOpen={this.afterOpenModal}
+          onRequestClose={this.closeModal}
+          className={{
+            base: 'view-modal',
+            afterOpen:'view-modal-open', 
+            beforeClose: 'view-modal-close'
+          }}
+          overlayClassName={{
+            base: 'view-modal-overlay', 
+            afterOpen:'view-modal-overlay-open',
+            beforeClose: 'view-modal-overlay-close'  
+          }}
+         >
+        <div className="modal">
+            <ProjectShowContainer project={project}/> 
+        </div>
+      </Modal>
+    </div>
+    ); 
+  }
+}
+
+```
+
 
 
 
