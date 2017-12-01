@@ -72,30 +72,28 @@ class ProjectCreate extends React.Component {
       > 
         <div className="create-project-page">
           <form className="project-info-form">
-            <label>Project Title:
-                    <input type="text"
-                      value={ this.state.title }
-                      onChange={this.update('title')}
-                      className="project-input"
-                    />
-            </label>
-            <label>Description:
-                    <input type="text"
-                      value={ this.state.description }
-                      onChange={this.update('description')}
-                      className="project-input"
-                    />
-            </label>
-            <label>Category:
-                    <input type="text"
-                      value={ this.state.category }
-                      onChange={this.update('category')}
-                      className="project-input"
-                    />
-            </label>
+            <h2 className="fs-title">Create Your Project</h2>
+            <input type="text"
+              value={ this.state.title }
+              onChange={this.update('title')}
+              className="project-input"
+              placeholder="Title"
+            />
+            <input type="text"
+              value={ this.state.description }
+              onChange={this.update('description')}
+              className="project-input"
+              placeholder="Description"
+            />
+            <input type="text"
+              value={ this.state.category }
+              onChange={this.update('category')}
+              className="project-input"
+              placeholder="Category"
+            />
+            <button onClick={this.handleSubmit}>Create Project</button>
           </form>
 
-          <button onClick={this.handleSubmit}>Create Project</button>
         </div>
       </Modal>
     ); 

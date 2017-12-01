@@ -38,6 +38,7 @@ input[type="submit"] {
 .login-buttons{
   display: flex; 
   justify-content: space-around;
+  cursor: pointer;
 }
 
 .login-input{

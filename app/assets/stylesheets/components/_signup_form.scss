@@ -34,6 +34,7 @@ input[type="submit"] {
 .signup-buttons{
   display: flex; 
   justify-content: space-around;
+  cursor: pointer;
 }
 
 .signup-input{

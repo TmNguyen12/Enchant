@@ -49,6 +49,7 @@
         }
       }
       button{
+        cursor: pointer;
         padding: 5px 10px;
         a{
           color:white; 
@@ -70,6 +71,9 @@
     width: 12%;
     // width: calc(100% - 500px);
     align-items: center; 
+    button{
+      cursor: pointer;
+    }
     a {
       text-decoration: none; 
       color: $light-gray;

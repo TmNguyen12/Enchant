@@ -76,6 +76,7 @@
   }
 
   button{
+    cursor: pointer;
     font-size:13px;
     padding: 4px 13px;
     font-weight:bold; 
@@ -91,6 +92,7 @@
   border: 1px solid $gray-line;
   height: 100%; 
   button{
+    cursor: pointer;
     font-weight: bold;
     font-size: 14px; 
     padding:  8px 32px; 
@@ -246,6 +248,7 @@
   padding: 7px 15px; 
   font-weight: bold; 
   font-size: 13px; 
+  cursor: pointer;
 }
 
 .comment-button-div{

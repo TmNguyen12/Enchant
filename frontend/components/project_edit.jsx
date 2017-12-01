@@ -36,19 +36,19 @@ class ProjectEdit extends React.Component {
 
 
   render() {
-    const { project } = this.state; 
-
+    const project  = this.props.project[0]; 
     if (!project) {
       return null; 
     } 
     return( 
-        <div className="create-project-page">
-          <form className="project-info-form">
+        <div className="edit-project-page">
+          <form className="project-edit-form">
             <label>Project Title:
                     <input type="text"
                       value={ project.title }
                       onChange={this.update('title')}
                       className="project-input"
+                      placeholder={project.title}
                     />
             </label>
             <label>Description:
@@ -65,12 +65,14 @@ class ProjectEdit extends React.Component {
                       className="project-input"
                     />
             </label>
-          </form>
-          <div className="item-upload">
-            <ItemsUploadContainer project_id={project.id}/>
-          </div>
           <button onClick={this.handleSubmit}>Update Project</button>
-        </div>  
+          </form>
+          <div className="project-edit-form">
+            <div className="item-upload">
+              <ItemsUploadContainer project_id={project.id}/>
+            </div>
+          </div>
+        </div>
     ); 
   }
 }

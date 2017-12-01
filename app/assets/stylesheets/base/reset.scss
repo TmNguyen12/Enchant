@@ -29,6 +29,28 @@ time, mark, audio, video {
 	
 
 }
+label,
+select,
+textarea
+{
+	&:focus {
+		outline: none;
+	}
+	margin:0;
+	border:0;
+	padding:0;
+	display:inline-block;
+	vertical-align:middle;
+	white-space:normal;
+	background:none;
+	line-height:1;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	/* Browsers have different default form fonts */
+	font-size: 14px;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+}
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
@@ -57,7 +79,8 @@ button {
   /*
   Get rid of native styling. Read more here:
   http://css-tricks.com/almanac/properties/a/appearance/
-  */
+	*/
+	pointer: cursor; 
   -webkit-appearance: none;
   -moz-appearance: none;
 	appearance: none;
@@ -88,4 +111,26 @@ img {
 
 .ReactModal__Body--open {
 	overflow: hidden;
+}
+
+.pointer{
+	cursor: pointer;
+}
+
+input{
+	&:focus {
+		outline: none;
+	}
+  padding: 10px; 
+  margin: 15px 10px;
+  background: $gray-line;
+  border: 1px solid transparent; 
+  transition: border-color 300ms; 
+  &:hover {
+    border: 1px solid lightblue;
+  }
+  &:focus {
+    background: $offwhite;
+    border: 1px solid rgb(47, 120, 202);
+  }
 }

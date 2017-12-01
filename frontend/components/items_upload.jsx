@@ -51,20 +51,23 @@ class ItemsUpload extends React.Component {
   render() {
     console.log(this.state); 
     return(
-      <div>
-        Upload Project Files 
+      <div className="upload-wrapper">
+        <div className="upload-controls">
+          <p>Upload Project File(s)</p>
+          <input type="text" onChange={this.updateText} className="project-input" placeholder="Photo Title"/>
+          <input type="file" onChange={this.updateFile} />
+          <button onClick={this.handleSubmit}>Upload file</button>
+        </div>
 
-        <input type="text" onChange={this.updateText}/>
-        <input type="file" onChange={this.updateFile}/>
-        <button onClick={this.handleSubmit}>Upload file</button>
-        {/* <img src={this.state.image.url}/> */}
-        <ul className="uploaded-images">
-          {
-            this.state.uploadImages.map( (imageurl, i) => {
-            return (<img src={imageurl} key={i+1}/>);
-            })
-          }
-        </ul>
+        <div className="upload-preview">
+          <ul className="uploaded-images">
+            {
+              this.state.uploadImages.map( (imageurl, i) => {
+              return (<img src={imageurl} key={i+1}/>);
+              })
+            }
+          </ul>
+        </div>
       </div>);
   }
 
