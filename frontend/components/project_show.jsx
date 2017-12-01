@@ -40,6 +40,7 @@ class ProjectShow extends React.Component {
     const fname = (author.fname) ? author.fname : author.username; 
     const lname = (author.lname) ? author.lname : ""; 
 
+    let date = new Date(project.created_at); 
 
     if (!project) {
       return null;
@@ -61,6 +62,8 @@ class ProjectShow extends React.Component {
               <h4>{project.category}</h4>
               <div className="stats"> Likes and comments</div>
               <div className="publish-date">{project.created_at.toString()} </div> 
+
+              {/* <div className="publish-date">{date} </div>  */}
             </div>
             <div className="sidebar-misc-links">
               <button onClick={this.handleLike}>{likeButton}</button>

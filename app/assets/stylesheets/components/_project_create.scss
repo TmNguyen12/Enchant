@@ -1,20 +1,79 @@
 .create-project-page{
-  height: 400px;
-  // color: #fff;
   box-sizing: border-box;
   display: flex;
-  // flex-direction: column; 
-  justify-content: left; 
-  padding: 0 20px; 
-  text-align: center; 
+  flex-direction: column; 
   width: 100%;
-  position: fixed;
-  top: 60px; 
-  z-index:0; 
-  align-items: center;
+
   .project-info-form{
     display: flex;
     flex-direction: column; 
+    justify-content: center;
+
+    label{
+      display: flex;
+      justify-content: space-bewteen; 
+      position: relative; 
+      margin-top: 22px; 
+      font-size: 20px; 
+    }
   }
+  button{
+    margin-top: 25px;
+    width: 51%; 
+    align-self: center; 
+  }
+}
+
+
+
+.create-modal{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  marginRight: -50%; 
+  transform: translate(-50%, -50%); 
+  border: 1px solid $background;
+  background: #fff;
+  overflow:scroll; 
+  WebkitOverflowScrolling: touch;
+  // borderRadius: 4px;
+  outline: none;
+  height: 40%; 
+  width:40%; 
+  border-right:1px solid $gray-line; 
+  opacity: 0 ; 
+  transition: opacity 500ms ease-in-out; 
+  box-sizing: border-box;
+  z-index: 6;
+  border-radius: 7px;
+}
+
+.create-modal-open{
+  opacity: 1; 
+}
+
+.create-modal-close{
+  opacity: 0; 
+}
+
+.create-modal-overlay{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  opacity:0;
+  transition: opacity 500ms ease-in-out;
+  z-index: 5;
+}
+.create-modal-overlay-open{
+  opacity: 1; 
+}
+
+.create-modal-overlay-close{
+  opacity: 0; 
 }
 

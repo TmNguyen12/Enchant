@@ -30,6 +30,7 @@ class ProjectCreate extends React.Component {
   closeModal() {
     // let oldLoc = this.props.history.goBack(); 
     this.setState({modalIsOpen: false});
+    this.props.history.push('/');
   }
 
   componentWillMount(){
@@ -58,10 +59,16 @@ class ProjectCreate extends React.Component {
         isOpen={this.state.modalIsOpen}
         onAfterOpen={this.afterOpenModal}
         onRequestClose={this.closeModal}
-        // style={customStyles}
-        // // contentLabel="Example Modal"
-        // className="session-modal"
-        // overlayClassName="session-modal-overlay"
+        className={{
+          base: 'create-modal',
+          afterOpen:'create-modal-open', 
+          beforeClose: 'create-modal-close'
+        }}
+        overlayClassName={{
+          base: 'create-modal-overlay', 
+          afterOpen:'create-modal-overlay-open',
+          beforeClose: 'create-modal-overlay-close'  
+        }}
       > 
         <div className="create-project-page">
           <form className="project-info-form">

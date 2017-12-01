@@ -16,9 +16,6 @@ class ProjectIndex extends React.Component {
       console.log("loading"); 
       return null; 
     } else {
-
- 
-
       return (
         <section className="project-index">
           <ul className="project-list">
