@@ -1,10 +1,31 @@
 .hide{
   display: none; 
 }
+.splash-content{
+  display: flex; 
+  justify-content: center;
+  justify-items: center;
+  height: 100vh; 
+}
 
+.splash-title{
+  position: absolute; 
+  display: flex; 
+  flex-direction: column; 
+  top: 30%; 
+  align-items: center; 
+  color: white;
+  text-align: center; 
+}
 .splash-image{
-  background-image: url(https://i.imgur.com/JTsR15D.jpg); 
-  height: 400px;
+  // background-image: url(https://i.imgur.com/JTsR15D.jpg); 
+  // background-image: url(https://i.imgur.com/1E4AToR.jpg); 
+  background-image: url(https://i.imgur.com/8SsGrbK.jpg); 
+  // height: 400px;
+  height: 100vh; 
+  // object-fit: cover; 
+  filter: brightness(.6); 
+  background-size: cover; 
   color: #fff;
   box-sizing: border-box;
   display: flex;
@@ -26,11 +47,13 @@
 }
 
 .demo-button{
-  padding: 10px;
+  padding: 15px 40px;
   justify-content: center;
-  width: 13%;
-  border-radius: 13px; 
+  width: 40%;
+  border-radius: 7px; 
   margin-top: 55px;
   cursor: pointer;
+  font-size: 18px;
+  font-weight: 700; 
 }
 

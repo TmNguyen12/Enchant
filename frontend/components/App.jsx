@@ -25,7 +25,7 @@ const App = () => (
       <div>
         <Link to="/" className="logo">Enchānt</Link>
       </div>
-      <div>
+      <div className="nav-bar-center">
         <NavCenterContainer /> 
       </div>
       <div>
