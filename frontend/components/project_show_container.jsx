@@ -7,7 +7,7 @@ import { makeLike, unLike } from '../actions/like_actions';
 const mapStateToProps = ( state ) => { 
   return (
     {
-    state
+    // state
     // project: selectProjects(state)
     }
   ); 

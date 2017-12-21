@@ -6,6 +6,8 @@ class Api::LikesController < ApplicationController
     if @like.save
       @like_count = Project.find_by(id: params[:project][:id]).likes.count
       @project.liked_by_current_user = !@project.liked_by_current_user 
+      @date = @project.created_at.strftime('%B %d %Y')
+
       render "api/projects/show"
     else 
       render json: @like.errors.full_messages, status: 418 
@@ -22,6 +24,7 @@ class Api::LikesController < ApplicationController
     if @like
       @like.destroy
       @like_count = Project.find_by(id: params[:project][:id]).likes.count
+      @date = @project.created_at.strftime('%B %d %Y')      
       render "api/projects/show"
     else 
       render json: "there was an error deleting", status: 418 

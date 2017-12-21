@@ -31,6 +31,8 @@ class ProjectShow extends React.Component {
   }
 
   render() {
+    // debugger
+    console.log("this.props", this.props); 
     const { project } = this.props; 
     const { author } = this.props.project; 
     const likeButton = this.props.project.liked_by_current_user ? "Thank you!" : "Appreciate Project";  
