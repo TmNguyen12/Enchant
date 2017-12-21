@@ -67,7 +67,7 @@ class ProjectEdit extends React.Component {
             </label>
           <button onClick={this.handleSubmit}>Update Project</button>
           </form>
-          <div className="project-edit-form">
+          <div className="project-edit-items">
             <div className="item-upload">
               <ItemsUploadContainer project_id={project.id}/>
             </div>

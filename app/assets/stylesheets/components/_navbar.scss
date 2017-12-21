@@ -24,7 +24,7 @@
 
   div{
     box-sizing:border-box;
-    width:calc(100% - 1040px); 
+    // width:calc(100% - 1040px); 
     display:flex; 
     justify-content:center;
     .nav-center-links{
@@ -69,6 +69,7 @@
     display: flex; 
     justify-content: space-between;
     width: 12%;
+    min-width: 175px; 
     // width: calc(100% - 500px);
     align-items: center; 
     button{
@@ -87,3 +88,6 @@
   }
 }
 
+.nav-bar-center{
+  width: 400px; 
+}

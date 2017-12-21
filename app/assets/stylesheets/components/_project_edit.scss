@@ -6,27 +6,80 @@
   align-items: center; 
   position: absolute;
   height: 100%;
-
+  width: 100%;
 }
 
 .project-edit-form{
+  justify-content: center;
+  position: fixed; 
   display: flex; 
-  z-index: 2; 
-  flex-direction: row;
-  width: 100%;
+  z-index: 2;
+  flex-direction: row; 
+  width: 2000px;
+  border: 1px solid white;
+  top: 60px;
+  right: -225px; 
+
+
+  // align-items: center; 
+  // position: absolute; 
+  // height: 100%;
+  // width: 100%; 
+
+  // display: flex; 
+  // z-index: 2; 
+  // flex-direction: row;
+  // width: 100%;
   border: 1px solid $gray-line;
   background: white; 
+    h2{
+      font-size: 24px;
+      font-weight: bold;
+    }
+    input{
+      padding: 10px; 
+      margin: 15px 10px;
+      background: $lightest-gray;
+      border: 1px solid transparent; 
+      transition: border-color 300ms; 
+      &:hover {
+        border: 1px solid lightblue;
+      }
+      &:focus {
+        background: $offwhite;
+        border: 1px solid rgb(47, 120, 202);
+      }
+    }
   label{
     align-items: center; 
+    font-size: 16px;
+    font-weight: bold; 
+    input{
+      padding: 10px; 
+      margin: 15px 10px;
+      background: $gray-line;
+      border: 1px solid transparent; 
+      border-radius: 4px; 
+      transition: border-color 300ms; 
+      &:hover {
+        border: 1px solid lightblue;
+      }
+      &:focus {
+        background: $offwhite;
+        border: 1px solid rgb(47, 120, 202);
+      }
+    }
   }
   button{
     width: 13%; 
     position: relative;
     left: 5%; 
+    height: 40px; 
+    margin-top: 10px; 
   }
 }
 
-.project-edit-form{
+.project-edit-items{
   position: absolute;
   top: 142px;
   align-self: left;
@@ -49,6 +102,7 @@
   }
   input{
     padding: 20px;
+    background: $gray-line;
   }
   button{
     font-size: 18px;

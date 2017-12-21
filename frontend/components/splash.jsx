@@ -21,13 +21,17 @@ class Splash extends React.Component {
 
   notLoggedIn(){
     return (
-      <div className="splash-image">
-        <h1 className="splash-image-title">
-          Showcase & Discover
-          <br/>
-          Creative Work
-        </h1>
-        <button className="demo-button" onClick={this.demoLogin}>Demo Login</button>
+      <div className="splash-content">
+        <div className="splash-image">
+        </div>
+        <div className="splash-title">
+          <h1 className="splash-image-title">
+            Showcase & Discover
+            <br/>
+            Creative Work
+          </h1>
+          <button className="demo-button" onClick={this.demoLogin}>Demo Login</button>
+        </div>
       </div>
     );
   } 

@@ -49,7 +49,6 @@ class ItemsUpload extends React.Component {
   //   this.context.router.push("/");
   // }
   render() {
-    console.log(this.state); 
     return(
       <div className="upload-wrapper">
         <div className="upload-controls">

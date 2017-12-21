@@ -15,7 +15,10 @@ class CommentsIndexItem extends React.Component {
       <div className="comments-index-itemwrap">
         <img src={this.props.comment.user.image} id="comment-user-icon"/>
         <div className="comment-main-body">
-          <div className="author-name">{fname} {lname} </div>
+          <div className="top-part">
+            <div className="author-name">{fname} {lname} </div>
+            <p>᛫ {comment.created_at}</p>
+          </div>
           <div className="comment-body">{comment.body} </div>
         </div>
       </div>

@@ -13,7 +13,6 @@ class ProjectIndex extends React.Component {
     const { projects } = this.props; 
 
     if (Object.keys(projects).length < 1) {
-      console.log("loading"); 
       return null; 
     } else {
       return (
@@ -28,11 +27,3 @@ class ProjectIndex extends React.Component {
 }
 
 export default ProjectIndex; 
-
-
-
-     // const projectsArr = selectProjects(this.props.state); 
-      // console.log(projectsArr); 
-// {projectsArr.map( project => <ProjectIndexItem key={project.id} project={project}/>
-// )}
-

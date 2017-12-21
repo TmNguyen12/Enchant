@@ -12,7 +12,6 @@ const itemReducer = (state = defaultState, action ) => {
 
   switch (action.type) {
     case RECEIVE_ALL_ITEMS:
-      console.log(action.items);
       return merge( {}, action.items ) ; 
     case CREATE_ITEM:
       return merge ( {}, action.item); 

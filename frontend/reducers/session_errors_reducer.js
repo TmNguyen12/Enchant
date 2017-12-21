@@ -11,10 +11,6 @@ export default (state = [], action) => {
   Object.freeze(state);
   switch(action.type) {
     case RECEIVE_SESSION_ERRORS:
-      // if (action.errors === undefined) {
-      //   action.errors = []; 
-      // } 
-      console.log(action.errors);
       return action.errors;
     case RECEIVE_CURRENT_USER:
       return [];

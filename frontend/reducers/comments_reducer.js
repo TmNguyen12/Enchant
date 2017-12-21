@@ -15,7 +15,6 @@ const commentsReducer = (state = defaultState , action ) => {
 
   switch (action.type) {
     case RECEIVE_ALL_COMMENTS:
-      console.log("action comments ", action.comments); 
       const m = merge({}, state, action.comments ); 
       return merge({}, state, action.comments ); 
     case CREATE_COMMENT:

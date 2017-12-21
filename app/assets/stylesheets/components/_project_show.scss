@@ -9,7 +9,7 @@
 }
 
 .items-index{
-  // overflow: scroll;
+  // overflow: 
   // // height:100%;
   // // padding: 0 69px; 
 
@@ -63,6 +63,11 @@
   h4{
     font-size:14px; 
     color: $black; 
+  }
+  .publish-date{
+    font-size: 11px;
+    color: gray; 
+    padding-top: 10px; 
   }
 }
 
@@ -155,29 +160,29 @@
 
 //modal animation from Jesse Couch on codepen
 
-@keyframes unfoldIn {
-  0% {
-    transform:scaleY(.005) scaleX(0);
-  }
-  50% {
-    transform:scaleY(.005) scaleX(1);
-  }
-  100% {
-    transform:scaleY(1) scaleX(1);
-  }
-}
+// @keyframes unfoldIn {
+//   0% {
+//     transform:scaleY(.005) scaleX(0);
+//   }
+//   50% {
+//     transform:scaleY(.005) scaleX(1);
+//   }
+//   100% {
+//     transform:scaleY(1) scaleX(1);
+//   }
+// }
 
-@keyframes unfoldOut {
-  0% {
-    transform:scaleY(1) scaleX(1);
-  }
-  50% {
-    transform:scaleY(.005) scaleX(1);
-  }
-  100% {
-    transform:scaleY(.005) scaleX(0);
-  }
-}
+// @keyframes unfoldOut {
+//   0% {
+//     transform:scaleY(1) scaleX(1);
+//   }
+//   50% {
+//     transform:scaleY(.005) scaleX(1);
+//   }
+//   100% {
+//     transform:scaleY(.005) scaleX(0);
+//   }
+// }
 
 .comments-wrapper{
   width: 80%; 
@@ -275,7 +280,9 @@
   }
 }
 .comments-list{
-  border-radius: inherit;   
+  border-radius: inherit;  
+  display: flex; 
+  flex-direction: column-reverse;  
 }
 .comments-index{
   border-radius: inherit; 
@@ -286,6 +293,16 @@
   font-size: 16px; 
 }
 
+.top-part{
+  display: flex; 
+  align-items: center; 
+  p{
+    font-size: 10px; 
+    color: gray;
+    position: relative; 
+    left: 5px; 
+  }
+}
 .author-name{
   font-weight: bold; 
 }

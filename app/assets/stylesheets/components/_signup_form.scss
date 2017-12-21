@@ -4,12 +4,12 @@
 }
 
 .signup-form-box{
-  border: 1px solid black;
-  border-radius: 10px;
-  display: flex; 
-  margin: 20px;
-  padding: 0 30px;
-  // background-color: #f5f5f5;
+  // border: 1px solid black;
+  // border-radius: 10px;
+  // display: flex; 
+  // margin: 20px;
+  // padding: 0 30px;
+  // // background-color: #f5f5f5;
 }
 
 .signup-form{
@@ -19,6 +19,12 @@
   padding: 40px;
   input{
     margin-bottom: 20px;
+  }
+  p{
+    align-self: center;
+    font-size: 20px; 
+    font-weight: bold; 
+    padding-bottom: 15px;
   }
 }
 

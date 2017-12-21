@@ -8,12 +8,12 @@
 }
 
 .login-form-box{
-  border: 1px solid black;
-  border-radius: 10px;
-  display: flex; 
-  margin: 20px;
-  padding: 0 30px;
-  // background-color: #f5f5f5;
+  // border: 1px solid black;
+  // border-radius: 10px;
+  // display: flex; 
+  // margin: 20px;
+  // padding: 0 30px;
+  // // background-color: #f5f5f5;
   
 }
 
@@ -25,31 +25,34 @@
   input{
     margin-bottom: 20px;
   }
-}
-
-input[type="submit"] {
-  // padding: 100px;
-  // font-size:50px;
-  // width:400px;
-  height:40px;
-  background-color:transparent;
-}
-
-.login-buttons{
-  display: flex; 
-  justify-content: space-around;
-  cursor: pointer;
-}
-
-.login-input{
-  width: 200px;
-  padding: 10px;
-  background-color: $lighter-gray;
-  border-color: 1px solid transparent;
-  &:focus{
-    background-color: $white; 
+  ul{
+    color: red;
   }
 }
+
+// input[type="submit"] {
+//   // padding: 100px;
+//   // font-size:50px;
+//   // width:400px;
+//   height:40px;
+//   background-color:transparent;
+// }
+
+// .login-buttons{
+//   display: flex; 
+//   justify-content: space-around;
+//   cursor: pointer;
+// }
+
+// .login-input{
+//   width: 200px;
+//   padding: 10px;
+//   background-color: $lighter-gray;
+//   border-color: 1px solid transparent;
+//   &:focus{
+//     background-color: $white; 
+//   }
+// }
 
 .session-modal{
   position: absolute;
@@ -65,7 +68,9 @@ input[type="submit"] {
   WebkitOverflowScrolling: touch;
   borderRadius: 4px;
   outline: none;
-  padding: 20px; 
+  padding: 20px;
+  border-radius: 4px;
+  width: 25%; 
 }
 
 .session-modal-overlay{
