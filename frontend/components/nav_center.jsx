@@ -19,8 +19,8 @@ class NavCenter extends React.Component {
     return (
       <ul className="nav-center-links">
         <li onClick={this.demoLogin}>Discover</li>
-        <li>LinkIn</li>
-        <li>GitHub</li>
+        <li><a href="https://www.linkedin.com/in/truong-nguyen-2821471b/">LinkedIn</a></li>
+        <li><a href="https://github.com/TmNguyen12/Enchant">GitHub</a></li>
         <button> <Link to="/signup">Sign Up With Email</Link></button>
       </ul>
     ); 
@@ -31,8 +31,8 @@ class NavCenter extends React.Component {
       <ul className="nav-center-links">
         <li><Link to="/"> Activity </Link></li>
         <li><Link to="/"> Discover </Link></li>
-        <li><Link to="/"> Live </Link></li>
-        <li><Link to="/"> Profile </Link></li>
+        <li><a href="https://www.linkedin.com/in/truong-nguyen-2821471b/"> LinkedIn </a></li>
+        <li><a href="https://github.com/TmNguyen12/Enchant"> Github </a></li>
         <button> <Link to="/project/create">Create a Project</Link></button>
       </ul>
     );
