@@ -4,10 +4,29 @@
 
 Enchant is a full-stack, single-page web application modeled after [Behance](https://www.behance.net/). It is built with a Ruby on Rails backend, a React.js/Redux frontend, and a PostgreSQL database. Media hosting is done through Amazon Web Services (S3) and application hosting is through Heroku.  
 
-## Features and Implementation 
+## Technologies 
+- Backend 
+  - Ruby on Rails 
+  - jBuilder
+  - PostgreSQL
+  - Heroku 
+- Frontend
+  - Javascript
+  - React/Redux
+  - SCSS/CSS
+  - Webpack 
+- Storage 
+  - Amazon Web Services - S3 
+
+## Features and Implementation
+
 ### Project Index and Detail Views 
 
 Users are able to view an index of project thumbnails which are individual react components. Upon clicking the thumbnail, a modal opens to show a scrolling view of high resolution images with a fixed sidebar displaying more details about the current project. Modal animations were created by overriding the default modal styling with css classes. 
+
+![Project Show](https://media.giphy.com/media/3o7520vRoD7P3QwISs/giphy.gif)
+
+
 ```javascript
 return (
       <div>
@@ -86,21 +105,7 @@ The navigation bar changed to show relevant actions to the user depending on whe
   }
 ```
 
-## Technologies 
-- Backend 
-  - Ruby on Rails 
-  - jBuilder
-  - PostgreSQL
-  - Heroku 
-- Frontend
-  - Javascript
-  - React/Redux
-  - SCSS/CSS
-  - Webpack 
-- Storage 
-  - Amazon Web Services - S3 
-
-## Future Features 
+## Future Development  
 - User Profiles 
   - Allow users to follow their favorite artists
 - Tagging 

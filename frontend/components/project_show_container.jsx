@@ -7,6 +7,7 @@ import { makeLike, unLike } from '../actions/like_actions';
 const mapStateToProps = ( state ) => { 
   return (
     {
+      commentCount: Object.keys(state.entities.comments.byId).length
     // state
     // project: selectProjects(state)
     }

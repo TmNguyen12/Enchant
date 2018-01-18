@@ -2,6 +2,7 @@ import React from 'react';
 import Modal from 'react-modal'; 
 import ItemsIndexContainer from './items_index_container'; 
 import CommentsContainer from './comments_container'; 
+import ReactSVG from 'react-svg'; 
 
 class ProjectShow extends React.Component {
   constructor(props){
@@ -55,7 +56,9 @@ class ProjectShow extends React.Component {
             <div className="sidebar-project-info">
               <h2>{project.title}</h2>
               <h4>{project.category}</h4>
-              <div className="stats"> Likes and comments</div>
+              <div className="stats">
+               <i class="fa fa-comments" aria-hidden="true"></i> {this.props.commentCount}
+              </div>
               <div className="publish-date">Published: {project.created_at}</div> 
             </div>
             <div className="sidebar-misc-links">
