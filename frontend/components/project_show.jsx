@@ -2,6 +2,7 @@ import React from 'react';
 import Modal from 'react-modal'; 
 import ItemsIndexContainer from './items_index_container'; 
 import CommentsContainer from './comments_container'; 
+import ReactSVG from 'react-svg'; 
 
 class ProjectShow extends React.Component {
   constructor(props){
@@ -31,8 +32,7 @@ class ProjectShow extends React.Component {
   }
 
   render() {
-    // debugger
-    console.log("this.props", this.props); 
+    console.log("this.props.project.likes", this.props.project.likes); 
     const { project } = this.props; 
     const { author } = this.props.project; 
     const likeButton = this.props.project.liked_by_current_user ? "Thank you!" : "Appreciate Project";  
@@ -55,7 +55,16 @@ class ProjectShow extends React.Component {
             <div className="sidebar-project-info">
               <h2>{project.title}</h2>
               <h4>{project.category}</h4>
-              <div className="stats"> Likes and comments</div>
+              <div className="stats">
+                <div className="stats-likes">
+                  <i className="fa fa-thumbs-up" aria-hidden="true"></i>
+                  {this.props.project.likes}
+                </div>
+                <div className="stats-comments">
+                  <i className="fa fa-comments" aria-hidden="true"></i> 
+                  {this.props.commentCount}
+                </div>
+              </div>
               <div className="publish-date">Published: {project.created_at}</div> 
             </div>
             <div className="sidebar-misc-links">

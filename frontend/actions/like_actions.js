@@ -4,7 +4,6 @@ import { log } from 'util';
 export const LIKE_PROJECT = "LIKE_PROJECT"; 
 export const UNLIKE_PROJECT = "UNLIKE_PROJECT"; 
 
-
 export const likeProject = project => ({
   type: LIKE_PROJECT, 
   projects

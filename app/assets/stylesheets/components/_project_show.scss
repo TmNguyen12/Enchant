@@ -55,6 +55,20 @@
   justify-content: space-around; 
   background-color: $background; 
   
+  .stats{
+    padding-top: 5px; 
+    display: flex; 
+    .stats-likes{
+      display: flex;
+      width: 16%; 
+      justify-content: space-around; 
+    }
+    .stats-comments{
+      display: flex;
+      width: 17%; 
+      justify-content: space-around; 
+    }
+  }
 
   h2{
     font-size: 16px; 
@@ -312,4 +326,11 @@
 	border-radius:50%;
 	width: 48px;
 	height: 48px; 
+}
+
+.showpage-icon {
+  width: 16px;
+  height: 16px;
+  margin-right: 10px;
+  padding-top: 2px;
 }

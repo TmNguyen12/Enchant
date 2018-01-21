@@ -15,7 +15,7 @@ class Api::LikesController < ApplicationController
   end 
 
   def show
-    @project = Project.find_by(id: params[:project][:id])    
+    @project = Project.find_by(id: params[:project][:id])
   end 
 
   def destroy

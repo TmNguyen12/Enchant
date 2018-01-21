@@ -21,11 +21,11 @@ class CommentsForm extends React.Component {
     this.state.user_id = this.props.currentUser.id; 
     const comment = this.state; 
     this.props.fetchMakeComment(this.props.projectId, comment)
-      .then ( () => this.setState({body: ""})); 
-    
-    // this.setState({body: ""});
+      .then( () => this.setState({body: ""})); 
+      this.textInput.value = ""; 
+      this.textInput.blur(); 
   }
-
+  
   render (){
     const { currentUser } = this.props;
     return(
@@ -33,7 +33,14 @@ class CommentsForm extends React.Component {
         <h1 className="comment-header">Comments</h1>
         <div className="comment-form-mid">
           <img id="comment-user-icon" src={currentUser.image}/>
-          <textarea onChange={this.update("body")} name="comment" id="comment" cols="60" rows="10" className="comment-textarea">
+          <textarea id="comment" 
+            onChange={this.update("body")} 
+            name="comment"  
+            cols="60" 
+            rows="10" 
+            className="comment-textarea"
+            ref={ input => { this.textInput = input; }}
+            >
           </textarea>
         </div>
         <div className="comment-button-div">

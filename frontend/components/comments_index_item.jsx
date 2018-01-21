@@ -19,7 +19,7 @@ class CommentsIndexItem extends React.Component {
             <div className="author-name">{fname} {lname} </div>
             <p>᛫ {comment.created_at}</p>
           </div>
-          <div className="comment-body">{comment.body} </div>
+          <span className="comment-body">{comment.body} </span>
         </div>
       </div>
     ); 
