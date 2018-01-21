@@ -5,6 +5,7 @@ class Api::ProjectsController < ApplicationController
   def create
     @project = Project.new(project_params)
     @project.author_id = current_user.id 
+    @project.likes = 0
     if @project.save
       render "api/projects/edit"
     else 

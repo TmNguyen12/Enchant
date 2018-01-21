@@ -32,8 +32,7 @@ class ProjectShow extends React.Component {
   }
 
   render() {
-    // debugger
-    console.log("this.props", this.props); 
+    console.log("this.props.project.likes", this.props.project.likes); 
     const { project } = this.props; 
     const { author } = this.props.project; 
     const likeButton = this.props.project.liked_by_current_user ? "Thank you!" : "Appreciate Project";  
@@ -57,7 +56,14 @@ class ProjectShow extends React.Component {
               <h2>{project.title}</h2>
               <h4>{project.category}</h4>
               <div className="stats">
-               <i class="fa fa-comments" aria-hidden="true"></i> {this.props.commentCount}
+                <div className="stats-likes">
+                  <i className="fa fa-thumbs-up" aria-hidden="true"></i>
+                  {this.props.project.likes}
+                </div>
+                <div className="stats-comments">
+                  <i className="fa fa-comments" aria-hidden="true"></i> 
+                  {this.props.commentCount}
+                </div>
               </div>
               <div className="publish-date">Published: {project.created_at}</div> 
             </div>

@@ -55,6 +55,20 @@
   justify-content: space-around; 
   background-color: $background; 
   
+  .stats{
+    padding-top: 5px; 
+    display: flex; 
+    .stats-likes{
+      display: flex;
+      width: 16%; 
+      justify-content: space-around; 
+    }
+    .stats-comments{
+      display: flex;
+      width: 17%; 
+      justify-content: space-around; 
+    }
+  }
 
   h2{
     font-size: 16px; 
