@@ -24,7 +24,7 @@ Enchant is a full-stack, single-page web application modeled after [Behance](htt
 
 Users are able to view an index of project thumbnails which are individual react components. Upon clicking the thumbnail, a modal opens to show a scrolling view of high resolution images with a fixed sidebar displaying more details about the current project. Modal animations were created by overriding the default modal styling with css classes. 
 
-![Project Show](https://media.giphy.com/media/3o7520vRoD7P3QwISs/giphy.gif)
+![Project Show](https://github.com/TmNguyen12/Enchant/blob/master/app/assets/gifs/Enchant_demo.gif)
 
 
 ```javascript
