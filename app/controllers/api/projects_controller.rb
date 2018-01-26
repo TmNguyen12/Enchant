@@ -6,7 +6,9 @@ class Api::ProjectsController < ApplicationController
     debugger 
     @project = Project.new(project_params)
     @project.author_id = current_user.id 
+    debugger 
     @project.likes = []
+    
     if @project.save
       render "api/projects/edit"
     else 
