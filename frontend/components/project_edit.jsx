@@ -1,6 +1,7 @@
 import React from 'react'; 
 import ItemsUploadContainer from './items_upload_container'; 
 import Modal from 'react-modal'; 
+import { Link } from 'react-router-dom'; 
 
 class ProjectEdit extends React.Component {
   constructor(props){
@@ -31,6 +32,7 @@ class ProjectEdit extends React.Component {
     const project = Object.assign({}, this.state);
     project.author_id = this.props.currentUser.id; 
     this.props.editProject(project.id); 
+    this.props.history.push('/'); 
   }
 
 

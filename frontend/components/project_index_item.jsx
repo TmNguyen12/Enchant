@@ -1,7 +1,9 @@
 import React from 'react'; 
 import ProjectShowContainer from './project_show_container'; 
 import Modal from 'react-modal'; 
-import { withRouter } from 'react-router-dom'; 
+import { Route, withRouter } from 'react-router-dom'; 
+import { ModalContainer, ModalRoute } from 'react-router-modal';
+// import 'react-router-modal/css/react-router-modal.css'
 
 class ProjectIndexItem extends React.Component {
   // modal code from Dan Abramov portal examples 
@@ -17,7 +19,10 @@ class ProjectIndexItem extends React.Component {
 
    // default modal syntax from https://github.com/reactjs/react-modal
    openModal() {
-    this.setState({modalIsOpen: true});
+     this.setState({modalIsOpen: true});
+    const url = `/project/${this.props.project.id}`;
+    debugger 
+    this.props.history.push(url);
   }
 
   afterOpenModal() {
@@ -35,7 +40,7 @@ class ProjectIndexItem extends React.Component {
     const { author } = this.props.project; 
     const fname = (author.fname) ? author.fname : author.username; 
     const lname = (author.lname) ? author.lname : ""; 
-
+    debugger 
     return (
       <div>
         <div className="project-card">
@@ -70,8 +75,12 @@ class ProjectIndexItem extends React.Component {
          >
         <div className="modal">
             <ProjectShowContainer project={project}/> 
+            <Route exact path="/project/:projectid/" component={ProjectShowContainer}/>
         </div>
       </Modal>
+      <ModalRoute path='/project/:project.id' parentPath='/'>
+        <ProjectShowContainer project={project}/>                
+      </ModalRoute>
     </div>
     ); 
   }

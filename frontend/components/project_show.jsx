@@ -4,6 +4,7 @@ import ItemsIndexContainer from './items_index_container';
 import CommentsContainer from './comments_container'; 
 import ReactSVG from 'react-svg'; 
 
+
 class ProjectShow extends React.Component {
   constructor(props){
     super(props);
@@ -14,6 +15,7 @@ class ProjectShow extends React.Component {
 
   componentWillMount(){
     this.props.fetchProject(this.props.project.id); 
+    // this.props.fetchProject(this.props.match.params.id); 
   }
 
   componentWillReceiveProps(newProps){
@@ -23,6 +25,7 @@ class ProjectShow extends React.Component {
   // component will umount and clear state 
 
   handleLike(){
+    debugger 
     const { liked_by_current_user } = this.props.project; 
     if (liked_by_current_user === true) {
       this.props.unLike(this.props.project); 

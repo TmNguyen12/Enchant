@@ -10,6 +10,7 @@ import MainComponent from './main_container';
 import NavCenterContainer from './nav_center_container'; 
 import ProjectCreateContainer from './project_create_container'; 
 import ProjectEditContainer from './project_edit_container'; 
+import ProjectShowContainer from './project_show_container'; 
 
 import {
   Route,
@@ -38,8 +39,11 @@ const App = () => (
     <ProtectedRoute exact path="/project/create" component={ProjectCreateContainer} />
 
     <div className="main-content">
-      <Route exact path="/" component={MainComponent} />
-      <ProtectedRoute exact path="/project/edit/:projectId" component={ProjectEditContainer} />   
+      {/* <Switch> */}
+        <Route exact path="/" component={MainComponent} />
+        {/* <Route path="/project/:id" component={ProjectShowContainer}/> */}
+        <ProtectedRoute exact path="/project/edit/:projectId" component={ProjectEditContainer} />   
+      {/* </Switch> */}
     </div> 
   </div>
 );

@@ -26,19 +26,19 @@ document.addEventListener('DOMContentLoaded', () => {
     category: 'Photography', 
   }; 
 
-  window.createComment = fetchMakeComment;
-  window.comments = fetchComments; 
+  // window.createComment = fetchMakeComment;
+  // window.comments = fetchComments; 
   // let store = configureStore(); 
   // window.store = store; 
-  window.getState = store.getState; 
-  window.dispatch = store.dispatch;
-  window.fetchAllProjects = ProjAPIUtil.fetchAllProjects; 
-  window.fetchProject = ProjAPIUtil.fetchProject; 
-  window.fetchAllItems = ItemAPIUtil.fetchAllItems; 
-  window.selectProjects = selectProjects; 
-  window.createProject = ProjAPIUtil.createProject; 
-  window.like = fetchLike; 
-  window.unlike = fetchUnLike; 
+  // window.getState = store.getState; 
+  // window.dispatch = store.dispatch;
+  // window.fetchAllProjects = ProjAPIUtil.fetchAllProjects; 
+  // window.fetchProject = ProjAPIUtil.fetchProject; 
+  // window.fetchAllItems = ItemAPIUtil.fetchAllItems; 
+  // window.selectProjects = selectProjects; 
+  // window.createProject = ProjAPIUtil.createProject; 
+  // window.like = fetchLike; 
+  // window.unlike = fetchUnLike; 
  
 
   const root = document.getElementById('root');
