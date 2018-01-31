@@ -9,6 +9,7 @@ import * as ItemAPIUtil from './util/item_api_util';
 import { selectProjects } from './reducers/selectors'; 
 import { fetchLike, fetchUnLike } from './actions/like_actions'; 
 import { fetchMakeComment, fetchComments } from './actions/comment_actions'; 
+import { fetchProject } from './actions/project_actions'; 
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
@@ -29,11 +30,14 @@ document.addEventListener('DOMContentLoaded', () => {
   // window.createComment = fetchMakeComment;
   // window.comments = fetchComments; 
   // let store = configureStore(); 
-  // window.store = store; 
-  // window.getState = store.getState; 
-  // window.dispatch = store.dispatch;
+  window.store = store; 
+  window.getState = store.getState; 
+  window.dispatch = store.dispatch;
   // window.fetchAllProjects = ProjAPIUtil.fetchAllProjects; 
   // window.fetchProject = ProjAPIUtil.fetchProject; 
+  window.fetchProject = fetchProject; 
+  window.receiveProject = ProjAPIUtil.receiveProject;
+
   // window.fetchAllItems = ItemAPIUtil.fetchAllItems; 
   // window.selectProjects = selectProjects; 
   // window.createProject = ProjAPIUtil.createProject; 

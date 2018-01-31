@@ -14,9 +14,9 @@ export const createProject = projects => ({
   projects 
 });
 
-export const receiveProject = projects => ({
+export const receiveProject = viewProject => ({
   type: RECEIVE_PROJECT, 
-  projects
+  viewProject
 });
 
 export const makeProject = project => dispatch => {

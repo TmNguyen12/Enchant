@@ -11,42 +11,101 @@ import NavCenterContainer from './nav_center_container';
 import ProjectCreateContainer from './project_create_container'; 
 import ProjectEditContainer from './project_edit_container'; 
 import ProjectShowContainer from './project_show_container'; 
+import Modal from 'react-modal'; 
+
 
 import {
   Route,
   Redirect,
   Switch,
   Link, 
-  HashRouter
+  HashRouter,
+  withRouter
 } from 'react-router-dom';
 
-const App = () => (
-  <div className="all-content">
-    <nav className="nav-main">
-      <div>
-        <Link to="/" className="logo">Enchānt</Link>
-      </div>
-      <div className="nav-bar-center">
-        <NavCenterContainer /> 
-      </div>
-      <div>
-        <NavContainer />
-      </div>
-    </nav>
+class App extends React.Component {
+  constructor(props){
+    super(props);
+    this.previousLocation = this.props.location;
 
-    <Route exact path="/signup" component={SignupContainer} />
-    <Route exact path="/login" component={SessionFormContainer} />
-    <ProtectedRoute exact path="/project/create" component={ProjectCreateContainer} />
+    //normal modal `
+    this.state = {modelIsOpen: false }; 
+    this.openModal = this.openModal.bind(this);
+    this.afterOpenModal = this.afterOpenModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
+  }
+  
+  componentWillUpdate(nextProps) {
+    const { location } = this.props;
+    if (
+      nextProps.history.action !== "POP" &&
+      (!location.state || !location.state.modal)
+    ) {
+      this.previousLocation = this.props.location;
+    }
+  }
 
-    <div className="main-content">
-      {/* <Switch> */}
-        <Route exact path="/" component={MainComponent} />
-        {/* <Route path="/project/:id" component={ProjectShowContainer}/> */}
-        <ProtectedRoute exact path="/project/edit/:projectId" component={ProjectEditContainer} />   
-      {/* </Switch> */}
-    </div> 
-  </div>
-);
+  openModal() {
+    this.setState({modalIsOpen: true});
+    const url = `/project/${this.props.project.id}`;
+    debugger 
+    this.props.history.push(url);
+  }
 
-export default App;
+  afterOpenModal() {
+    // references are now sync'd and can be accessed.
+    // this.subtitle.style.color = '#f00';
+  }
+
+  closeModal() {
+    // let oldLoc = this.props.history.goBack(); 
+    this.setState({modalIsOpen: false});
+  }
+
+  render() {
+    const { location } = this.props;
+    debugger 
+    const isModal = !!(
+      location.state &&
+      location.state.modal &&
+      this.previousLocation !== location
+    );
+
+    if (isModal){
+      this.setState({modalIsOpen: true});
+    }
+    let projectz = {}
+    projectz['id'] = parseInt(location.pathname.slice(-1)); 
+
+    return (
+      <div className="all-content">
+        <nav className="nav-main">
+          <div>
+            <Link to="/" className="logo">Enchānt</Link>
+          </div>
+          <div className="nav-bar-center">
+            <NavCenterContainer /> 
+          </div>
+          <div>
+            <NavContainer />
+          </div>
+        </nav>
+    
+        <Route exact path="/signup" component={SignupContainer} />
+        <Route exact path="/login" component={SessionFormContainer} />
+        <ProtectedRoute exact path="/project/create" component={ProjectCreateContainer} />
+    
+        <div className="main-content">
+          <Switch location={isModal ? this.previousLocation : location}>
+            <Route exact path="/" component={MainComponent} />
+            <ProtectedRoute exact path="/project/edit/:projectId" component={ProjectEditContainer} />   
+
+          </Switch>
+        </div> 
+      </div>
+    );
+  }
+}
+
+export default withRouter(App);
 

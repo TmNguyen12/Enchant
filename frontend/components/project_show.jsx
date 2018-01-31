@@ -14,18 +14,19 @@ class ProjectShow extends React.Component {
   }
 
   componentWillMount(){
+    debugger 
     this.props.fetchProject(this.props.project.id); 
     // this.props.fetchProject(this.props.match.params.id); 
   }
 
   componentWillReceiveProps(newProps){
+    debugger 
     this.setState({projects: newProps}); 
   }
 
   // component will umount and clear state 
 
   handleLike(){
-    debugger 
     const { liked_by_current_user } = this.props.project; 
     if (liked_by_current_user === true) {
       this.props.unLike(this.props.project); 
@@ -35,14 +36,18 @@ class ProjectShow extends React.Component {
   }
 
   render() {
-    console.log("this.props.project.likes", this.props.project.likes); 
     const { project } = this.props; 
-    const { author } = this.props.project; 
-    const likeButton = this.props.project.liked_by_current_user ? "Thank you!" : "Appreciate Project";  
-    const fname = (author.fname) ? author.fname : author.username; 
-    const lname = (author.lname) ? author.lname : ""; 
 
-    if (!project) {
+    if (project.author){
+      console.log("this.props.project.likes", this.props.project.likes); 
+      const { author } = this.props.project; 
+      const likeButton = this.props.project.liked_by_current_user ? "Thank you!" : "Appreciate Project";  
+      const fname = (author.fname) ? author.fname : author.username; 
+      const lname = (author.lname) ? author.lname : ""; 
+    }
+
+    debugger 
+    if (project.author === undefined) {
       return null;
     }
     return (

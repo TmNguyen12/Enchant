@@ -8,12 +8,13 @@ import {
 
 
 const projectReducer = (state = {}, action ) => {
+  debugger 
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_ALL_PROJECTS:
       return merge ({}, action.projects); 
     case RECEIVE_PROJECT:
-      return merge({}, state, action.projects); 
+      return merge({}, state, {viewProject: Object.values(action.viewProject)[0]}); 
     case CREATE_PROJECT:
       return merge({}, action.project);   
     default:
@@ -22,4 +23,3 @@ const projectReducer = (state = {}, action ) => {
 };
 
 export default projectReducer; 
-

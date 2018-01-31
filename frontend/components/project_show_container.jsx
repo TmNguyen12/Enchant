@@ -5,11 +5,12 @@ import { selectProjects } from '../reducers/selectors';
 import { makeLike, unLike } from '../actions/like_actions'; 
 
 const mapStateToProps = ( state ) => { 
+  debugger 
   return (
     {
-      commentCount: Object.keys(state.entities.comments.byId).length
+      commentCount: Object.keys(state.entities.comments.byId).length, 
     // state
-    // project: selectProjects(state)
+      // project: selectProjects(state)
     }
   ); 
 };

@@ -1,9 +1,7 @@
 import React from 'react'; 
 import ProjectShowContainer from './project_show_container'; 
 import Modal from 'react-modal'; 
-import { Route, withRouter } from 'react-router-dom'; 
-import { ModalContainer, ModalRoute } from 'react-router-modal';
-// import 'react-router-modal/css/react-router-modal.css'
+import { Route, withRouter, Link } from 'react-router-dom'; 
 
 class ProjectIndexItem extends React.Component {
   // modal code from Dan Abramov portal examples 
@@ -19,9 +17,8 @@ class ProjectIndexItem extends React.Component {
 
    // default modal syntax from https://github.com/reactjs/react-modal
    openModal() {
-     this.setState({modalIsOpen: true});
+    // this.setState({modalIsOpen: true});
     const url = `/project/${this.props.project.id}`;
-    debugger 
     this.props.history.push(url);
   }
 
@@ -40,11 +37,13 @@ class ProjectIndexItem extends React.Component {
     const { author } = this.props.project; 
     const fname = (author.fname) ? author.fname : author.username; 
     const lname = (author.lname) ? author.lname : ""; 
-    debugger 
     return (
       <div>
         <div className="project-card">
-          <img onClick={this.openModal} src={project.thumbnail_url} className="thumb pointer" />
+          <img onClick={this.openModal} src={project.thumbnail_url} className="thumb pointer"/>
+           {/* <Link to={{ pathname: "/project/:projectid", state: { modelIsOpen: true } }}>
+           </Link>  */}
+          
           <div className="details"> 
             <div className="title">{project.title}</div>
             <div className="owners">
@@ -75,12 +74,9 @@ class ProjectIndexItem extends React.Component {
          >
         <div className="modal">
             <ProjectShowContainer project={project}/> 
-            <Route exact path="/project/:projectid/" component={ProjectShowContainer}/>
+            {/* <Route exact path="/project/:projectid/" component={ProjectShowContainer}/> */}
         </div>
       </Modal>
-      <ModalRoute path='/project/:project.id' parentPath='/'>
-        <ProjectShowContainer project={project}/>                
-      </ModalRoute>
     </div>
     ); 
   }
