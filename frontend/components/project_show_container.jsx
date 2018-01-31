@@ -9,8 +9,7 @@ const mapStateToProps = ( state ) => {
   return (
     {
       commentCount: Object.keys(state.entities.comments.byId).length, 
-    // state
-      // project: selectProjects(state)
+      viewProject: state.entities.projects.viewProject
     }
   ); 
 };

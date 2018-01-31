@@ -100,6 +100,17 @@ class App extends React.Component {
             <Route exact path="/" component={MainComponent} />
             <ProtectedRoute exact path="/project/edit/:projectId" component={ProjectEditContainer} />   
 
+            <Route
+              exact path="/project/:projectId"
+              render={() => (
+                <div>
+                {isModal ? null : <ProjectShowContainer project={projectz}/>}
+                    
+
+                  <Modal onClose={() => this.props.history.push("/")} />; 
+                </div>
+              )}
+              />
           </Switch>
         </div> 
       </div>
