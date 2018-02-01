@@ -12,7 +12,7 @@ import ProjectCreateContainer from './project_create_container';
 import ProjectEditContainer from './project_edit_container'; 
 import ProjectShowContainer from './project_show_container'; 
 import Modal from 'react-modal'; 
-
+import ModalWrapper from './modal'; 
 
 import {
   Route,
@@ -104,10 +104,10 @@ class App extends React.Component {
               exact path="/project/:projectId"
               render={() => (
                 <div>
-                {isModal ? null : <ProjectShowContainer project={projectz}/>}
-                    
-
-                  <Modal onClose={() => this.props.history.push("/")} />; 
+                {/* {isModal ? null : <ProjectShowContainer project={projectz}/>} */}
+                {isModal ? null : <ModalWrapper project={projectz}/>}
+               
+                  {/* <Modal onClose={() => this.props.history.push("/")} />;  */}
                 </div>
               )}
               />

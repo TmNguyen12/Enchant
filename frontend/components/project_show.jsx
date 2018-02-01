@@ -14,15 +14,18 @@ class ProjectShow extends React.Component {
   }
 
   componentWillMount(){
-    debugger 
     this.props.fetchProject(this.props.project.id); 
     // this.props.fetchProject(this.props.match.params.id); 
   }
 
   componentWillReceiveProps(newProps){
     debugger 
-    // this.setState({projects: newProps}); 
-    this.setState({viewProject: newProps.viewProject}); 
+    // this.setState({projects: newProps});
+    // if (!((newProps.viewProject) && (newProps.viewProject !== this.props.viewProject))){
+    if (((newProps.viewProject) && (newProps.viewProject !== this.props.viewProject))){
+      this.props.fetchProject(this.props.project.id);     
+      this.setState({viewProject: newProps.viewProject}); 
+    }
   }
 
   // component will umount and clear state 
