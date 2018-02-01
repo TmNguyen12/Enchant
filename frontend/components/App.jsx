@@ -75,7 +75,8 @@ class App extends React.Component {
       this.setState({modalIsOpen: true});
     }
     let projectz = {}
-    projectz['id'] = parseInt(location.pathname.slice(-1)); 
+    let myRegex = /[^\/]+$/g; 
+    projectz['id'] = parseInt(myRegex.exec(location.pathname)); 
 
     return (
       <div className="all-content">

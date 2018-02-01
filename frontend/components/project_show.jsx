@@ -22,9 +22,21 @@ class ProjectShow extends React.Component {
     debugger 
     // this.setState({projects: newProps});
     // if (!((newProps.viewProject) && (newProps.viewProject !== this.props.viewProject))){
-    if (((newProps.viewProject) && (newProps.viewProject !== this.props.viewProject))){
+    // if (((newProps.viewProject) && (newProps.viewProject !== this.props.viewProject))){
+   if (this.didReceiveNewProject(this.props.viewProject, newProps.viewProject)){
       this.props.fetchProject(this.props.project.id);     
       this.setState({viewProject: newProps.viewProject}); 
+    }
+  }
+
+  didReceiveNewProject(oldProject, newProject){
+    if (!oldProject){
+      return true;  
+    }
+    if (newProject.id !== oldProject.id){
+      return true; 
+    } else {
+      return false; 
     }
   }
 
