@@ -5,7 +5,6 @@ import { selectProjects } from '../reducers/selectors';
 import { makeLike, unLike } from '../actions/like_actions'; 
 
 const mapStateToProps = ( state ) => { 
-  debugger 
   return (
     {
       commentCount: Object.keys(state.entities.comments.byId).length, 

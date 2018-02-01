@@ -1,6 +1,6 @@
 import React from 'react'; 
 import Modal from 'react-modal'; 
-import { Route, withRouter, Link } from 'react-router-dom'; 
+import { withRouter } from 'react-router-dom'; 
 import ProjectShowContainer from './project_show_container'; 
 
 class ModalWrapper extends React.Component {
@@ -8,20 +8,16 @@ class ModalWrapper extends React.Component {
   constructor(props) {
     super(props);
 
-    //normal modal `
+    //normal modal
     this.state = {modalIsOpen: true }; 
     this.openModal = this.openModal.bind(this);
     this.afterOpenModal = this.afterOpenModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
   }
 
-
-
    // default modal syntax from https://github.com/reactjs/react-modal
   openModal() {
     this.setState({modalIsOpen: true});
-    // const url = `/project/${this.props.project.id}`;
-    // this.props.history.push(url);
   }
 
   afterOpenModal() {
@@ -30,13 +26,11 @@ class ModalWrapper extends React.Component {
   }
 
   closeModal() {
-    // let oldLoc = this.props.history.goBack(); 
     this.setState({modalIsOpen: false});
     this.props.history.push('/'); 
   }
 
   render() {
-    debugger 
     return(
       <div className="modalz">
       theese nutz
@@ -55,10 +49,9 @@ class ModalWrapper extends React.Component {
               afterOpen:'view-modal-overlay-open',
               beforeClose: 'view-modal-overlay-close'  
             }}
-        >
+          >
           <div className="modal">
               <ProjectShowContainer project={this.props.project}/> 
-              {/* <Route exact path="/project/:projectid/" component={ProjectShowContainer}/> */}
           </div>
         </Modal>
       </div>

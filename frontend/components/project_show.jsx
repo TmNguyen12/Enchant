@@ -4,25 +4,17 @@ import ItemsIndexContainer from './items_index_container';
 import CommentsContainer from './comments_container'; 
 import ReactSVG from 'react-svg'; 
 
-
 class ProjectShow extends React.Component {
   constructor(props){
     super(props);
-    // this.state = {liked_by_current_user: this.props.project.liked_by_current_user};
-    // this.state.project = this.props.project; 
     this.handleLike = this.handleLike.bind(this); 
   }
 
   componentWillMount(){
     this.props.fetchProject(this.props.project.id); 
-    // this.props.fetchProject(this.props.match.params.id); 
   }
 
   componentWillReceiveProps(newProps){
-    debugger 
-    // this.setState({projects: newProps});
-    // if (!((newProps.viewProject) && (newProps.viewProject !== this.props.viewProject))){
-    // if (((newProps.viewProject) && (newProps.viewProject !== this.props.viewProject))){
    if (this.didReceiveNewProject(this.props.viewProject, newProps.viewProject)){
       this.props.fetchProject(this.props.project.id);     
       this.setState({viewProject: newProps.viewProject}); 
@@ -30,11 +22,8 @@ class ProjectShow extends React.Component {
   }
 
   didReceiveNewProject(oldProject, newProject){
-    if (!oldProject){
+    if (!oldProject || (newProject.id !== oldProject.id)){
       return true;  
-    }
-    if (newProject.id !== oldProject.id){
-      return true; 
     } else {
       return false; 
     }
@@ -53,7 +42,6 @@ class ProjectShow extends React.Component {
 
   render() {
     const { viewProject } = this.props; 
-
     if (viewProject){
       console.log("this.props.viewProject.likes", this.props.viewProject.likes); 
       var { author } = this.props.viewProject; 
@@ -62,7 +50,6 @@ class ProjectShow extends React.Component {
       var lname = (author.lname) ? author.lname : ""; 
     }
 
-    debugger 
     if (!viewProject) {
       return null;
     }

@@ -24,59 +24,14 @@ import {
 } from 'react-router-dom';
 
 class App extends React.Component {
-  constructor(props){
-    super(props);
-    this.previousLocation = this.props.location;
-
-    //normal modal `
-    this.state = {modelIsOpen: false }; 
-    this.openModal = this.openModal.bind(this);
-    this.afterOpenModal = this.afterOpenModal.bind(this);
-    this.closeModal = this.closeModal.bind(this);
-  }
-  
-  componentWillUpdate(nextProps) {
-    const { location } = this.props;
-    if (
-      nextProps.history.action !== "POP" &&
-      (!location.state || !location.state.modal)
-    ) {
-      this.previousLocation = this.props.location;
-    }
-  }
-
-  openModal() {
-    this.setState({modalIsOpen: true});
-    const url = `/project/${this.props.project.id}`;
-    debugger 
-    this.props.history.push(url);
-  }
-
-  afterOpenModal() {
-    // references are now sync'd and can be accessed.
-    // this.subtitle.style.color = '#f00';
-  }
-
-  closeModal() {
-    // let oldLoc = this.props.history.goBack(); 
-    this.setState({modalIsOpen: false});
-  }
-
   render() {
     const { location } = this.props;
-    debugger 
-    const isModal = !!(
-      location.state &&
-      location.state.modal &&
-      this.previousLocation !== location
-    );
+ 
+    let tempProject = {}; 
 
-    if (isModal){
-      this.setState({modalIsOpen: true});
-    }
-    let projectz = {}
+    // to pull out the project number from the URL
     let myRegex = /[^\/]+$/g; 
-    projectz['id'] = parseInt(myRegex.exec(location.pathname)); 
+    tempProject['id'] = parseInt(myRegex.exec(location.pathname)); 
 
     return (
       <div className="all-content">
@@ -97,18 +52,14 @@ class App extends React.Component {
         <ProtectedRoute exact path="/project/create" component={ProjectCreateContainer} />
     
         <div className="main-content">
-          <Switch location={isModal ? this.previousLocation : location}>
+          <Switch>
             <Route exact path="/" component={MainComponent} />
             <ProtectedRoute exact path="/project/edit/:projectId" component={ProjectEditContainer} />   
-
             <Route
               exact path="/project/:projectId"
               render={() => (
                 <div>
-                {/* {isModal ? null : <ProjectShowContainer project={projectz}/>} */}
-                {isModal ? null : <ModalWrapper project={projectz}/>}
-               
-                  {/* <Modal onClose={() => this.props.history.push("/")} />;  */}
+                  <ModalWrapper project={tempProject}/>
                 </div>
               )}
               />
