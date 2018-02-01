@@ -1,25 +1,19 @@
 import React from 'react'; 
 import { Provider } from 'react-redux';
-import SplashContainer from './splash_container'; 
-import SessionFormContainer from './session_form_container'; 
-import SignupContainer from './signup_form_container'; 
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import NavContainer from './navbar_container'; 
-import ProjectIndexContainer from './project_index_container'; 
-import MainComponent from './main_container'; 
 import NavCenterContainer from './nav_center_container'; 
+import SignupContainer from './signup_form_container'; 
+import SessionFormContainer from './session_form_container'; 
 import ProjectCreateContainer from './project_create_container'; 
+import MainComponent from './main_container'; 
 import ProjectEditContainer from './project_edit_container'; 
-import ProjectShowContainer from './project_show_container'; 
-import Modal from 'react-modal'; 
 import ModalWrapper from './modal'; 
 
 import {
   Route,
-  Redirect,
   Switch,
   Link, 
-  HashRouter,
   withRouter
 } from 'react-router-dom';
 
@@ -49,7 +43,7 @@ class App extends React.Component {
     
         <Route exact path="/signup" component={SignupContainer} />
         <Route exact path="/login" component={SessionFormContainer} />
-        <ProtectedRoute exact path="/project/create" component={ProjectCreateContainer} />
+        <ProtectedRoute path="/project/create" component={ProjectCreateContainer} />
     
         <div className="main-content">
           <Switch>

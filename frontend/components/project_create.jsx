@@ -30,7 +30,7 @@ class ProjectCreate extends React.Component {
   closeModal() {
     // let oldLoc = this.props.history.goBack(); 
     this.setState({modalIsOpen: false});
-    this.props.history.push('/');
+    // this.props.history.push('/');
   }
 
   componentWillMount(){
@@ -54,6 +54,7 @@ class ProjectCreate extends React.Component {
   }
 
   render() {
+    debugger 
     return(
       <Modal
         isOpen={this.state.modalIsOpen}

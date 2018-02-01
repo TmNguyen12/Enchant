@@ -3,12 +3,10 @@ class Api::ProjectsController < ApplicationController
   # before_action :require_login 
 
   def create
-    debugger 
     @project = Project.new(project_params)
     @project.author_id = current_user.id 
-    debugger 
     @project.likes = []
-    
+    debugger 
     if @project.save
       render "api/projects/edit"
     else 
