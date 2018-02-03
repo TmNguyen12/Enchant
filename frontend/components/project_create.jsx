@@ -7,7 +7,7 @@ class ProjectCreate extends React.Component {
   constructor(){
     super(); 
     this.state = {
-    title:' ', 
+    title:'', 
     description:'', 
     category: '', 
     author_id: ''
@@ -56,29 +56,29 @@ class ProjectCreate extends React.Component {
   render() {
     debugger 
     return(
-      <Modal
-        isOpen={this.state.modalIsOpen}
-        onAfterOpen={this.afterOpenModal}
-        onRequestClose={this.closeModal}
-        className={{
-          base: 'create-modal',
-          afterOpen:'create-modal-open', 
-          beforeClose: 'create-modal-close'
-        }}
-        overlayClassName={{
-          base: 'create-modal-overlay', 
-          afterOpen:'create-modal-overlay-open',
-          beforeClose: 'create-modal-overlay-close'  
-        }}
-      > 
+      // <Modal
+      //   isOpen={this.state.modalIsOpen}
+      //   onAfterOpen={this.afterOpenModal}
+      //   onRequestClose={this.closeModal}
+      //   className={{
+      //     base: 'create-modal',
+      //     afterOpen:'create-modal-open', 
+      //     beforeClose: 'create-modal-close'
+      //   }}
+      //   overlayClassName={{
+      //     base: 'create-modal-overlay', 
+      //     afterOpen:'create-modal-overlay-open',
+      //     beforeClose: 'create-modal-overlay-close'  
+      //   }}
+      // > 
         <div className="create-project-page">
           <form className="project-info-form">
             <h2 className="fs-title">Create Your Project</h2>
             <input type="text"
+              placeholder="Title"
               value={ this.state.title }
               onChange={this.update('title')}
               className="project-input"
-              placeholder="Title"
             />
             <input type="text"
               value={ this.state.description }
@@ -96,7 +96,7 @@ class ProjectCreate extends React.Component {
           </form>
 
         </div>
-      </Modal>
+      // </Modal>
     ); 
   }
 

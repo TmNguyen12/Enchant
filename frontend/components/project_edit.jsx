@@ -15,6 +15,8 @@ class ProjectEdit extends React.Component {
         author_id: this.props.project.author_id, 
       }}; 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.update = this.update.bind(this); 
+    // this.props.editProject = this.props.editProject.bind(this); 
   }
 
   componentWillMount() {
@@ -28,11 +30,14 @@ class ProjectEdit extends React.Component {
   }
 
   handleSubmit(e) {
+    debugger 
     e.preventDefault();
-    const project = Object.assign({}, this.state);
+    // const project = Object.assign({}, this.state);
+    let { project } = this.state; 
     project.author_id = this.props.currentUser.id; 
     this.props.editProject(project.id); 
-    this.props.history.push(`/project/${this.props.project.id}`); 
+    this.props.history.push(`/project/${this.props.project[0].id
+    }`); 
   }
 
   render() {

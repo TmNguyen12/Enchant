@@ -43,10 +43,10 @@ class App extends React.Component {
     
         <Route exact path="/signup" component={SignupContainer} />
         <Route exact path="/login" component={SessionFormContainer} />
-        <ProtectedRoute path="/project/create" component={ProjectCreateContainer} />
     
         <div className="main-content">
           <Switch>
+            <ProtectedRoute path="/project/create" component={ProjectCreateContainer} />
             <Route exact path="/" component={MainComponent} />
             <ProtectedRoute exact path="/project/edit/:projectId" component={ProjectEditContainer} />   
             <Route

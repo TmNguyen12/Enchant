@@ -10,6 +10,7 @@ class ProjectIndex extends React.Component {
 
   
   render () {
+    debugger 
     const { projects } = this.props; 
 
     if (Object.keys(projects).length < 1) {

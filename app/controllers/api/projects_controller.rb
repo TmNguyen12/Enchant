@@ -39,6 +39,7 @@ class Api::ProjectsController < ApplicationController
   end
   
   def update
+    debugger 
     @project = Project.find(params[:id])
     if @project.update_attributes(project_params)
       # go to the project show page 
