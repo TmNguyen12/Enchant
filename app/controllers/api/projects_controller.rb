@@ -41,8 +41,11 @@ class Api::ProjectsController < ApplicationController
   def update
     debugger 
     @project = Project.find(params[:id])
+    @project.thumbnail_url = @project.items[0].image.url
     if @project.update_attributes(project_params)
+      # @project.save 
       # go to the project show page 
+      render "api/projects/show"
     else 
       render json: @project.errors.full_messages, status: 419
     end 

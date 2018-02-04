@@ -2,49 +2,70 @@ import React from 'react';
 import ItemsUploadContainer from './items_upload_container'; 
 import Modal from 'react-modal'; 
 import { Link } from 'react-router-dom'; 
+import { pullProjectIdFromURL } from '../util/project_api_util'; 
 
 class ProjectEdit extends React.Component {
   constructor(props){
     super(props); 
-    this.state = { 
-      project: {
-        id: this.props.match.params.projectId, 
-        title: this.props.project.title, 
-        description: this.props.project.description, 
-        category: this.props.project.category, 
-        author_id: this.props.project.author_id, 
-      }}; 
+    // this.state = { 
+    //   project: {
+    //     id: this.props.match.params.projectId, 
+    //     title: this.props.project.title, 
+    //     description: this.props.project.description, 
+    //     category: this.props.project.category, 
+    //     author_id: this.props.project.author_id, 
+    //   }}; 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this); 
     // this.props.editProject = this.props.editProject.bind(this); 
   }
 
   componentWillMount() {
-    this.props.fetchProject(parseInt(this.state.project.id)); 
+    const { location } = this.props;
+    let projectId = pullProjectIdFromURL(location.pathname); 
+    this.props.fetchProject(projectId); 
+    this.props.fetchAllItems(projectId); 
+  }
+
+  componentWillReceiveProps(newProps){
+    debugger 
+    if (newProps.project){
+      this.setState({
+        project: {
+          id: newProps.project.id, 
+          title: newProps.project.title, 
+          description: newProps.project.description, 
+          category: newProps.project.category, 
+          author_id: newProps.project.author_id, 
+        }
+      }); 
+    }
   }
 
   update(field) {
-    return e => this.setState({
-      [field]: e.currentTarget.value
+    return e => this.setState({ 
+      project: {
+        [field]: e.currentTarget.value
+      }
     });
   }
 
   handleSubmit(e) {
-    debugger 
     e.preventDefault();
-    // const project = Object.assign({}, this.state);
     let { project } = this.state; 
     project.author_id = this.props.currentUser.id; 
-    this.props.editProject(project.id); 
-    this.props.history.push(`/project/${this.props.project[0].id
-    }`); 
+    if (this.props.items){
+      project.thumbnail = this.props.thumbnail; 
+    }
+    this.props.updateProject(project); 
+    this.props.history.push(`/project/${project.id}`); 
   }
 
   render() {
-    const project  = this.props.project[0]; 
-    if (!project) {
+    if (!this.props.project) {
       return null; 
     } 
+    let { project } = this.state; 
     return( 
         <div className="edit-project-page">
           <form className="project-edit-form">

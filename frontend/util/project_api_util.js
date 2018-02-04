@@ -12,10 +12,11 @@ export const fetchProject = id => (
   })
 );
 
-export const editProject = id => (
+export const editProject = project => (
   $.ajax({
     method: 'PATCH', 
-    url:`api/projects/${id}`
+    url:`api/projects/${project.id}`,
+    data: { project }
   })
 );
 
@@ -27,5 +28,11 @@ export const createProject = project => {
       data: { project } 
     })
   ); 
+}; 
+
+export const pullProjectIdFromURL = URL => {
+  let myRegex = /[^\/]+$/g; 
+  let projectID = parseInt(myRegex.exec(URL)); 
+  return projectID; 
 }; 
 

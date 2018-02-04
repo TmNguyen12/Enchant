@@ -26,6 +26,11 @@ export const makeProject = project => dispatch => {
   ); 
 }; 
 
+export const updateProject = id => dispatch => (
+  ProjAPIUtil.editProject(id)
+    .then( project => dispatch(receiveProject(project))) 
+);
+
 export const fetchAllProjects = () => dispatch => {
   return (
     ProjAPIUtil.fetchAllProjects()

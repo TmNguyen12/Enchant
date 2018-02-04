@@ -1,8 +1,10 @@
 import { connect } from 'react-redux'; 
 import ProjectEdit from './project_edit'; 
-import { editProject, receiveProject, fetchProject } from '../actions/project_actions'; 
+import { updateProject, receiveProject, fetchProject } from '../actions/project_actions'; 
 import { withRouter } from 'react-router'; 
 import { selectProjects } from '../reducers/selectors'; 
+import { fetchAllItems } from '../actions/item_actions'; 
+
 
 // const defaultstate = {
 //     title:' ', 
@@ -11,15 +13,22 @@ import { selectProjects } from '../reducers/selectors';
 //     author_id: ''
 // }; 
 
-const mapStateToProps = ( state ) => ({
-  currentUser: state.session.currentUser, 
-  // project
-  project: selectProjects(state)
-});
+const mapStateToProps = ( state ) => {
+  debugger 
+  return (
+    {
+      currentUser: state.session.currentUser, 
+      thumbnail: state.entities.items.image_url, 
+      project: state.entities.projects.viewProject 
+    }
+  ); 
+};
 
 const mapDispatchToProps = dispatch => ({
-  editProject: projectId => dispatch(editProject(projectId)), 
-  fetchProject: projectId => dispatch(fetchProject(projectId))
+  updateProject: projectId => dispatch(updateProject(projectId)), 
+  fetchProject: projectId => dispatch(fetchProject(projectId)),
+  fetchAllItems: projectId => dispatch(fetchAllItems(projectId))
+
 });
 
 export default withRouter(connect(

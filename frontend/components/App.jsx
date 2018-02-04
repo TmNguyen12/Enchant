@@ -9,6 +9,7 @@ import ProjectCreateContainer from './project_create_container';
 import MainComponent from './main_container'; 
 import ProjectEditContainer from './project_edit_container'; 
 import ModalWrapper from './modal'; 
+import { pullProjectIdFromURL } from '../util/project_api_util'; 
 
 import {
   Route,
@@ -24,8 +25,9 @@ class App extends React.Component {
     let tempProject = {}; 
 
     // to pull out the project number from the URL
-    let myRegex = /[^\/]+$/g; 
-    tempProject['id'] = parseInt(myRegex.exec(location.pathname)); 
+    // let myRegex = /[^\/]+$/g; 
+    // tempProject['id'] = parseInt(myRegex.exec(location.pathname)); 
+    tempProject['id'] = pullProjectIdFromURL(location.pathname); 
 
     return (
       <div className="all-content">
