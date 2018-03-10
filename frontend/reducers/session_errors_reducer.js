@@ -1,7 +1,7 @@
 import {
   RECEIVE_SESSION_ERRORS,
-  RECEIVE_CURRENT_USER,
-} from '../actions/session_actions';
+  RECEIVE_CURRENT_USER
+} from "../actions/session_actions";
 
 const _nullErrors = Object.freeze({
   errors: null
@@ -9,7 +9,7 @@ const _nullErrors = Object.freeze({
 
 export default (state = [], action) => {
   Object.freeze(state);
-  switch(action.type) {
+  switch (action.type) {
     case RECEIVE_SESSION_ERRORS:
       return action.errors;
     case RECEIVE_CURRENT_USER:
@@ -18,4 +18,3 @@ export default (state = [], action) => {
       return state;
   }
 };
-

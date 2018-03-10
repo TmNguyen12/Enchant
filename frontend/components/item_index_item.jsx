@@ -1,11 +1,7 @@
-import React from 'react'; 
+import React from "react";
 
 const ItemIndexItem = ({ item }) => {
+  return <img src={item.image_url} />;
+};
 
-  return (
-    <img src={item.image_url} />
-  ); 
-}; 
-
-
-export default ItemIndexItem; 
+export default ItemIndexItem;

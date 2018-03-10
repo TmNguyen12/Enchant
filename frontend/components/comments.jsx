@@ -1,14 +1,14 @@
-import React from 'react'; 
-import CommentsForm from './comments_form'; 
-import CommentsIndex from './comments_index'; 
+import React from "react";
+import CommentsForm from "./comments_form";
+import CommentsIndex from "./comments_index";
 
 class Comments extends React.Component {
-  constructor(props){
-    super(props); 
-    // this.state ={ comments: {} }; 
+  constructor(props) {
+    super(props);
+    // this.state ={ comments: {} };
   }
 
-  componentWillMount(){
+  componentWillMount() {
     this.props.fetchComments(this.props.projectId);
   }
 
@@ -17,7 +17,7 @@ class Comments extends React.Component {
   // }
 
   render() {
-    const { comments,commentIds, currentUser } = this.props; 
+    const { comments, commentIds, currentUser } = this.props;
 
     if (!comments) {
       return null;
@@ -25,16 +25,23 @@ class Comments extends React.Component {
     return (
       <div className="comments-wrapper">
         <div className="comments-form">
-          <CommentsForm projectId={this.props.projectId} currentUser={currentUser} fetchMakeComment={this.props.fetchMakeComment}/>
+          <CommentsForm
+            projectId={this.props.projectId}
+            currentUser={currentUser}
+            fetchMakeComment={this.props.fetchMakeComment}
+          />
         </div>
 
         <div className="comments-index-wrapper">
-          <CommentsIndex projectId={this.props.projectId} comments={comments} commentIds={commentIds}/>
+          <CommentsIndex
+            projectId={this.props.projectId}
+            comments={comments}
+            commentIds={commentIds}
+          />
         </div>
       </div>
-    ); 
+    );
   }
 }
 
-export default Comments; 
-
+export default Comments;

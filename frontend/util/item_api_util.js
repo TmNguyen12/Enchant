@@ -1,19 +1,15 @@
-export const fetchAllItems = projectId => (
+export const fetchAllItems = projectId =>
   $.ajax({
-    method: 'GET', 
+    method: "GET",
     url: `api/projects/${projectId}/items`
-  })
-);
+  });
 
-export const createItem = (item) => {
-  
+export const createItem = item => {
   return $.ajax({
-    method: 'POST', 
+    method: "POST",
     url: `api/projects/${item.project_id}/items`,
-    contentType: false, 
-    processData: false, 
+    contentType: false,
+    processData: false,
     data: item
-  });  
-}; 
-
-
+  });
+};

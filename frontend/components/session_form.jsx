@@ -1,15 +1,15 @@
-import React from 'react'; 
-import { Link, withRouter } from 'react-router-dom'; 
-import Modal from 'react-modal'; 
+import React from "react";
+import { Link, withRouter } from "react-router-dom";
+import Modal from "react-modal";
 
 class SessionForm extends React.Component {
-  constructor (props) {
+  constructor(props) {
     super(props);
-    this.state ={
-      username: "", 
-      password: "", 
+    this.state = {
+      username: "",
+      password: "",
       modalIsOpen: false
-    }; 
+    };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.openModal = this.openModal.bind(this);
     this.afterOpenModal = this.afterOpenModal.bind(this);
@@ -17,7 +17,7 @@ class SessionForm extends React.Component {
   }
   // default modal syntax from https://github.com/reactjs/react-modal
   openModal() {
-    this.setState({modalIsOpen: true});
+    this.setState({ modalIsOpen: true });
   }
 
   afterOpenModal() {
@@ -26,50 +26,49 @@ class SessionForm extends React.Component {
   }
 
   closeModal() {
-    let oldLoc = this.props.history.goBack(); 
-    this.setState({modalIsOpen: false});
+    let oldLoc = this.props.history.goBack();
+    this.setState({ modalIsOpen: false });
   }
 
-  componentWillMount(){
-    this.openModal(); 
+  componentWillMount() {
+    this.openModal();
   }
 
   update(field) {
-    return e => this.setState({
-      [field]: e.currentTarget.value
-    });
+    return e =>
+      this.setState({
+        [field]: e.currentTarget.value
+      });
   }
 
-  componentWillUnmount(){
-    this.props.clearErrors([]); 
+  componentWillUnmount() {
+    this.props.clearErrors([]);
   }
 
   renderErrors() {
     return (
       <ul>
         {this.props.errors.map((error, idx) => (
-          <li key={`error${idx}`}>
-            { error }
-          </li>
+          <li key={`error${idx}`}>{error}</li>
         ))}
       </ul>
-    ); 
+    );
   }
 
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
     // this.props.splashForm(user);
-    this.props.login(user); 
+    this.props.login(user);
     this.closeModal();
   }
 
-  render () {
+  render() {
     const { username, password } = this.state;
 
-    return(
+    return (
       <div className="login-form-container">
-       <Modal
+        <Modal
           isOpen={this.state.modalIsOpen}
           onAfterOpen={this.afterOpenModal}
           onRequestClose={this.closeModal}
@@ -81,30 +80,29 @@ class SessionForm extends React.Component {
           <form onSubmit={this.handleSubmit} className="login-form-box">
             <div className="login-form">
               {this.renderErrors()}
-              <br/>
-                <input type="text"
-                  value={ username }
-                  onChange={this.update('username')}
-                  className="login-input"
-                  placeholder="User name"
-                />
-                      
-                <input type="password"
-                  value={ password }
-                  onChange={this.update('password')}
-                  className="login-input"
-                  placeholder="Password"
-                />
-                <input type="submit" value="Login" className="signin-button"/>
+              <br />
+              <input
+                type="text"
+                value={username}
+                onChange={this.update("username")}
+                className="login-input"
+                placeholder="User name"
+              />
 
+              <input
+                type="password"
+                value={password}
+                onChange={this.update("password")}
+                className="login-input"
+                placeholder="Password"
+              />
+              <input type="submit" value="Login" className="signin-button" />
             </div>
           </form>
         </Modal>
       </div>
-
     );
   }
-
 }
 
-export default withRouter(SessionForm); 
+export default withRouter(SessionForm);

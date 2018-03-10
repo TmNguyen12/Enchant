@@ -1,70 +1,74 @@
-import React from 'react'; 
-import { Provider } from 'react-redux';
-import { AuthRoute, ProtectedRoute } from '../util/route_util';
-import NavContainer from './navbar_container'; 
-import NavCenterContainer from './nav_center_container'; 
-import SignupContainer from './signup_form_container'; 
-import SessionFormContainer from './session_form_container'; 
-import ProjectCreateContainer from './project_create_container'; 
-import MainComponent from './main_container'; 
-import ProjectEditContainer from './project_edit_container'; 
-import ModalWrapper from './modal'; 
-import { pullProjectIdFromURL } from '../util/project_api_util'; 
+import React from "react";
+import { Provider } from "react-redux";
+import { AuthRoute, ProtectedRoute } from "../util/route_util";
+import NavContainer from "./navbar_container";
+import NavCenterContainer from "./nav_center_container";
+import SignupContainer from "./signup_form_container";
+import SessionFormContainer from "./session_form_container";
+import ProjectCreateContainer from "./project_create_container";
+import MainComponent from "./main_container";
+import ProjectEditContainer from "./project_edit_container";
+import ModalWrapper from "./modal";
+import { pullProjectIdFromURL } from "../util/project_api_util";
 
-import {
-  Route,
-  Switch,
-  Link, 
-  withRouter
-} from 'react-router-dom';
+import { Route, Switch, Link, withRouter } from "react-router-dom";
 
 class App extends React.Component {
   render() {
     const { location } = this.props;
- 
-    let tempProject = {}; 
+
+    let tempProject = {};
 
     // to pull out the project number from the URL
-    // let myRegex = /[^\/]+$/g; 
-    // tempProject['id'] = parseInt(myRegex.exec(location.pathname)); 
-    tempProject['id'] = pullProjectIdFromURL(location.pathname); 
+    // let myRegex = /[^\/]+$/g;
+    // tempProject['id'] = parseInt(myRegex.exec(location.pathname));
+    tempProject["id"] = pullProjectIdFromURL(location.pathname);
 
     return (
       <div className="all-content">
         <nav className="nav-main">
           <div>
-            <Link to="/" className="logo">Enchānt</Link>
+            <Link to="/" className="logo">
+              Enchānt
+            </Link>
           </div>
           <div className="nav-bar-center">
-            <NavCenterContainer /> 
+            <NavCenterContainer />
           </div>
           <div>
             <NavContainer />
           </div>
         </nav>
-    
+
         <Route exact path="/signup" component={SignupContainer} />
         <Route exact path="/login" component={SessionFormContainer} />
-    
+
         <div className="main-content">
           <Switch>
-            <ProtectedRoute path="/project/create" component={ProjectCreateContainer} />
+            <ProtectedRoute
+              path="/project/create"
+              component={ProjectCreateContainer}
+            />
             <Route exact path="/" component={MainComponent} />
-            <ProtectedRoute exact path="/project/edit/:projectId" component={ProjectEditContainer} />   
+            <ProtectedRoute
+              exact
+              path="/project/edit/:projectId"
+              component={ProjectEditContainer}
+            />
             <Route
-              exact path="/project/:projectId"
+              exact
+              path="/project/:projectId"
               render={() => (
                 <div>
-                  <ModalWrapper project={tempProject}/>
+                  <ModalWrapper project={tempProject} />
                 </div>
               )}
-              />
+            />
           </Switch>
-        </div> 
+        </div>
       </div>
     );
   }
 }
 
 export default withRouter(App);
-

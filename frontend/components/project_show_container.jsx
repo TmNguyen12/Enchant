@@ -1,16 +1,14 @@
-import { connect } from 'react-redux'; 
-import ProjectShow from './project_show'; 
-import { fetchProject } from '../actions/project_actions'; 
-import { selectProjects } from '../reducers/selectors'; 
-import { makeLike, unLike } from '../actions/like_actions'; 
+import { connect } from "react-redux";
+import ProjectShow from "./project_show";
+import { fetchProject } from "../actions/project_actions";
+import { selectProjects } from "../reducers/selectors";
+import { makeLike, unLike } from "../actions/like_actions";
 
-const mapStateToProps = ( state ) => { 
-  return (
-    {
-      commentCount: Object.keys(state.entities.comments.byId).length, 
-      viewProject: state.entities.projects.viewProject
-    }
-  ); 
+const mapStateToProps = state => {
+  return {
+    commentCount: Object.keys(state.entities.comments.byId).length,
+    viewProject: state.entities.projects.viewProject
+  };
 };
 
 const mapDispatchToProps = dispatch => ({
@@ -19,8 +17,4 @@ const mapDispatchToProps = dispatch => ({
   unLike: project => dispatch(unLike(project))
 });
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(ProjectShow); 
-
+export default connect(mapStateToProps, mapDispatchToProps)(ProjectShow);
