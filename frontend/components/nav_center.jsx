@@ -39,12 +39,6 @@ class NavCenter extends React.Component {
     return (
       <ul className="nav-center-links">
         <li>
-          <Link to="/"> Activity </Link>
-        </li>
-        <li>
-          <Link to="/"> Discover </Link>
-        </li>
-        <li>
           <a href="https://www.linkedin.com/in/truong-nguyen-2821471b/">
             {" "}
             LinkedIn{" "}

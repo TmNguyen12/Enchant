@@ -7,10 +7,15 @@ class ItemsIndex extends React.Component {
     this.props.fetchAllItems(this.props.projectId);
   }
 
+  // componentDidMount() {
+  //   this.props.fetchAllItems(this.props.projectId);
+  // }
+
   render() {
+    debugger;
     const { items, itemIds } = this.props;
 
-    if (Object.keys(items).length < 1) {
+    if (!!this.props.items === false) {
       return null;
     } else {
       return (

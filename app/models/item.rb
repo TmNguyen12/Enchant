@@ -18,7 +18,8 @@
 class Item < ApplicationRecord
   validates :project_id, presence: true 
 
-  has_attached_file :image, path:"dev/:attachment/:style/:filename"
+  has_attached_file :image, path:"dev/:attachment/:style/:basename.:extension"
+  validates_attachment_file_name :image, matches: [/png\z/, /jpe?g\z/]
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
   belongs_to :project,
@@ -26,5 +27,4 @@ class Item < ApplicationRecord
     primary_key: :id, 
     class_name: :Project 
 
-    
 end

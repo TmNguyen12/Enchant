@@ -3,8 +3,9 @@ class Api::ItemsController < ApplicationController
     @item = Item.create!(item_params)
     # @item.author_id = current_user.id 
     @item.project_id = item_params[:project_id]
-    if @item.save 
+    if @item.save! 
       render json: {image_url: @item.image.url}
+      # render "api/items/index"
     else 
       render json: @item.errors.full_messages, status: 418 
     end 

@@ -1,93 +1,94 @@
-.nav-main{
+.nav-main {
   position: fixed;
   top: 0;
-  width: 100%; 
-  background: $black; 
-  float: left; 
-  height: 60px; 
-  display:flex;
-  justify-content: space-between; 
-  z-index: 4; 
+  width: 100%;
+  background: $black;
+  float: left;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  z-index: 4;
 
-  .logo{
-    color: $white; 
-    text-decoration: none; 
-    height:60px; 
+  .logo {
+    color: $white;
+    text-decoration: none;
+    height: 60px;
     position: absolute;
     left: 20px;
-    top: 0; 
-    display: flex; 
+    top: 0;
+    display: flex;
     justify-content: space-between;
     width: 9%;
-    align-items: center; 
+    align-items: center;
   }
 
-  div{
-    box-sizing:border-box;
-    // width:calc(100% - 1040px); 
-    display:flex; 
-    justify-content:center;
-    .nav-center-links{
-      display: flex; 
-      justify-content:space-around;
+  div {
+    box-sizing: border-box;
+    // width:calc(100% - 1040px);
+    display: flex;
+    justify-content: center;
+    .nav-center-links {
+      display: flex;
+      justify-content: space-around;
       align-items: center;
-      width:100%; 
+      width: 100%;
       color: $light-gray;
-      
-      li{
-        display:flex; 
+
+      li {
+        display: flex;
         justify-content: space-between;
         color: $light-gray;
-        font-size: 15px; 
-        font-weight:bold;
-        
-        a{
+        font-size: 15px;
+        font-weight: bold;
+        cursor: pointer;
+
+        a {
           color: $light-gray;
-          text-decoration: none; 
-          font-size: 15px; 
-          font-weight:bold;
+          text-decoration: none;
+          font-size: 15px;
+          font-weight: bold;
         }
       }
-      button{
+      button {
         cursor: pointer;
         padding: 5px 10px;
-        a{
-          color:white; 
-          text-decoration:none;
-          font-size: 14px; 
-          font-weight:550; 
+        a {
+          color: white;
+          text-decoration: none;
+          font-size: 14px;
+          font-weight: 550;
         }
       }
     }
   }
 
-  .login-signup{
-    height:60px; 
+  .login-signup {
+    height: 60px;
     position: absolute;
     right: 25px;
-    top: 0; 
-    display: flex; 
+    top: 0;
+    display: flex;
     justify-content: space-between;
     width: 12%;
-    min-width: 175px; 
+    min-width: 175px;
     // width: calc(100% - 500px);
-    align-items: center; 
-    button{
+    align-items: center;
+    button {
       cursor: pointer;
     }
     a {
-      text-decoration: none; 
+      text-decoration: none;
       color: $light-gray;
     }
-    img{
+    img {
       object-fit: cover;
-      border-radius:50%;
+      border-radius: 50%;
       width: 35px;
-      height: 35px; 
+      height: 35px;
     }
   }
 }
 
-.nav-bar-center{
-  width: 400px; 
+.nav-bar-center {
+  width: 400px;
 }

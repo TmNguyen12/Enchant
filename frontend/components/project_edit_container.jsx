@@ -21,7 +21,9 @@ const mapStateToProps = state => {
   return {
     currentUser: state.session.currentUser,
     thumbnail: state.entities.items.image_url,
-    project: state.entities.projects.viewProject
+    project: state.entities.projects.viewProject,
+    item: state.entities.items.byId,
+    itemIds: state.entities.items.allIds
   };
 };
 

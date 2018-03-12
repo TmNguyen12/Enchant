@@ -57,7 +57,6 @@ class ProjectCreate extends React.Component {
   }
 
   render() {
-    debugger;
     return (
       // <Modal
       //   isOpen={this.state.modalIsOpen}

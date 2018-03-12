@@ -7,7 +7,8 @@ class ItemsUpload extends React.Component {
       text: "",
       image: "",
       project_id: this.props.project_id,
-      uploadImages: []
+      uploadImages: [],
+      imageFile: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateFile = this.updateFile.bind(this);
@@ -21,29 +22,34 @@ class ItemsUpload extends React.Component {
   }
 
   updateFile(e) {
+    debugger;
     const file = e.currentTarget.files[0];
-    const fileReader = new FileReader();
-    fileReader.onloadend = () => {
-      this.setState({ image: fileReader.result });
+    const reader = new FileReader();
+    reader.onloadend = () => {
+      this.setState({ imageURL: reader.result, imageFile: file });
     };
-
+    console.log(reader.result);
     if (file) {
-      fileReader.readAsDataURL(file);
+      reader.readAsDataURL(file);
     }
   }
 
   handleSubmit(e) {
-    const formData = new FormData();
+    const file = this.state.imageFile;
+    var formData = new FormData();
+
     formData.append("item[project_id]", this.state.project_id);
     formData.append("item[text]", this.state.text);
-    formData.append("item[image]", this.state.image || this.state.image_url);
-    if (this.state.image) formData.append("item[image]", this.state.image);
+    formData.append("item[image]", file || this.state.image_url);
+    // if (this.state.image) formData.append("item[image]", this.state.image);
     this.props.makeItem(formData).then(({ item }) => {
       const uploadImages = this.state.uploadImages.slice();
+      debugger;
       uploadImages.push(item.image_url);
       this.setState({ uploadImages });
     });
   }
+  // TODO this doesn't save the file you are uploading to the project
 
   // goBack() {
   //   this.context.router.push("/");

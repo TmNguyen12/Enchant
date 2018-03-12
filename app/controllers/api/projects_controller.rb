@@ -6,7 +6,6 @@ class Api::ProjectsController < ApplicationController
     @project = Project.new(project_params)
     @project.author_id = current_user.id 
     @project.likes = []
-    debugger 
     if @project.save
       render "api/projects/edit"
     else 
@@ -17,7 +16,7 @@ class Api::ProjectsController < ApplicationController
   def index 
     @projects = Project.all 
     @current_user = current_user
-    
+    \
   end 
 
   def show 
