@@ -27,7 +27,6 @@ class ItemsUpload extends React.Component {
     reader.onloadend = () => {
       this.setState({ imageURL: reader.result, imageFile: file });
     };
-    console.log(reader.result);
     if (file) {
       reader.readAsDataURL(file);
     }

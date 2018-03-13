@@ -11,14 +11,15 @@ import {
 const mapStateToProps = state => ({
   currentUser: state.session.currentUser,
   comments: state.entities.comments.byId,
-  commentIds: state.entities.comments.allIds
+  commentIds: state.entities.comments.allIds,
+  currentProject: state.entities.projects.viewProject.id
 });
 
 const mapDispatchToProps = dispatch => ({
   fetchMakeComment: (projectId, comment) =>
     dispatch(fetchMakeComment(projectId, comment)),
   fetchComments: projectId => dispatch(fetchComments(projectId)),
-  clearComments: () => dispatch(clearComments)
+  clearComments: () => dispatch(clearComments())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Comments);

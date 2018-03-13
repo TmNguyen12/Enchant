@@ -9,7 +9,7 @@ class Comments extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchComments(this.props.projectId);
+    this.props.fetchComments(this.props.currentProject);
   }
 
   // componentWillReceiveProps() {
@@ -26,7 +26,6 @@ class Comments extends React.Component {
 
   componentWillUnmount() {
     this.props.clearComments();
-    debugger;
   }
 
   render() {
