@@ -5,20 +5,32 @@ import CommentsIndex from "./comments_index";
 class Comments extends React.Component {
   constructor(props) {
     super(props);
-    // this.state ={ comments: {} };
+    this.state = { comments: {} };
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.props.fetchComments(this.props.projectId);
   }
 
-  // componentWillReceiveProps(){
+  // componentWillReceiveProps() {
   //   this.props.fetchComments(this.props.projectId);
   // }
 
+  // checkComments() {
+  //   if (
+  //     comments[Object.keys(comments)[0]].project_id !== this.props.projectId
+  //   ) {
+  //     this.setState({ comments: {} });
+  //   }
+  // }
+
+  componentWillUnmount() {
+    this.props.clearComments();
+    debugger;
+  }
+
   render() {
     const { comments, commentIds, currentUser } = this.props;
-
     if (!comments) {
       return null;
     }

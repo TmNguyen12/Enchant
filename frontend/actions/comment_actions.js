@@ -2,6 +2,7 @@ import * as CommentAPIUtil from "../util/comment_api_util";
 
 export const RECEIVE_ALL_COMMENTS = "RECEIVE_ALL_COMMENTS";
 export const CREATE_COMMENT = "CREATE_COMMENT";
+export const RECEIVE_NO_COMMENTS = "RECEIVE_NO_COMMENTS";
 
 export const receiveAllComments = comments => ({
   type: RECEIVE_ALL_COMMENTS,
@@ -24,3 +25,9 @@ export const fetchComments = projectId => dispatch => {
     dispatch(receiveAllComments(comments))
   );
 };
+
+const receiveNoComments = () => ({
+  type: RECEIVE_NO_COMMENTS
+});
+
+export const clearComments = () => dispatch => dispatch(receiveNoComments());

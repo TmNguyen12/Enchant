@@ -2,7 +2,8 @@ import merge from "lodash/merge";
 
 import {
   RECEIVE_ALL_COMMENTS,
-  CREATE_COMMENT
+  CREATE_COMMENT,
+  RECEIVE_NO_COMMENTS
 } from "../actions/comment_actions";
 
 const defaultState = {
@@ -19,6 +20,8 @@ const commentsReducer = (state = defaultState, action) => {
       return merge({}, state, action.comments);
     case CREATE_COMMENT:
       return merge({}, state, action.comments);
+    case RECEIVE_NO_COMMENTS:
+      return {};
     default:
       return state;
   }

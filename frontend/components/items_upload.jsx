@@ -22,7 +22,6 @@ class ItemsUpload extends React.Component {
   }
 
   updateFile(e) {
-    debugger;
     const file = e.currentTarget.files[0];
     const reader = new FileReader();
     reader.onloadend = () => {
@@ -41,19 +40,13 @@ class ItemsUpload extends React.Component {
     formData.append("item[project_id]", this.state.project_id);
     formData.append("item[text]", this.state.text);
     formData.append("item[image]", file || this.state.image_url);
-    // if (this.state.image) formData.append("item[image]", this.state.image);
     this.props.makeItem(formData).then(({ item }) => {
       const uploadImages = this.state.uploadImages.slice();
-      debugger;
       uploadImages.push(item.image_url);
       this.setState({ uploadImages });
     });
   }
-  // TODO this doesn't save the file you are uploading to the project
 
-  // goBack() {
-  //   this.context.router.push("/");
-  // }
   render() {
     return (
       <div className="upload-wrapper">

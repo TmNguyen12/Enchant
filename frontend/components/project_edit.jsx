@@ -7,17 +7,8 @@ import { pullProjectIdFromURL } from "../util/project_api_util";
 class ProjectEdit extends React.Component {
   constructor(props) {
     super(props);
-    // this.state = {
-    //   project: {
-    //     id: this.props.match.params.projectId,
-    //     title: this.props.project.title,
-    //     description: this.props.project.description,
-    //     category: this.props.project.category,
-    //     author_id: this.props.project.author_id,
-    //   }};
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
-    // this.props.editProject = this.props.editProject.bind(this);
   }
 
   componentWillMount() {
@@ -28,7 +19,6 @@ class ProjectEdit extends React.Component {
   }
 
   componentWillReceiveProps(newProps) {
-    debugger;
     if (newProps.project) {
       this.setState({
         project: {
@@ -52,7 +42,6 @@ class ProjectEdit extends React.Component {
   }
 
   handleSubmit(e) {
-    debugger;
     e.preventDefault();
     let { project } = this.state;
     project.author_id = this.props.currentUser.id;
@@ -62,7 +51,6 @@ class ProjectEdit extends React.Component {
     this.props.updateProject(project);
     this.props.history.push(`/project/${project.id}`);
   }
-  // TODO this history.push doesn't work
 
   render() {
     if (!this.props.project) {

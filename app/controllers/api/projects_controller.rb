@@ -16,20 +16,12 @@ class Api::ProjectsController < ApplicationController
   def index 
     @projects = Project.all 
     @current_user = current_user
-    \
   end 
 
   def show 
     @current_user = current_user    
     @project = Project.find(params[:id])
     @date = @project.created_at.strftime('%B %d %Y')
-    # if current_user.likes
-    #   if current_user.likes.find_by(project_id: params[:project_id])
-    #     @project.liked_by_current_user = true 
-    #   else 
-    #     @project.liked_by_current_user = false 
-    #   end 
-    # end 
     render "api/projects/show"
   end 
 
@@ -38,11 +30,9 @@ class Api::ProjectsController < ApplicationController
   end
   
   def update
-    debugger 
     @project = Project.find(params[:id])
     @project.thumbnail_url = @project.items[0].image.url
     if @project.update_attributes(project_params)
-      # @project.save 
       # go to the project show page 
       render "api/projects/show"
     else 

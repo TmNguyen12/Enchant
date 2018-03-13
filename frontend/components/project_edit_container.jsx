@@ -9,15 +9,7 @@ import { withRouter } from "react-router";
 import { selectProjects } from "../reducers/selectors";
 import { fetchAllItems } from "../actions/item_actions";
 
-// const defaultstate = {
-//     title:' ',
-//     description:'',
-//     category: '',
-//     author_id: ''
-// };
-
 const mapStateToProps = state => {
-  debugger;
   return {
     currentUser: state.session.currentUser,
     thumbnail: state.entities.items.image_url,

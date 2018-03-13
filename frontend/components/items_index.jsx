@@ -7,12 +7,7 @@ class ItemsIndex extends React.Component {
     this.props.fetchAllItems(this.props.projectId);
   }
 
-  // componentDidMount() {
-  //   this.props.fetchAllItems(this.props.projectId);
-  // }
-
   render() {
-    debugger;
     const { items, itemIds } = this.props;
 
     if (!!this.props.items === false) {
@@ -22,7 +17,10 @@ class ItemsIndex extends React.Component {
         <section className="item-index">
           <ul className="item-list">
             {itemIds.map(item => (
-              <ItemIndexItem key={items[item].id} item={items[item]} />
+              <ItemIndexItem
+                key={`indexitems` + `${items[item].id}`}
+                item={items[item]}
+              />
             ))}
           </ul>
         </section>
