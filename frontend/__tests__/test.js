@@ -1,10 +1,10 @@
 import React from 'react';
-import { fetchProject } from '../frontend/actions/project_actions';
-import { receiveCurrentUser } from '../frontend/actions/session_actions';
+import { fetchProject } from '../actions/project_actions';
+import { receiveCurrentUser } from '../actions/session_actions';
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
-import * as actions from '../frontend/actions/session_actions';
-import * as APIUtil from '../frontend/util/session_api_util';
+import * as actions from '../actions/session_actions';
+import * as APIUtil from '../util/session_api_util';
 
 const middlewares = [thunk];
 // const mockStore = configureMockStore(middlewares);
