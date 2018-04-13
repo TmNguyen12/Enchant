@@ -1,0 +1,1162 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+ */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+/* line 6, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/base/reset.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+  box-sizing: border box;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* line 30, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/base/reset.scss */
+label,
+select,
+textarea {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  display: inline-block;
+  vertical-align: middle;
+  white-space: normal;
+  background: none;
+  line-height: 1;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  /* Browsers have different default form fonts */
+  font-size: 14px;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+/* line 34, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/base/reset.scss */
+label:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+}
+
+/* HTML5 display-role reset for older browsers */
+/* line 53, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/base/reset.scss */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+/* line 58, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/base/reset.scss */
+body {
+  line-height: 1;
+}
+
+/* line 61, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/base/reset.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 64, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/base/reset.scss */
+blockquote, q {
+  quotes: none;
+}
+
+/* line 67, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/base/reset.scss */
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+/* line 72, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/base/reset.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 76, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/base/reset.scss */
+button {
+  /*
+  Get rid of native styling. Read more here:
+  http://css-tricks.com/almanac/properties/a/appearance/
+	*/
+  pointer: cursor;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: #0057ff;
+  border: 1px solid transparent;
+  border-radius: 50px;
+  display: block;
+  text-shadow: none;
+  transition-duration: 300ms;
+  transition-property: background, color, border;
+  transition-timing-function: linear;
+  vertical-align: top;
+  user-select: none;
+  color: #f9f9f9;
+}
+
+/* line 97, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/base/reset.scss */
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* line 103, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/base/reset.scss */
+#user-icon {
+  object-fit: cover;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+}
+
+/* line 110, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/base/reset.scss */
+.ReactModal__Body--open {
+  overflow: hidden;
+}
+
+/* line 114, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/base/reset.scss */
+.pointer {
+  cursor: pointer;
+}
+
+/* line 118, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/base/reset.scss */
+input {
+  padding: 10px;
+  margin: 15px 10px;
+  background: #e8e8e8;
+  border: 1px solid transparent;
+  transition: border-color 300ms;
+}
+/* line 119, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/base/reset.scss */
+input:focus {
+  outline: none;
+}
+/* line 127, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/base/reset.scss */
+input:hover {
+  border: 1px solid lightblue;
+}
+/* line 130, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/base/reset.scss */
+input:focus {
+  background: #fff;
+  border: 1px solid #2f78ca;
+}
+
+/* line 1, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_comments.scss */
+.comments-wrapper {
+  float: none;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+  min-width: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/* line 13, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_comments.scss */
+.comment-list {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+/* line 18, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_comments.scss */
+.comment-main-body {
+  width: 90%;
+  min-height: 40px;
+  display: flex;
+  flex-direction: column;
+}
+/* line 23, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_comments.scss */
+.comment-main-body .comment-body {
+  overflow-wrap: break-word;
+}
+
+/* line 1, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_main_content.scss */
+.main-content {
+  height: 100%;
+}
+
+/* line 4, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_main_content.scss */
+.project-index {
+  background: #f9f9f9;
+  justify-content: flex-end;
+  position: absolute;
+  top: 90px;
+  display: flex;
+  background: transparent;
+}
+
+/* line 13, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_main_content.scss */
+.project-list {
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+}
+
+/* line 20, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_main_content.scss */
+.project-card {
+  box-sizing: border-box;
+  margin: 0 10px 20px;
+  width: 202px;
+  height: 289px;
+  background-color: white;
+  box-shadow: 0 2px 1px rgba(25, 25, 25, 0.2);
+}
+/* line 28, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_main_content.scss */
+.project-card .thumb {
+  height: 158px;
+  border-radius: 3px 3px 0 0;
+  display: block;
+}
+/* line 33, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_main_content.scss */
+.project-card .title {
+  height: 27px;
+  display: block;
+  font-weight: bold;
+  line-height: 1.35;
+  overflow: hidden;
+  padding-left: 10px;
+  padding-top: 10px;
+  background-color: white;
+  font-size: 15px;
+}
+/* line 45, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_main_content.scss */
+.project-card .owners {
+  height: 36px;
+  line-height: 18px;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+  padding-bottom: 5px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  width: 90%;
+  margin-left: 10px;
+  border-bottom: 1px solid #d3dad3;
+}
+/* line 59, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_main_content.scss */
+.project-card .owners #card-user-icon {
+  object-fit: cover;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+}
+/* line 65, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_main_content.scss */
+.project-card .owners .author-card {
+  font-size: 14px;
+  position: relative;
+  left: 14px;
+}
+/* line 74, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_main_content.scss */
+.project-card .category {
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 7px 10px 0px;
+  box-sizing: border-box;
+  font-family: inherit;
+  height: 42px;
+  margin-top: 7px;
+  font-size: 15px;
+  color: gray;
+}
+/* line 85, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_main_content.scss */
+.project-card .category i {
+  color: #a4a4a4;
+}
+/* line 90, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_main_content.scss */
+.project-card .stats {
+  height: 40px;
+  background-color: white;
+  padding-top: 5px;
+}
+
+/* line 1, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_navbar.scss */
+.nav-main {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #191919;
+  float: left;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  z-index: 4;
+}
+/* line 12, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_navbar.scss */
+.nav-main .logo {
+  color: #f9f9f9;
+  text-decoration: none;
+  height: 60px;
+  position: absolute;
+  left: 20px;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  width: 9%;
+  align-items: center;
+}
+/* line 25, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_navbar.scss */
+.nav-main div {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+}
+/* line 30, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_navbar.scss */
+.nav-main div .nav-center-links {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  color: #a4a4a4;
+}
+/* line 37, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_navbar.scss */
+.nav-main div .nav-center-links li {
+  display: flex;
+  justify-content: space-between;
+  color: #a4a4a4;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+}
+/* line 45, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_navbar.scss */
+.nav-main div .nav-center-links li a {
+  color: #a4a4a4;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: bold;
+}
+/* line 52, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_navbar.scss */
+.nav-main div .nav-center-links button {
+  cursor: pointer;
+  padding: 5px 10px;
+}
+/* line 55, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_navbar.scss */
+.nav-main div .nav-center-links button a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 550;
+}
+/* line 65, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_navbar.scss */
+.nav-main .login-signup {
+  height: 60px;
+  position: absolute;
+  right: 25px;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  width: 12%;
+  min-width: 175px;
+  align-items: center;
+}
+/* line 76, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_navbar.scss */
+.nav-main .login-signup button {
+  cursor: pointer;
+}
+/* line 79, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_navbar.scss */
+.nav-main .login-signup a {
+  text-decoration: none;
+  color: #a4a4a4;
+}
+/* line 83, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_navbar.scss */
+.nav-main .login-signup img {
+  object-fit: cover;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+}
+
+/* line 92, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_navbar.scss */
+.nav-bar-center {
+  width: 400px;
+}
+
+/* line 1, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_project_create.scss */
+.create-project-page {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+  top: 100px;
+}
+
+/* line 10, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_project_create.scss */
+.project-info-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 400px;
+  margin: 50px auto;
+  text-align: center;
+  position: relative;
+}
+/* line 18, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_project_create.scss */
+.project-info-form h2 {
+  font-size: 24px;
+  font-weight: bold;
+}
+/* line 22, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_project_create.scss */
+.project-info-form input {
+  padding: 10px;
+  margin: 15px 10px;
+  background: #fafafa;
+  border: 1px solid transparent;
+  transition: border-color 300ms;
+}
+/* line 28, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_project_create.scss */
+.project-info-form input:hover {
+  border: 1px solid lightblue;
+}
+/* line 31, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_project_create.scss */
+.project-info-form input:focus {
+  background: #fff;
+  border: 1px solid #2f78ca;
+}
+/* line 37, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_project_create.scss */
+.project-info-form label {
+  display: flex;
+  justify-content: space-bewteen;
+  position: relative;
+  margin-top: 22px;
+  font-size: 20px;
+}
+/* line 45, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_project_create.scss */
+.project-info-form button {
+  cursor: pointer;
+  margin-top: 18px;
+  width: 95%;
+  align-self: center;
+  font-size: 15px;
+  padding: 10px;
+}
+
+/* line 55, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_project_create.scss */
+.create-modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  marginRight: -50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid #f9f9f9;
+  background: white;
+  overflow: scroll;
+  WebkitOverflowScrolling: touch;
+  outline: none;
+  height: 60%;
+  width: 60%;
+  border-right: 1px solid #e8e8e8;
+  opacity: 0;
+  transition: opacity 500ms ease-in-out;
+  box-sizing: border-box;
+  z-index: 6;
+  border-radius: 7px;
+}
+
+/* line 79, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_project_create.scss */
+.create-modal-open {
+  opacity: 1;
+}
+
+/* line 83, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_project_create.scss */
+.create-modal-close {
+  opacity: 0;
+}
+
+/* line 87, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_project_create.scss */
+.create-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  opacity: 0;
+  transition: opacity 500ms ease-in-out;
+  z-index: 5;
+}
+
+/* line 98, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_project_create.scss */
+.create-modal-overlay-open {
+  opacity: 1;
+}
+
+/* line 102, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_project_create.scss */
+.create-modal-overlay-close {
+  opacity: 0;
+}
+
+/* line 1, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_project_edit.scss */
+.edit-project-page {
+  align-items: center;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+/* line 12, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_project_edit.scss */
+.project-edit-form {
+  justify-content: center;
+  position: fixed;
+  display: flex;
+  z-index: 2;
+  flex-direction: row;
+  width: 2000px;
+  border: 1px solid white;
+  top: 60px;
+  right: -225px;
+  border: 1px solid #e8e8e8;
+  background: white;
+}
+/* line 35, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_project_edit.scss */
+.project-edit-form h2 {
+  font-size: 24px;
+  font-weight: bold;
+}
+/* line 39, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_project_edit.scss */
+.project-edit-form input {
+  padding: 10px;
+  margin: 15px 10px;
+  background: #fafafa;
+  border: 1px solid transparent;
+  transition: border-color 300ms;
+}
+/* line 45, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_project_edit.scss */
+.project-edit-form input:hover {
+  border: 1px solid lightblue;
+}
+/* line 48, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_project_edit.scss */
+.project-edit-form input:focus {
+  background: #fff;
+  border: 1px solid #2f78ca;
+}
+/* line 53, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_project_edit.scss */
+.project-edit-form label {
+  align-items: center;
+  font-size: 16px;
+  font-weight: bold;
+}
+/* line 57, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_project_edit.scss */
+.project-edit-form label input {
+  padding: 10px;
+  margin: 15px 10px;
+  background: #e8e8e8;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  transition: border-color 300ms;
+}
+/* line 64, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_project_edit.scss */
+.project-edit-form label input:hover {
+  border: 1px solid lightblue;
+}
+/* line 67, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_project_edit.scss */
+.project-edit-form label input:focus {
+  background: #fff;
+  border: 1px solid #2f78ca;
+}
+/* line 73, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_project_edit.scss */
+.project-edit-form button {
+  width: 13%;
+  position: relative;
+  left: 5%;
+  height: 40px;
+  margin-top: 10px;
+}
+
+/* line 82, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_project_edit.scss */
+.project-edit-items {
+  position: absolute;
+  top: 142px;
+  align-self: left;
+}
+
+/* line 87, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_project_edit.scss */
+.upload-wrapper {
+  display: flex;
+}
+
+/* line 91, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_project_edit.scss */
+.upload-controls {
+  border-right: 1px solid #e8e8e8;
+  display: flex;
+  flex-direction: column;
+  padding: 35px;
+  position: fixed;
+  height: 72%;
+}
+/* line 98, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_project_edit.scss */
+.upload-controls p {
+  padding: 20px;
+  font-size: 19px;
+  font-weight: bold;
+}
+/* line 103, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_project_edit.scss */
+.upload-controls input {
+  padding: 20px;
+  background: #e8e8e8;
+}
+/* line 107, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_project_edit.scss */
+.upload-controls button {
+  font-size: 18px;
+  padding: 5px;
+}
+
+/* line 113, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_project_edit.scss */
+.item-upload {
+  width: 100%;
+  box-sizing: border-box;
+  height: 1000px;
+}
+
+/* line 119, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_project_edit.scss */
+.upload-images {
+  padding-right: 40px;
+  overflow: scroll;
+  width: 500px;
+  height: 500px;
+}
+
+/* line 126, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_project_edit.scss */
+.upload-preview {
+  width: 1000px;
+  overflow: scroll;
+  position: absolute;
+  left: 370px;
+}
+
+/* line 133, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_project_edit.scss */
+.project-input {
+  padding: 10px;
+  margin: 15px 10px;
+  background: #fafafa;
+  border: 1px solid transparent;
+  transition: border-color 300ms;
+}
+/* line 139, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_project_edit.scss */
+.project-input:hover {
+  border: 1px solid lightblue;
+}
+/* line 142, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_project_edit.scss */
+.project-input:focus {
+  background: #fff;
+  border: 1px solid #2f78ca;
+}
+
+/* line 1, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_project_show.scss */
+.project-show {
+  position: relative;
+  height: 100vh;
+  box-sizing: border-box;
+  z-index: 999;
+}
+
+/* line 11, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_project_show.scss */
+.items-index {
+  position: absolute;
+  left: 0;
+  width: 80%;
+  height: 100%;
+  overflow: scroll;
+}
+
+/* line 22, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_project_show.scss */
+.sidebar {
+  background-color: #f9f9f9;
+  position: absolute;
+  right: 0;
+  width: 20%;
+  height: 72%;
+}
+
+/* line 35, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_project_show.scss */
+.sidebar-user-info {
+  background-color: #f9f9f9;
+  display: flex;
+  box-sizing: border-box;
+  height: 89px;
+  justify-content: space-between;
+  border-bottom: 1px solid #e8e8e8;
+  border-left: 1px solid #e8e8e8;
+  border-right: 1px solid #e8e8e8;
+  padding: 20px;
+}
+
+/* line 47, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_project_show.scss */
+.sidebar-project-info {
+  box-sizing: border-box;
+  border-bottom: 1px solid #e8e8e8;
+  border-left: 1px solid #e8e8e8;
+  border-right: 1px solid #e8e8e8;
+  padding: 20px;
+  height: 123px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: #f9f9f9;
+}
+/* line 58, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_project_show.scss */
+.sidebar-project-info .stats {
+  padding-top: 5px;
+  display: flex;
+}
+/* line 61, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_project_show.scss */
+.sidebar-project-info .stats .stats-likes {
+  display: flex;
+  width: 16%;
+  justify-content: space-around;
+}
+/* line 66, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_project_show.scss */
+.sidebar-project-info .stats .stats-comments {
+  display: flex;
+  width: 17%;
+  justify-content: space-around;
+}
+/* line 73, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_project_show.scss */
+.sidebar-project-info h2 {
+  font-size: 16px;
+  font-weight: bold;
+}
+/* line 77, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_project_show.scss */
+.sidebar-project-info h4 {
+  font-size: 14px;
+  color: #191919;
+}
+/* line 81, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_project_show.scss */
+.sidebar-project-info .publish-date {
+  font-size: 11px;
+  color: gray;
+  padding-top: 10px;
+}
+
+/* line 88, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_project_show.scss */
+.name-follow {
+  box-sizing: border-box;
+  display: inline-block;
+}
+/* line 92, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_project_show.scss */
+.name-follow h2 {
+  font-size: 16px;
+  font-weight: bold;
+}
+/* line 97, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_project_show.scss */
+.name-follow button {
+  cursor: pointer;
+  font-size: 13px;
+  padding: 4px 13px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* line 106, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_project_show.scss */
+.sidebar-misc-links {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  background-color: #f9f9f9;
+  border: 1px solid #e8e8e8;
+  height: 100%;
+}
+/* line 113, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_project_show.scss */
+.sidebar-misc-links button {
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+  padding: 8px 32px;
+  margin: 10px 0 0 0;
+  position: relative;
+  top: 20px;
+  height: 35px;
+}
+
+/* line 125, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_project_show.scss */
+.view-modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  marginRight: -50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  overflow: scroll;
+  WebkitOverflowScrolling: touch;
+  outline: none;
+  height: 100%;
+  width: 90%;
+  border-right: 1px solid #e8e8e8;
+  opacity: 0;
+  transition: opacity 500ms ease-in-out;
+  box-sizing: border-box;
+  z-index: 6;
+}
+
+/* line 148, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_project_show.scss */
+.view-modal-open {
+  opacity: 1;
+}
+
+/* line 152, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_project_show.scss */
+.view-modal-close {
+  opacity: 0;
+}
+
+/* line 156, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_project_show.scss */
+.view-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  opacity: 0;
+  transition: opacity 500ms ease-in-out;
+  z-index: 5;
+}
+
+/* line 167, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_project_show.scss */
+.view-modal-overlay-open {
+  opacity: 1;
+}
+
+/* line 171, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_project_show.scss */
+.view-modal-overlay-close {
+  opacity: 0;
+}
+
+/* line 201, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_project_show.scss */
+.comments-wrapper {
+  width: 80%;
+  margin-top: 90px;
+  border-radius: 7px;
+  border: 1px solid #e8e8e8;
+  margin-bottom: 120px;
+}
+
+/* line 209, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_project_show.scss */
+.comment-header {
+  font-size: 20px;
+}
+
+/* line 213, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_project_show.scss */
+.comments {
+  display: flex;
+  justify-content: center;
+  border-radius: inherit;
+  background-color: #f9f9f9;
+}
+
+/* line 219, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_project_show.scss */
+.comments-form {
+  border-radius: inherit;
+}
+
+/* line 223, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_project_show.scss */
+.comments-form-form {
+  margin: auto;
+  padding: 30px;
+  border-bottom: 1px solid #e8e8e8;
+  background-color: white;
+  border-radius: 7px 7px 0 0;
+}
+
+/* line 241, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_project_show.scss */
+.comment-header {
+  padding-bottom: 25px;
+}
+
+/* line 245, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_project_show.scss */
+.comment-form-mid {
+  border-radius: inherit;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  background-color: white;
+}
+/* line 254, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_project_show.scss */
+.comment-form-mid textarea {
+  width: 90%;
+  border-radius: 5;
+  border: 1px solid #e8e8e8;
+}
+
+/* line 266, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_project_show.scss */
+.comment-button {
+  padding: 7px 15px;
+  font-weight: bold;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+/* line 273, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_project_show.scss */
+.comment-button-div {
+  padding-top: 15px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* line 280, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_project_show.scss */
+.comments-index-wrapper {
+  border-radius: inherit;
+}
+
+/* line 283, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_project_show.scss */
+.comments-index-itemwrap {
+  border-radius: inherit;
+  padding: 30px;
+  display: flex;
+  background-color: white;
+}
+/* line 292, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_project_show.scss */
+.comments-index-itemwrap .comment-main-body {
+  padding-left: 20px;
+}
+
+/* line 296, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_project_show.scss */
+.comments-list {
+  border-radius: inherit;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+/* line 301, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_project_show.scss */
+.comments-index {
+  border-radius: inherit;
+}
+
+/* line 305, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_project_show.scss */
+.comment-body {
+  padding-top: 12px;
+  font-size: 16px;
+}
+
+/* line 310, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_project_show.scss */
+.top-part {
+  display: flex;
+  align-items: center;
+}
+/* line 313, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_project_show.scss */
+.top-part p {
+  font-size: 10px;
+  color: gray;
+  position: relative;
+  left: 5px;
+}
+
+/* line 320, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_project_show.scss */
+.author-name {
+  font-weight: bold;
+}
+
+/* line 324, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_project_show.scss */
+#comment-user-icon {
+  object-fit: cover;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+}
+
+/* line 331, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_project_show.scss */
+.showpage-icon {
+  width: 16px;
+  height: 16px;
+  margin-right: 10px;
+  padding-top: 2px;
+}
+
+/* line 5, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_session_form.scss */
+.login-form-container {
+  display: flex;
+  justify-content: center;
+}
+
+/* line 20, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_session_form.scss */
+.login-form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 40px;
+}
+/* line 25, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_session_form.scss */
+.login-form input {
+  margin-bottom: 20px;
+}
+/* line 28, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_session_form.scss */
+.login-form ul {
+  color: red;
+}
+
+/* line 57, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_session_form.scss */
+.session-modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  marginRight: -50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid #ccc;
+  background: #fff;
+  overflow: auto;
+  WebkitOverflowScrolling: touch;
+  borderRadius: 4px;
+  outline: none;
+  padding: 20px;
+  border-radius: 4px;
+  width: 25%;
+}
+
+/* line 76, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_session_form.scss */
+.session-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+/* line 1, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_signup_form.scss */
+.signup-form-container {
+  display: flex;
+  justify-content: center;
+}
+
+/* line 15, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_signup_form.scss */
+.signup-form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 40px;
+}
+/* line 20, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_signup_form.scss */
+.signup-form input {
+  margin-bottom: 20px;
+}
+/* line 23, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_signup_form.scss */
+.signup-form p {
+  align-self: center;
+  font-size: 20px;
+  font-weight: bold;
+  padding-bottom: 15px;
+}
+
+/* line 31, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_signup_form.scss */
+input[type="submit"] {
+  height: 40px;
+  background-color: transparent;
+  margin-top: 10px;
+}
+
+/* line 40, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_signup_form.scss */
+.signup-buttons {
+  display: flex;
+  justify-content: space-around;
+  cursor: pointer;
+}
+
+/* line 46, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_signup_form.scss */
+.signup-input {
+  width: 89%;
+  padding: 10px;
+}
+
+/* line 1, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_splash.scss */
+.hide {
+  display: none;
+}
+
+/* line 4, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_splash.scss */
+.splash-content {
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  height: 100vh;
+}
+
+/* line 11, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_splash.scss */
+.splash-title {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: 30%;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+
+/* line 20, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_splash.scss */
+.splash-image {
+  background-image: url(https://i.imgur.com/8SsGrbK.jpg);
+  height: 100vh;
+  filter: brightness(0.6);
+  background-size: cover;
+  color: #fff;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 20px;
+  text-align: center;
+  width: 100%;
+  position: fixed;
+  top: 60px;
+  z-index: 0;
+  align-items: center;
+}
+
+/* line 42, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_splash.scss */
+.splash-image-title {
+  font-size: 70px;
+  font-weight: 900;
+  line-height: .95;
+  margin: -13px auto 0;
+}
+
+/* line 49, /Users/ghost/App_Academy/full_stack/enchant/app/assets/stylesheets/components/_splash.scss */
+.demo-button {
+  padding: 15px 40px;
+  justify-content: center;
+  width: 40%;
+  border-radius: 7px;
+  margin-top: 55px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 700;
+}
