@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 class NavCenter extends React.Component {
   constructor() {
@@ -9,8 +9,8 @@ class NavCenter extends React.Component {
 
   demoLogin() {
     const demo = {
-      username: "Felurian",
-      password: "password"
+      username: 'Felurian',
+      password: 'password'
     };
     this.props.login(demo);
   }
@@ -18,7 +18,7 @@ class NavCenter extends React.Component {
   notLoggedIn() {
     return (
       <ul className="nav-center-links">
-        <li onClick={this.demoLogin}>Discover</li>
+        <li onClick={this.demoLogin}>TESTING TO SEE IF HEROKU WORKS</li>
         <li>
           <a href="https://www.linkedin.com/in/truong-nguyen-2821471b/">
             LinkedIn
@@ -28,7 +28,7 @@ class NavCenter extends React.Component {
           <a href="https://github.com/TmNguyen12/Enchant">GitHub</a>
         </li>
         <button>
-          {" "}
+          {' '}
           <Link to="/signup">Sign Up With Email</Link>
         </button>
       </ul>
@@ -40,15 +40,15 @@ class NavCenter extends React.Component {
       <ul className="nav-center-links">
         <li>
           <a href="https://www.linkedin.com/in/truong-nguyen-2821471b/">
-            {" "}
-            LinkedIn{" "}
+            {' '}
+            LinkedIn{' '}
           </a>
         </li>
         <li>
           <a href="https://github.com/TmNguyen12/Enchant"> Github </a>
         </li>
         <button>
-          {" "}
+          {' '}
           <Link to="/project/create">Create a Project</Link>
         </button>
       </ul>
