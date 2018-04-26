@@ -8,6 +8,7 @@ const middlewares = [thunk];
 
 console.log('I AM IN THE STORE');
 console.log(process.env.NODE_ENV);
+console.log('I just want to make sure this gets to heroku');
 
 if (process.env.NODE_ENV !== 'production') {
   // must use 'require' (import only allowed at top of file)
