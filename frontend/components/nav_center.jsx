@@ -18,7 +18,7 @@ class NavCenter extends React.Component {
   notLoggedIn() {
     return (
       <ul className="nav-center-links">
-        <li onClick={this.demoLogin}>TESTING TO SEE IF HEROKU WORKS</li>
+        <li onClick={this.demoLogin}>TESTING TO SEE IF HEROKU Please work</li>
         <li>
           <a href="https://www.linkedin.com/in/truong-nguyen-2821471b/">
             LinkedIn
