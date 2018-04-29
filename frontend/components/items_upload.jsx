@@ -3,12 +3,10 @@ import React from 'react';
 class ItemsUpload extends React.Component {
   constructor(props) {
     super(props);
-    let id = this.props.location.pathname.slice(14);
     this.state = {
       text: '',
       image: '',
-      path: this.props.location.pathname,
-      project_id: id,
+      project_id: this.props.project_id,
       uploadImages: [],
       imageFile: ''
     };
@@ -38,7 +36,7 @@ class ItemsUpload extends React.Component {
     const file = this.state.imageFile;
     var formData = new FormData();
 
-    formData.append('item[project_id]', this.props.location.pathname.slice(14));
+    formData.append('item[project_id]', this.state.project_id);
     formData.append('item[text]', this.state.text);
     formData.append('item[image]', file || this.state.image_url);
     this.props.makeItem(formData).then(({ item }) => {
