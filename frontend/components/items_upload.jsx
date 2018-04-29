@@ -1,14 +1,16 @@
-import React from "react";
+import React from 'react';
 
 class ItemsUpload extends React.Component {
   constructor(props) {
     super(props);
+    let id = this.props.location.pathname.slice(14);
     this.state = {
-      text: "",
-      image: "",
-      project_id: this.props.project_id,
+      text: '',
+      image: '',
+      path: this.props.location.pathname,
+      project_id: id,
       uploadImages: [],
-      imageFile: ""
+      imageFile: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateFile = this.updateFile.bind(this);
@@ -36,9 +38,9 @@ class ItemsUpload extends React.Component {
     const file = this.state.imageFile;
     var formData = new FormData();
 
-    formData.append("item[project_id]", this.state.project_id);
-    formData.append("item[text]", this.state.text);
-    formData.append("item[image]", file || this.state.image_url);
+    formData.append('item[project_id]', this.props.location.pathname.slice(14));
+    formData.append('item[text]', this.state.text);
+    formData.append('item[image]', file || this.state.image_url);
     this.props.makeItem(formData).then(({ item }) => {
       const uploadImages = this.state.uploadImages.slice();
       uploadImages.push(item.image_url);

@@ -2,6 +2,7 @@ import { connect } from "react-redux";
 import ItemsUpload from "./items_upload";
 import { selectItems } from "../reducers/selectors";
 import { makeItem } from "../actions/item_actions";
+import { withRouter } from "react-router";
 
 // const defaultState = {
 //   items: {},
@@ -26,4 +27,4 @@ const mapDispatchToProps = dispatch => ({
   makeItem: item => dispatch(makeItem(item))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(ItemsUpload);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ItemsUpload));
