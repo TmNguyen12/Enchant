@@ -41,7 +41,7 @@ class ItemsUpload extends React.Component {
     formData.append('item[project_id]', projectId);
     formData.append('item[text]', this.state.text);
     formData.append('item[image]', file || this.state.image_url);
-    this.props.makeItem(formData).then(({ item }) => {
+    this.props.makeItem(formData, projectId).then(({ item }) => {
       const uploadImages = this.state.uploadImages.slice();
       uploadImages.push(item.image_url);
       this.setState({ uploadImages });

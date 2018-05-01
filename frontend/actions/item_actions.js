@@ -1,7 +1,7 @@
-import * as ItemAPIUtil from "../util/item_api_util";
+import * as ItemAPIUtil from '../util/item_api_util';
 
-export const RECEIVE_ALL_ITEMS = "RECEIVE_ALL_ITEMS";
-export const CREATE_ITEM = "CREATE_ITEM";
+export const RECEIVE_ALL_ITEMS = 'RECEIVE_ALL_ITEMS';
+export const CREATE_ITEM = 'CREATE_ITEM';
 
 export const receiveAllItems = items => ({
   type: RECEIVE_ALL_ITEMS,
@@ -15,8 +15,10 @@ export const createItem = item => {
   };
 };
 
-export const makeItem = item => dispatch => {
-  return ItemAPIUtil.createItem(item).then(item => dispatch(createItem(item)));
+export const makeItem = (item, projectId) => dispatch => {
+  return ItemAPIUtil.createItem(item, projectId).then(newItem =>
+    dispatch(createItem(newItem))
+  );
 };
 
 export const fetchAllItems = projectId => dispatch => {
