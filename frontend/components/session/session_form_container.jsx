@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 import { Link, withRouter } from "react-router-dom";
 
-import { login, logout, signup, clearErrors } from "../actions/session_actions";
+import { login, logout, signup, clearErrors } from "../../actions/session_actions";
 import SessionForm from "./session_form";
 
 const mapStateToProps = state => ({

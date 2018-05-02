@@ -1,7 +1,7 @@
-import React from "react";
-import Modal from "react-modal";
-import { withRouter } from "react-router-dom";
-import ProjectShowContainer from "./project_show_container";
+import React from 'react';
+import Modal from 'react-modal';
+import { withRouter } from 'react-router-dom';
+import ProjectShowContainer from '../project/project_show_container';
 
 class ModalWrapper extends React.Component {
   // modal code from Dan Abramov portal examples
@@ -27,7 +27,9 @@ class ModalWrapper extends React.Component {
 
   closeModal() {
     this.setState({ modalIsOpen: false });
-    this.props.history.push("/");
+
+    // this.props.history.push("/");
+    this.props.history.goBack();
   }
 
   render() {
@@ -40,14 +42,14 @@ class ModalWrapper extends React.Component {
           onAfterOpen={this.afterOpenModal}
           onRequestClose={this.closeModal}
           className={{
-            base: "view-modal",
-            afterOpen: "view-modal-open",
-            beforeClose: "view-modal-close"
+            base: 'view-modal',
+            afterOpen: 'view-modal-open',
+            beforeClose: 'view-modal-close'
           }}
           overlayClassName={{
-            base: "view-modal-overlay",
-            afterOpen: "view-modal-overlay-open",
-            beforeClose: "view-modal-overlay-close"
+            base: 'view-modal-overlay',
+            afterOpen: 'view-modal-overlay-open',
+            beforeClose: 'view-modal-overlay-close'
           }}
         >
           <div className="modal">

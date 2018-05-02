@@ -1,8 +1,8 @@
 import React from "react";
-import ItemsUploadContainer from "./items_upload_container";
+import ItemsUploadContainer from "../items/items_upload_container";
 import Modal from "react-modal";
 import { Link } from "react-router-dom";
-import { pullProjectIdFromURL } from "../util/project_api_util";
+import { pullProjectIdFromURL } from "../../util/project_api_util";
 
 class ProjectEdit extends React.Component {
   constructor(props) {

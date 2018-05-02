@@ -1,7 +1,7 @@
-import React from "react";
-import { selectProjects } from "../reducers/selectors";
-import ProjectIndexItem from "./project_index_item";
-import ProjectShow from "./project_show_container";
+import React from 'react';
+import { selectProjects } from '../../reducers/selectors';
+import ProjectIndexItem from './project_index_item';
+import ProjectShow from './project_show_container';
 
 class ProjectIndex extends React.Component {
   componentWillMount() {
@@ -19,7 +19,7 @@ class ProjectIndex extends React.Component {
           <ul className="project-list">
             {projects.map(proj => (
               <ProjectIndexItem
-                key={"projects" + `${proj.id}`}
+                key={'projects' + `${proj.id}`}
                 project={proj}
               />
             ))}

@@ -1,12 +1,12 @@
-import { connect } from "react-redux";
-import Comments from "./comments";
-import CommentsForm from "./comments_form";
-import CommentsIndex from "./comments_index";
+import { connect } from 'react-redux';
+import Comments from '../comments/comments';
+import CommentsForm from '../comments/comments_form';
+import CommentsIndex from './comments_index';
 import {
   fetchMakeComment,
   fetchComments,
   clearComments
-} from "../actions/comment_actions";
+} from '../../actions/comment_actions';
 
 const mapStateToProps = state => ({
   currentUser: state.session.currentUser,

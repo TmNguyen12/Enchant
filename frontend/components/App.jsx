@@ -1,17 +1,17 @@
-import React from "react";
-import { Provider } from "react-redux";
-import { AuthRoute, ProtectedRoute } from "../util/route_util";
-import NavContainer from "./navbar_container";
-import NavCenterContainer from "./nav_center_container";
-import SignupContainer from "./signup_form_container";
-import SessionFormContainer from "./session_form_container";
-import ProjectCreateContainer from "./project_create_container";
-import MainComponent from "./main_container";
-import ProjectEditContainer from "./project_edit_container";
-import ModalWrapper from "./modal";
-import { pullProjectIdFromURL } from "../util/project_api_util";
+import React from 'react';
+import { Provider } from 'react-redux';
+import { AuthRoute, ProtectedRoute } from '../util/route_util';
+import NavContainer from './navbar/navbar_container';
+import NavCenterContainer from './navbar/nav_center_container';
+import SignupContainer from './signup/signup_form_container';
+import SessionFormContainer from './session/session_form_container';
+import ProjectCreateContainer from './project/project_create_container';
+import MainComponent from './main/main_container';
+import ProjectEditContainer from './project/project_edit_container';
+import ModalWrapper from './modal/modal';
+import { pullProjectIdFromURL } from '../util/project_api_util';
 
-import { Route, Switch, Link, withRouter } from "react-router-dom";
+import { Route, Switch, Link, withRouter } from 'react-router-dom';
 
 class App extends React.Component {
   render() {
@@ -22,7 +22,7 @@ class App extends React.Component {
     // to pull out the project number from the URL
     // let myRegex = /[^\/]+$/g;
     // tempProject['id'] = parseInt(myRegex.exec(location.pathname));
-    tempProject["id"] = pullProjectIdFromURL(location.pathname);
+    tempProject['id'] = pullProjectIdFromURL(location.pathname);
 
     return (
       <div className="all-content">

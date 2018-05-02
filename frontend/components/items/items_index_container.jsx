@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 import ItemsIndex from "./items_index";
-import { selectItems } from "../reducers/selectors";
-import { fetchAllItems } from "../actions/item_actions";
+import { selectItems } from "../../reducers/selectors";
+import { fetchAllItems } from "../../actions/item_actions";
 
 const mapStateToProps = state => {
   return {

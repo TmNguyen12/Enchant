@@ -1,8 +1,8 @@
-import { connect } from "react-redux";
-import { Link, withRouter } from "react-router-dom";
+import { connect } from 'react-redux';
+import { Link, withRouter } from 'react-router-dom';
 
-import { signup, clearErrors } from "../actions/session_actions";
-import SignupForm from "./signup_form";
+import { signup, clearErrors } from '../../actions/session_actions';
+import SignupForm from './signup_form';
 
 const mapStateToProps = state => {
   return {

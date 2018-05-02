@@ -1,7 +1,7 @@
 import React from "react";
 import Modal from "react-modal";
-import ItemsIndexContainer from "./items_index_container";
-import CommentsContainer from "./comments_container";
+import ItemsIndexContainer from "../items/items_index_container";
+import CommentsContainer from "../comments/comments_container";
 import ReactSVG from "react-svg";
 
 class ProjectShow extends React.Component {

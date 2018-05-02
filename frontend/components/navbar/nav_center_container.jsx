@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { logout, login } from "../actions/session_actions";
+import { logout, login } from "../../actions/session_actions";
 import NavCenter from "./nav_center";
 
 const mapStateToProps = ({ session }) => ({

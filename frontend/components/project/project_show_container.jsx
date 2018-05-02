@@ -1,8 +1,8 @@
 import { connect } from "react-redux";
 import ProjectShow from "./project_show";
-import { fetchProject } from "../actions/project_actions";
-import { selectProjects } from "../reducers/selectors";
-import { makeLike, unLike } from "../actions/like_actions";
+import { fetchProject } from "../../actions/project_actions";
+import { selectProjects } from "../../reducers/selectors";
+import { makeLike, unLike } from "../../actions/like_actions";
 
 const mapStateToProps = state => {
   return {

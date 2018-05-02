@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import ProjectCreate from "./project_create";
-import { makeProject } from "../actions/project_actions";
+import { makeProject } from "../../actions/project_actions";
 
 // const defaultstate = {
 //     title:' ',

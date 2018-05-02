@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import ItemsUpload from './items_upload';
-import { selectItems } from '../reducers/selectors';
-import { makeItem } from '../actions/item_actions';
+import { selectItems } from '../../reducers/selectors';
+import { makeItem } from '../../actions/item_actions';
 import { withRouter } from 'react-router';
 
 // const defaultState = {

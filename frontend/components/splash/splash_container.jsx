@@ -1,6 +1,6 @@
-import { connect } from "react-redux";
-import { login } from "../actions/session_actions";
-import Splash from "./splash";
+import { connect } from 'react-redux';
+import { login } from '../../actions/session_actions';
+import Splash from '../splash/splash';
 
 const mapStateToProps = ({ session }) => ({
   currentUser: session.currentUser

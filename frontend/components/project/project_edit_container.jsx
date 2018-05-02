@@ -4,10 +4,10 @@ import {
   updateProject,
   receiveProject,
   fetchProject
-} from "../actions/project_actions";
+} from "../../actions/project_actions";
 import { withRouter } from "react-router";
-import { selectProjects } from "../reducers/selectors";
-import { fetchAllItems } from "../actions/item_actions";
+import { selectProjects } from "../../reducers/selectors";
+import { fetchAllItems } from "../../actions/item_actions";
 
 const mapStateToProps = state => {
   return {

@@ -1,5 +1,5 @@
 import React from "react";
-import ItemsUploadContainer from "./items_upload_container";
+import ItemsUploadContainer from "../items/items_upload_container";
 import Modal from "react-modal";
 import { Link } from "react-router-dom";
 
