@@ -2,6 +2,7 @@ import React from 'react';
 import { selectProjects } from '../../reducers/selectors';
 import ProjectIndexItem from './project_index_item';
 import ProjectShow from './project_show_container';
+import LoadingIcon from '../loading/loading';
 
 class ProjectIndex extends React.Component {
   componentWillMount() {
@@ -11,8 +12,8 @@ class ProjectIndex extends React.Component {
   render() {
     const { projects } = this.props;
 
-    if (Object.keys(projects).length < 1) {
-      return null;
+    if (Object.keys(projects).length < 2) {
+      return <LoadingIcon />;
     } else {
       return (
         <section className="project-index">

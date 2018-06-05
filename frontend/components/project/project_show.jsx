@@ -7,18 +7,25 @@ import ReactSVG from "react-svg";
 class ProjectShow extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {id: this.props.match.params.projectId}; 
     this.handleLike = this.handleLike.bind(this);
   }
 
+
   componentWillMount() {
-    this.props.fetchProject(this.props.project.id);
+    // const { match } = this.props; 
+    // let id = parseInt(match.params.projectId); 
+    this.props.fetchProject(this.state.id); 
+    // this.props.fetchProject(this.props.project.id);
+
+    this.setState({id:parseInt(this.props.match.params.projectId)}); 
   }
 
   componentWillReceiveProps(newProps) {
     if (
-      this.didReceiveNewProject(this.props.viewProject, newProps.viewProject)
+      this.didReceiveNewProject(this.state.id, newProps.match.params.projectId)
     ) {
-      this.props.fetchProject(this.props.project.id);
+      this.props.fetchProject(newProps.match.params.projectId);
       this.setState({ viewProject: newProps.viewProject });
     }
   }
@@ -57,7 +64,7 @@ class ProjectShow extends React.Component {
       return null;
     }
     return (
-      <div className="project-show">
+      <div className={`project-show ${this.props.classToAdd}`}>
         <div className="sidebar">
           <div className="sidebar-user-info">
             <div className="name-follow">

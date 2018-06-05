@@ -334,3 +334,11 @@
   margin-right: 10px;
   padding-top: 2px;
 }
+
+.noModal {
+  margin-top: 60px; 
+  height: calc(100vh - 60px);
+  .sidebar{
+    height: calc(72vh - 60px); 
+  } 
+}

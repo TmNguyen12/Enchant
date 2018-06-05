@@ -1,6 +1,7 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
+
 import NavContainer from './navbar/navbar_container';
 import NavCenterContainer from './navbar/nav_center_container';
 import SignupContainer from './signup/signup_form_container';
@@ -10,12 +11,40 @@ import MainComponent from './main/main_container';
 import ProjectEditContainer from './project/project_edit_container';
 import ModalWrapper from './modal/modal';
 import { pullProjectIdFromURL } from '../util/project_api_util';
+import ProjectShowContainer from './project/project_show_container'; 
 
-import { Route, Switch, Link, withRouter } from 'react-router-dom';
+import { Router, Route, Switch, Link, withRouter, browserHistory } from 'react-router-dom';
+import createBrowserHistory from 'history/createBrowserHistory'; 
 
 class App extends React.Component {
-  render() {
+  constructor(props){
+    super(props); 
+    this.state = {
+      previousLocation: this.props.location
+    }; 
+  }
+
+  componentWillUpdate(nextProps) {
     const { location } = this.props;
+    // set previousLocation if props.location is not modal
+    if (
+      nextProps.history.action !== "POP"
+      // (!location.state || !location.state.modal)
+    ) {
+      this.state.previousLocation = this.props.location;
+    }
+  }
+
+  render() {
+    const history = createBrowserHistory(); 
+
+    const { location } = this.props;
+
+    const isModal = !!(
+      location.state &&
+      location.state.modal && 
+      this.previousLocation !== location
+    ); // not initial render
 
     let tempProject = {};
 
@@ -23,7 +52,10 @@ class App extends React.Component {
     // let myRegex = /[^\/]+$/g;
     // tempProject['id'] = parseInt(myRegex.exec(location.pathname));
     tempProject['id'] = pullProjectIdFromURL(location.pathname);
+    
 
+
+    debugger 
     return (
       <div className="all-content">
         <nav className="nav-main">
@@ -44,27 +76,29 @@ class App extends React.Component {
         <Route exact path="/login" component={SessionFormContainer} />
 
         <div className="main-content">
-          <Switch>
+          <Switch location={isModal ? this.state.previousLocation : location}>
+            <Route exact path="/" component={MainComponent} />
             <ProtectedRoute
               path="/project/create"
               component={ProjectCreateContainer}
             />
-            <Route exact path="/" component={MainComponent} />
             <ProtectedRoute
               exact
               path="/project/edit/:projectId"
               component={ProjectEditContainer}
             />
-            <Route
-              exact
-              path="/project/:projectId"
-              render={() => (
-                <div>
-                  <ModalWrapper project={tempProject} />
-                </div>
-              )}
-            />
+            <Route path="/project/:projectId" render={()=> <ProjectShowContainer classToAdd={"noModal"}/>} />
           </Switch>
+          { isModal ? 
+              <Route
+                  path="/project/:projectId"
+                  render={() => (
+                    <div>
+                      <ModalWrapper project={tempProject} />
+                    </div>
+                  )}
+                /> : null 
+        }
         </div>
       </div>
     );

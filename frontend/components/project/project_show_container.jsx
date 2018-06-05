@@ -3,6 +3,8 @@ import ProjectShow from "./project_show";
 import { fetchProject } from "../../actions/project_actions";
 import { selectProjects } from "../../reducers/selectors";
 import { makeLike, unLike } from "../../actions/like_actions";
+import { withRouter } from 'react-router';
+
 
 const mapStateToProps = state => {
   return {
@@ -17,4 +19,4 @@ const mapDispatchToProps = dispatch => ({
   unLike: project => dispatch(unLike(project))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(ProjectShow);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ProjectShow));

@@ -11,7 +11,10 @@ class ProjectIndexItem extends React.Component {
 
   pushURL() {
     const url = `/project/${this.props.project.id}`;
-    this.props.history.push(url);
+    this.props.history.push({
+      pathname: url, 
+      state: {modal: true} 
+    });
   }
 
   render() {
