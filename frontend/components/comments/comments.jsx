@@ -1,6 +1,6 @@
-import React from "react";
-import CommentsForm from "./comments_form";
-import CommentsIndex from "./comments_index";
+import React from 'react';
+import CommentsForm from './comments_form';
+import CommentsIndex from './comments_index';
 
 class Comments extends React.Component {
   constructor(props) {
@@ -9,20 +9,8 @@ class Comments extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchComments(this.props.currentProject);
+    this.props.fetchComments(this.props.match.params.projectId);
   }
-
-  // componentWillReceiveProps() {
-  //   this.props.fetchComments(this.props.projectId);
-  // }
-
-  // checkComments() {
-  //   if (
-  //     comments[Object.keys(comments)[0]].project_id !== this.props.projectId
-  //   ) {
-  //     this.setState({ comments: {} });
-  //   }
-  // }
 
   componentWillUnmount() {
     this.props.clearComments();

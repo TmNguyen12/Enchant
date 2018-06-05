@@ -19,6 +19,12 @@ export const receiveProject = viewProject => ({
   viewProject
 });
 
+const nullProject = {}; 
+
+export const clearProject = () => dispatch => (
+  dispatch(receiveProject(nullProject))
+);
+
 export const makeProject = project => dispatch => {
   return ProjAPIUtil.createProject(project).then(project =>
     dispatch(createProject(project))

@@ -35,7 +35,6 @@ class ModalWrapper extends React.Component {
   render() {
     return (
       <div className="modalz">
-        theese nutz
         <Modal
           isOpen={this.state.modalIsOpen}
           closeTimeoutMS={500}

@@ -1,5 +1,6 @@
 import React from "react";
 import CommentsIndexItem from "./comments_index_item";
+import { composeWithDevTools } from 'redux-devtools-extension';
 
 class CommentsIndex extends React.Component {
   constructor(props) {

@@ -1,31 +1,32 @@
-import React from "react";
-import Modal from "react-modal";
-import ItemsIndexContainer from "../items/items_index_container";
-import CommentsContainer from "../comments/comments_container";
-import ReactSVG from "react-svg";
+import React from 'react';
+import Modal from 'react-modal';
+import ItemsIndexContainer from '../items/items_index_container';
+import CommentsContainer from '../comments/comments_container';
+import ReactSVG from 'react-svg';
 
 class ProjectShow extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {id: this.props.match.params.projectId}; 
+    this.state = { id: this.props.match.params.projectId };
     this.handleLike = this.handleLike.bind(this);
+    this.didReceiveNewProject = this.didReceiveNewProject.bind(this);
   }
 
-
   componentWillMount() {
-    // const { match } = this.props; 
-    // let id = parseInt(match.params.projectId); 
-    this.props.fetchProject(this.state.id); 
-    // this.props.fetchProject(this.props.project.id);
-
-    this.setState({id:parseInt(this.props.match.params.projectId)}); 
+    if (this.props.project) {
+      this.props.fetchProject(this.props.project.id);
+      this.setState({ id: this.props.project.id });
+    } else {
+      this.props.fetchProject(this.state.id);
+      this.setState({ id: parseInt(this.props.match.params.projectId) });
+    }
   }
 
   componentWillReceiveProps(newProps) {
     if (
-      this.didReceiveNewProject(this.state.id, newProps.match.params.projectId)
+      this.didReceiveNewProject(this.props.viewProject, newProps.viewProject)
     ) {
-      this.props.fetchProject(newProps.match.params.projectId);
+      this.props.fetchProject(this.state.id);
       this.setState({ viewProject: newProps.viewProject });
     }
   }
@@ -38,7 +39,9 @@ class ProjectShow extends React.Component {
     }
   }
 
-  // component will umount and clear state
+  componentWillUnmount() {
+    this.props.clearProject();
+  }
 
   handleLike() {
     const { liked_by_current_user } = this.props.viewProject;
@@ -54,10 +57,10 @@ class ProjectShow extends React.Component {
     if (viewProject) {
       var { author } = this.props.viewProject;
       var likeButton = this.props.viewProject.liked_by_current_user
-        ? "Thank you!"
-        : "Appreciate Project";
+        ? 'Thank you!'
+        : 'Appreciate Project';
       var fname = author.fname ? author.fname : author.username;
-      var lname = author.lname ? author.lname : "";
+      var lname = author.lname ? author.lname : '';
     }
 
     if (!viewProject) {

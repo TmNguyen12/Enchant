@@ -1,7 +1,8 @@
-import { connect } from "react-redux";
-import ItemsIndex from "./items_index";
-import { selectItems } from "../../reducers/selectors";
-import { fetchAllItems } from "../../actions/item_actions";
+import { connect } from 'react-redux';
+import ItemsIndex from './items_index';
+import { selectItems } from '../../reducers/selectors';
+import { fetchAllItems, clearItems } from '../../actions/item_actions';
+import { withRouter } from 'react-router';
 
 const mapStateToProps = state => {
   return {
@@ -11,7 +12,10 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  fetchAllItems: projectId => dispatch(fetchAllItems(projectId))
+  fetchAllItems: projectId => dispatch(fetchAllItems(projectId)),
+  clearItems: () => dispatch(clearItems())
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(ItemsIndex);
+export default withRouter(
+  connect(mapStateToProps, mapDispatchToProps)(ItemsIndex)
+);

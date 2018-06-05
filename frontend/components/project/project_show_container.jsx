@@ -1,10 +1,9 @@
-import { connect } from "react-redux";
-import ProjectShow from "./project_show";
-import { fetchProject } from "../../actions/project_actions";
-import { selectProjects } from "../../reducers/selectors";
-import { makeLike, unLike } from "../../actions/like_actions";
+import { connect } from 'react-redux';
+import ProjectShow from './project_show';
+import { fetchProject, clearProject } from '../../actions/project_actions';
+import { selectProjects } from '../../reducers/selectors';
+import { makeLike, unLike } from '../../actions/like_actions';
 import { withRouter } from 'react-router';
-
 
 const mapStateToProps = state => {
   return {
@@ -16,7 +15,10 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => ({
   fetchProject: project => dispatch(fetchProject(project)),
   makeLike: project => dispatch(makeLike(project)),
-  unLike: project => dispatch(unLike(project))
+  unLike: project => dispatch(unLike(project)),
+  clearProject: () => dispatch(clearProject())
 });
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ProjectShow));
+export default withRouter(
+  connect(mapStateToProps, mapDispatchToProps)(ProjectShow)
+);

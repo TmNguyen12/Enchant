@@ -1,4 +1,6 @@
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router';
+
 import Comments from '../comments/comments';
 import CommentsForm from '../comments/comments_form';
 import CommentsIndex from './comments_index';
@@ -22,4 +24,4 @@ const mapDispatchToProps = dispatch => ({
   clearComments: () => dispatch(clearComments())
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Comments);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Comments));

@@ -4,12 +4,16 @@ import ItemIndexItem from "./item_index_item";
 
 class ItemsIndex extends React.Component {
   componentWillMount() {
-    this.props.fetchAllItems(this.props.projectId);
+    this.props.fetchAllItems(this.props.match.params.projectId);
+    console.log('items index', this.props.projectId); 
+  }
+
+  componentWillUnmount(){
+    this.props.clearItems(); 
   }
 
   render() {
     const { items, itemIds } = this.props;
-
     if (!!this.props.items === false) {
       return null;
     } else {

@@ -1,7 +1,7 @@
-import React from "react";
-import ProjectShowContainer from "./project_show_container";
-import Modal from "react-modal";
-import { Route, withRouter, Link } from "react-router-dom";
+import React from 'react';
+import ProjectShowContainer from './project_show_container';
+import Modal from 'react-modal';
+import { Route, withRouter, Link } from 'react-router-dom';
 
 class ProjectIndexItem extends React.Component {
   constructor(props) {
@@ -12,8 +12,8 @@ class ProjectIndexItem extends React.Component {
   pushURL() {
     const url = `/project/${this.props.project.id}`;
     this.props.history.push({
-      pathname: url, 
-      state: {modal: true} 
+      pathname: url,
+      state: { modal: true }
     });
   }
 
@@ -21,7 +21,7 @@ class ProjectIndexItem extends React.Component {
     const { project } = this.props;
     const { author } = this.props.project;
     const fname = author.fname ? author.fname : author.username;
-    const lname = author.lname ? author.lname : "";
+    const lname = author.lname ? author.lname : '';
     return (
       <div>
         <div className="project-card">

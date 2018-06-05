@@ -1,6 +1,10 @@
-import merge from "lodash/merge";
+import merge from 'lodash/merge';
 
-import { RECEIVE_ALL_ITEMS, CREATE_ITEM } from "../actions/item_actions";
+import {
+  RECEIVE_ALL_ITEMS,
+  CREATE_ITEM,
+  RECEIVE_NO_ITEMS
+} from '../actions/item_actions';
 
 const defaultState = {
   byId: {},
@@ -15,6 +19,8 @@ const itemReducer = (state = defaultState, action) => {
       return merge({}, action.items);
     case CREATE_ITEM:
       return merge({}, action.item);
+    case RECEIVE_NO_ITEMS:
+      return defaultState;
     default:
       return state;
   }

@@ -11,24 +11,30 @@ import MainComponent from './main/main_container';
 import ProjectEditContainer from './project/project_edit_container';
 import ModalWrapper from './modal/modal';
 import { pullProjectIdFromURL } from '../util/project_api_util';
-import ProjectShowContainer from './project/project_show_container'; 
+import ProjectShowContainer from './project/project_show_container';
 
-import { Router, Route, Switch, Link, withRouter, browserHistory } from 'react-router-dom';
-import createBrowserHistory from 'history/createBrowserHistory'; 
+import {
+  Router,
+  Route,
+  Switch,
+  Link,
+  withRouter,
+  browserHistory
+} from 'react-router-dom';
 
 class App extends React.Component {
-  constructor(props){
-    super(props); 
+  constructor(props) {
+    super(props);
     this.state = {
       previousLocation: this.props.location
-    }; 
+    };
   }
 
   componentWillUpdate(nextProps) {
     const { location } = this.props;
     // set previousLocation if props.location is not modal
     if (
-      nextProps.history.action !== "POP"
+      nextProps.history.action !== 'POP'
       // (!location.state || !location.state.modal)
     ) {
       this.state.previousLocation = this.props.location;
@@ -36,15 +42,11 @@ class App extends React.Component {
   }
 
   render() {
-    const history = createBrowserHistory(); 
-
     const { location } = this.props;
 
-    const isModal = !!(
-      location.state &&
-      location.state.modal && 
-      this.previousLocation !== location
-    ); // not initial render
+    const isModal = Boolean(location.state &&
+      location.state.modal &&
+      this.previousLocation !== location); // not initial render
 
     let tempProject = {};
 
@@ -52,10 +54,7 @@ class App extends React.Component {
     // let myRegex = /[^\/]+$/g;
     // tempProject['id'] = parseInt(myRegex.exec(location.pathname));
     tempProject['id'] = pullProjectIdFromURL(location.pathname);
-    
 
-
-    debugger 
     return (
       <div className="all-content">
         <nav className="nav-main">
@@ -87,18 +86,21 @@ class App extends React.Component {
               path="/project/edit/:projectId"
               component={ProjectEditContainer}
             />
-            <Route path="/project/:projectId" render={()=> <ProjectShowContainer classToAdd={"noModal"}/>} />
+            <Route
+              path="/project/:projectId"
+              render={() => <ProjectShowContainer classToAdd={'noModal'} />}
+            />
           </Switch>
-          { isModal ? 
-              <Route
-                  path="/project/:projectId"
-                  render={() => (
-                    <div>
-                      <ModalWrapper project={tempProject} />
-                    </div>
-                  )}
-                /> : null 
-        }
+          {isModal ? (
+            <Route
+              path="/project/:projectId"
+              render={() => (
+                <div>
+                  <ModalWrapper project={tempProject} />
+                </div>
+              )}
+            />
+          ) : null}
         </div>
       </div>
     );
