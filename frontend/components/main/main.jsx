@@ -7,5 +7,5 @@ import SplashContainer from '../splash/splash_container';
 const MainComponent = ({ currentUser }) => (
   currentUser ? <ProjectIndex /> : <SplashContainer />
 );
-
+// testing if this works
 export default MainComponent; 
